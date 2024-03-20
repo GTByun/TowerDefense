@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject towerPlaceParent;
     public GameObject road;
     public GameObject roadParent;
+    public UIController uiConrol;
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour
             obj.transform.localScale = Vector2.one * modular;
             obj.transform.parent = roadParent.transform;
         }
+        uiConrol.DarkFaderOn(true);
+        uiConrol.FirstCardOn(true);
+        uiConrol.DarkFaderEditOn(false);
     }
 
     // Update is called once per frame
