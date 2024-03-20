@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         {
             for(int j = 0; j < 3; j++)
             {
-                Vector2 pos = new Vector2(i * modular - modular, modular - j * modular);
+                Vector2 pos = new(i * modular - modular, modular - j * modular);
                 GameObject obj = Instantiate(towerPlace, pos, Quaternion.identity);
                 obj.transform.localScale = Vector2.one * modular;
                 obj.transform.parent = towerPlaceParent.transform;
@@ -36,11 +36,27 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             roadY -= modular;
-            Vector2 pos = new Vector2(roadX, roadY);
+            Vector2 pos = new(roadX, roadY);
             GameObject obj = Instantiate(road, pos, Quaternion.identity);
             obj.transform.localScale = Vector2.one * modular;
             obj.transform.parent = roadParent.transform;
-        }    
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            roadX -= modular;
+            Vector2 pos = new(roadX, roadY);
+            GameObject obj = Instantiate(road, pos, Quaternion.identity);
+            obj.transform.localScale = Vector2.one * modular;
+            obj.transform.parent = roadParent.transform;
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            roadY += modular;
+            Vector2 pos = new(roadX, roadY);
+            GameObject obj = Instantiate(road, pos, Quaternion.identity);
+            obj.transform.localScale = Vector2.one * modular;
+            obj.transform.parent = roadParent.transform;
+        }
     }
 
     // Update is called once per frame
