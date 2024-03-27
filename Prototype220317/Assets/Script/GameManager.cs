@@ -10,10 +10,15 @@ public class GameManager : MonoBehaviour
     public GameObject road;
     public GameObject roadParent;
     public UIController uiConrol;
-    // Start is called before the first frame update
+    public CardSpriteInfoSaver cardSpriteInfoSaver;
+    public EditManager editManager;
+    public TowerTypeSaver towerTypeSaver;
+    public static GameManager gameManager;
+
     void Awake()
     {
-        int id = 0;
+        if (gameManager == null)
+            gameManager = this;
         for (int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 3; j++)
@@ -63,7 +68,6 @@ public class GameManager : MonoBehaviour
         uiConrol.DarkFaderEditOn(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

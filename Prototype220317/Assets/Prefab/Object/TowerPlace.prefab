@@ -98,7 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38056fd385c2ab24f8caf9106b0287cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  towerPrefab:
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
+  - {fileID: 3552983649891172678, guid: ca9777cf92b8e1246878ffc93e1a0801, type: 3}
 --- !u!61 &-9001393677081615146
 BoxCollider2D:
   m_ObjectHideFlags: 0
