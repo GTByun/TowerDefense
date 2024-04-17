@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     public float modular;
     public GameObject towerPlace;
     public GameObject towerPlaceParent;
-    public GameObject road;
-    public GameObject roadParent;
     public static GameManager gameManager;
     public CardSpriteSet[] cards;
     public bool GameOn;
@@ -32,40 +30,6 @@ public class GameManager : MonoBehaviour
                 obj.transform.localScale = Vector2.one * modular;
                 obj.transform.parent = towerPlaceParent.transform;
             }
-        }
-        float roadX = -modular * 3;
-        float roadY = modular * 2;
-        for (int i = 0;i < 5;i++)
-        {
-            roadX += modular;
-            Vector2 pos = new(roadX, roadY);
-            GameObject obj = Instantiate(road, pos, Quaternion.identity);
-            obj.transform.localScale = Vector2.one * modular;
-            obj.transform.parent = roadParent.transform;
-        }
-        for (int i = 0; i < 4; i++)
-        {
-            roadY -= modular;
-            Vector2 pos = new(roadX, roadY);
-            GameObject obj = Instantiate(road, pos, Quaternion.identity);
-            obj.transform.localScale = Vector2.one * modular;
-            obj.transform.parent = roadParent.transform;
-        }
-        for (int i = 0; i < 4; i++)
-        {
-            roadX -= modular;
-            Vector2 pos = new(roadX, roadY);
-            GameObject obj = Instantiate(road, pos, Quaternion.identity);
-            obj.transform.localScale = Vector2.one * modular;
-            obj.transform.parent = roadParent.transform;
-        }
-        for (int i = 0; i < 3; i++)
-        {
-            roadY += modular;
-            Vector2 pos = new(roadX, roadY);
-            GameObject obj = Instantiate(road, pos, Quaternion.identity);
-            obj.transform.localScale = Vector2.one * modular;
-            obj.transform.parent = roadParent.transform;
         }
         UIConroller = gameObject.GetComponent<UIController>();
         CardSpriteInfoSaver = gameObject.GetComponent<CardSpriteInfoSaver>();
