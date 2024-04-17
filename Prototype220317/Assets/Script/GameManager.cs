@@ -9,10 +9,20 @@ public class GameManager : MonoBehaviour
     public GameObject towerPlaceParent;
     public GameObject road;
     public GameObject roadParent;
-    // Start is called before the first frame update
+    public static GameManager gameManager;
+    public CardSpriteSet[] cards;
+    public bool GameOn;
+    private bool firstGame;
+
+    public UIController UIConroller { get; private set; }
+    public CardSpriteInfoSaver CardSpriteInfoSaver { get; private set; }
+    public EditManager EditManager { get; private set; }
+    public TowerTypeSaver TowerTypeSaver { get; private set; }
+
     void Awake()
     {
-        int id = 0;
+        if (gameManager == null)
+            gameManager = this;
         for (int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 3; j++)
@@ -28,7 +38,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0;i < 5;i++)
         {
             roadX += modular;
-            Vector2 pos = new Vector2(roadX, roadY);
+            Vector2 pos = new(roadX, roadY);
             GameObject obj = Instantiate(road, pos, Quaternion.identity);
             obj.transform.localScale = Vector2.one * modular;
             obj.transform.parent = roadParent.transform;
@@ -57,11 +67,30 @@ public class GameManager : MonoBehaviour
             obj.transform.localScale = Vector2.one * modular;
             obj.transform.parent = roadParent.transform;
         }
+        UIConroller = gameObject.GetComponent<UIController>();
+        CardSpriteInfoSaver = gameObject.GetComponent<CardSpriteInfoSaver>();
+        EditManager = gameObject.GetComponent<EditManager>();
+        TowerTypeSaver = gameObject.GetComponent<TowerTypeSaver>();
+        GameOn = false;
+        firstGame = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (GameOn)
+        {
+            if (firstGame)
+            {
+                GameOn = false;
+                firstGame = false;
+                StartCoroutine(FirstGameStart());
+            }
+        }
+    }
+
+    IEnumerator FirstGameStart()
+    {
+        yield return new WaitForSeconds(3);
+        GameOn = true;
     }
 }
