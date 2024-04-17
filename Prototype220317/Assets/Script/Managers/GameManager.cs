@@ -13,9 +13,8 @@ public class GameManager : MonoBehaviour
     private bool firstGame;
 
     public UIController UIController { get; private set; }
-    public CardSpriteInfoSaver CardSpriteInfoSaver { get; private set; }
     public EditManager EditManager { get; private set; }
-    public TowerTypeSaver TowerTypeSaver { get; private set; }
+    public TowerInfoManager TowerInfoManager { get; private set; }
 
     void Awake()
     {
@@ -65,11 +64,9 @@ public class GameManager : MonoBehaviour
     {
         //UIController : UI 액티브를 관리
         UIController = gameObject.GetComponent<UIController>();
-        //CardSpriteInfoSaver : 각 카드의 정보를 보관
-        CardSpriteInfoSaver = gameObject.GetComponent<CardSpriteInfoSaver>();
         //EditManager : 에딧모드 전환
         EditManager = gameObject.GetComponent<EditManager>();
-        //TowerTyperSaver : 각 타워 보관
-        TowerTypeSaver = gameObject.GetComponent<TowerTypeSaver>();
+        //TowerInfoManager : 각 타워에 대한 정보들을 보관
+        TowerInfoManager = gameObject.GetComponent <TowerInfoManager>();
     }
 }

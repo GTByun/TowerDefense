@@ -7,7 +7,7 @@ public class TowerPlace : MonoBehaviour
 {
     private EditManager editManager;
     private GameObject nowTower;
-    private TowerTypeSaver towerTypeSaver;
+    private TowerInfoManager TowerInfoManager;
     private UIController uIController;
     private int towerId;
     private int attackRank;
@@ -23,7 +23,7 @@ public class TowerPlace : MonoBehaviour
     private void Start()
     {
         editManager = GameManager.gameManager.EditManager;
-        towerTypeSaver = GameManager.gameManager.TowerTypeSaver;
+        TowerInfoManager = GameManager.gameManager.TowerInfoManager;
         uIController = GameManager.gameManager.UIController;
     }
 
@@ -31,7 +31,7 @@ public class TowerPlace : MonoBehaviour
     {
         if (nowTower == null)
         {
-            nowTower = Instantiate(towerTypeSaver.towers[id], gameObject.transform);
+            nowTower = Instantiate(TowerInfoManager.GetObject(id), gameObject.transform);
             towerId = id;
             return false;
         }
@@ -43,7 +43,7 @@ public class TowerPlace : MonoBehaviour
         if (towerId == checkId)
         {
             Destroy(nowTower);
-            nowTower = Instantiate(towerTypeSaver.towers[id], gameObject.transform);
+            nowTower = Instantiate(TowerInfoManager.GetObject(id), gameObject.transform);
             towerId = id;
             return false;
         }

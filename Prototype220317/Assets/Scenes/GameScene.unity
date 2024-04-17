@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 114203218}
   - component: {fileID: 114203219}
   - component: {fileID: 114203220}
-  - component: {fileID: 114203221}
   - component: {fileID: 114203222}
-  - component: {fileID: 114203223}
+  - component: {fileID: 114203221}
+  - component: {fileID: 114203224}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEdit: 0
   editId: 0
---- !u!114 &114203223
+--- !u!114 &114203224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,22 +295,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 114203217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8a2759fcd36cb41ab6c5abee2b73a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 36ed589fe2613de4d9cbf81f5ec9e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towers:
-  - {fileID: 6624849031295809783, guid: 34ca1f5d4a13e354682f4f0be536129d, type: 3}
-  - {fileID: 177113014060768766, guid: 006235f96029d9c4ab74090d504d3c85, type: 3}
-  - {fileID: 6881034845119654329, guid: 144cc32c86b5db44d81abce816dfcf60, type: 3}
-  - {fileID: 6822693835450624016, guid: bbe2e1f570407364f9ad54f3524852a5, type: 3}
-  - {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
-  - {fileID: 177113014060768766, guid: 7c3e0833017ad5242af20ce3a8d2f45a, type: 3}
-  - {fileID: 6881034845119654329, guid: d7e415f740dc1fd4fb1adab2b19d75bc, type: 3}
-  - {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
-  - {fileID: 3510167354384777032, guid: 7e1ea778e4b105945b3969e8d94e2d85, type: 3}
-  - {fileID: 3510167354384777032, guid: 7e1ea778e4b105945b3969e8d94e2d85, type: 3}
-  - {fileID: 3510167354384777032, guid: 7e1ea778e4b105945b3969e8d94e2d85, type: 3}
-  - {fileID: 3510167354384777032, guid: 7e1ea778e4b105945b3969e8d94e2d85, type: 3}
+  TowerInfoArr:
+  - TowerIcon: {fileID: 21300000, guid: a2df7184e064e6343b76ce930973b784, type: 3}
+    TowerName: "\uC0F7\uAC74"
+    TowerDescription: 
+    TowerObject: {fileID: 6624849031295809783, guid: 34ca1f5d4a13e354682f4f0be536129d, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: bf772b7286ebdca4fa983df130b40b27, type: 3}
+    TowerName: "\uC6A9\uC228\uACB0"
+    TowerDescription: 
+    TowerObject: {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: 8a8726b9b45a0694783c588f401928f9, type: 3}
+    TowerName: "3\uC810\uC0AC"
+    TowerDescription: 
+    TowerObject: {fileID: 177113014060768766, guid: 006235f96029d9c4ab74090d504d3c85, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: 95a177e1168cdf640a99c6c03e661123, type: 3}
+    TowerName: "\uC790\uB3D9"
+    TowerDescription: 
+    TowerObject: {fileID: 177113014060768766, guid: 7c3e0833017ad5242af20ce3a8d2f45a, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: d0d8b48008a3d4f41a7bae8ad6c32fa5, type: 3}
+    TowerName: "\uC800\uACA9"
+    TowerDescription: 
+    TowerObject: {fileID: 6881034845119654329, guid: 144cc32c86b5db44d81abce816dfcf60, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: fe30338a50c68a440a8194cbfdf1066d, type: 3}
+    TowerName: "\uC989\uC0AC"
+    TowerDescription: 
+    TowerObject: {fileID: 6881034845119654329, guid: d7e415f740dc1fd4fb1adab2b19d75bc, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: 6284937469f977c4eb31c61e8c8b91ca, type: 3}
+    TowerName: "\uD3ED\uACA9"
+    TowerDescription: 
+    TowerObject: {fileID: 6822693835450624016, guid: bbe2e1f570407364f9ad54f3524852a5, type: 3}
+  - TowerIcon: {fileID: 21300000, guid: 15a826ac763e9624bade0b1b18cf974b, type: 3}
+    TowerName: "\uB808\uC774\uB354"
+    TowerDescription: 
+    TowerObject: {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
 --- !u!1 &155785711
 GameObject:
   m_ObjectHideFlags: 0

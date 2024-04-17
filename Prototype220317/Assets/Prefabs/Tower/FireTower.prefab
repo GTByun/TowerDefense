@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6029972642214509071}
   - component: {fileID: 2099153478900749149}
   m_Layer: 0
-  m_Name: BreathTower
+  m_Name: FireTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
