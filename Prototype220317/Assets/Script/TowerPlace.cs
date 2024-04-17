@@ -24,7 +24,7 @@ public class TowerPlace : MonoBehaviour
     {
         editManager = GameManager.gameManager.EditManager;
         towerTypeSaver = GameManager.gameManager.TowerTypeSaver;
-        uIController = GameManager.gameManager.UIConroller;
+        uIController = GameManager.gameManager.UIController;
     }
 
     bool TowerCreate(int id)

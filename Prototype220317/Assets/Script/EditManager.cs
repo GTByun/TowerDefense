@@ -10,7 +10,7 @@ public class EditManager : MonoBehaviour
 
     private void Awake()
     {
-        uIController = GameManager.gameManager.UIConroller;
+        uIController = GameManager.gameManager.UIController;
     }
 
     public void SetEditMode(bool edit)
