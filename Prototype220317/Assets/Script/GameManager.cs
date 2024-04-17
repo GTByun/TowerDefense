@@ -63,9 +63,13 @@ public class GameManager : MonoBehaviour
     }
     private void SetManagers()
     {
+        //UIController : UI 액티브를 관리
         UIController = gameObject.GetComponent<UIController>();
+        //CardSpriteInfoSaver : 각 카드의 정보를 보관
         CardSpriteInfoSaver = gameObject.GetComponent<CardSpriteInfoSaver>();
+        //EditManager : 에딧모드 전환
         EditManager = gameObject.GetComponent<EditManager>();
+        //TowerTyperSaver : 각 타워 보관
         TowerTypeSaver = gameObject.GetComponent<TowerTypeSaver>();
     }
 }

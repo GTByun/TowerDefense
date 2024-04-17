@@ -6,11 +6,11 @@ public class EditManager : MonoBehaviour
 {
     public bool isEdit = false;
     public int editId;
-    private UIController uIController;
+    private UIController UIController;
 
     private void Awake()
     {
-        uIController = GameManager.gameManager.UIController;
+        UIController = GameManager.gameManager.UIController;
     }
 
     public void SetEditMode(bool edit)
@@ -18,7 +18,7 @@ public class EditManager : MonoBehaviour
         isEdit = edit;
         if (editId > 14)
         {
-            uIController.GameModeOn();
+            UIController.GameModeOn();
         }
     }
 
