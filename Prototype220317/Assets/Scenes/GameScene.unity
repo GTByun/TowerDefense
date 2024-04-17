@@ -1622,6 +1622,8 @@ MonoBehaviour:
   healthPoint: 0
   burning: 0
   burningDamage: 0
+  speedMagni: 0
+  speed: 0
 --- !u!212 &1017370554
 SpriteRenderer:
   m_ObjectHideFlags: 0
