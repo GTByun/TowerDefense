@@ -19,14 +19,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //테스트
+        //인스턴스 생성
         if (instance == null)
             instance = this;
-        //Ÿ�� ��ġ ������Ʈ ����. TowerPlaceParent�� �ڽ����� ����
+        //TowerPlace를 배치
         SetTowerPlace();
-        //�Ŵ��� ��������
+        //매니저들 지정
         SetManagers();
-        //���� ������Ʈ
+        //뭔지 모름
         GameOn = false;
         firstGame = true;
     }
@@ -63,11 +63,8 @@ public class GameManager : MonoBehaviour
     }
     private void SetManagers()
     {
-        //UIController : UI ��Ƽ�긦 ����
         UIController = gameObject.GetComponent<UIController>();
-        //EditManager : ������� ��ȯ
         EditManager = gameObject.GetComponent<EditManager>();
-        //TowerInfoManager : �� Ÿ���� ���� �������� ����
         TowerInfoManager = gameObject.GetComponent<TowerInfoManager>();
         StateManager = gameObject.GetComponent<StateManager>();
     }

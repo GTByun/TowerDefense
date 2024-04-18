@@ -4,16 +4,18 @@ using UnityEngine;
 
 
 /// <summary>
-/// ���� ������ ���� State���� ������
-/// State�� �����ϰų� ������ �� ��� �κ��� ���� �Ѿ� �ϴ��� ������
+/// 
+/// State를 관리해주는 매니저
 /// </summary>
 public class StateManager : MonoBehaviour
 {
     public GameState gameState = GameState.SelectReward;
     private UIController UIController;
+    private EditManager EditManager;
 
     void Start() {
         UIController = GameManager.instance.UIController;
+        EditManager = GameManager.instance.EditManager;
     }
 
     public void EnterState(GameState state) {
@@ -23,6 +25,7 @@ public class StateManager : MonoBehaviour
                 break;
             case GameState.EditMode :
                 UIController.EditModeOn();
+                EditManager.SetEditMode();
                 break;
         }
     }
@@ -34,7 +37,7 @@ public class StateManager : MonoBehaviour
     public void AdvanceState() {
     }
 
-    public void initState() {
+    public void InitState() {
         EnterState(GameState.SelectReward);
     }
 }

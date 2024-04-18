@@ -6,10 +6,8 @@ public class EnumScript
 {
 }
 
-//���⿡ enum�� �־��ּ���
-
 /// <summary>
-/// �� ������Ʈ�� ��� �������� �̵��ؾ� �ϴ����� ������
+/// 적의 이동 경로
 /// </summary>
 public enum EnemyMove
 {
@@ -20,7 +18,7 @@ public enum EnemyMove
 }
 
 /// <summary>
-/// ���� ������ State
+/// State 상태
 /// </summary>
 public enum GameState
 {
