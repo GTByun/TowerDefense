@@ -5,17 +5,8 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public GameObject darkFader;
-    public GameObject firstCard;
     public GameObject darkFaderEdit;
     public GameObject cards;
-
-    private void Awake()
-    {
-        darkFader.SetActive(true);
-        firstCard.SetActive(true);
-        darkFaderEdit.SetActive(false);
-        cards.SetActive(false);
-    }
 
     public void CardModeOn()
     {
@@ -29,7 +20,6 @@ public class UIController : MonoBehaviour
         darkFader.SetActive(false);
         cards.SetActive(false);
         darkFaderEdit.SetActive(true);
-        firstCard.SetActive(false);
     }
 
     public void GameModeOn()

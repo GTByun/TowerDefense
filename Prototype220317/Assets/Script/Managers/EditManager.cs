@@ -22,8 +22,8 @@ public class EditManager : MonoBehaviour
         }
     }
 
-    public void SetEditId(int Id)
-    {
-        editId = Id;
+    public void EditTower(int index) {
+        GameManager.gameManager.StateManager.EnterState(GameState.EditMode);
+        editId = index;
     }
 }

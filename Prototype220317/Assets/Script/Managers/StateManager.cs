@@ -4,10 +4,37 @@ using UnityEngine;
 
 
 /// <summary>
-/// ÇöÀç °ÔÀÓÀÌ ¹«½¼ StateÀÎÁö °ü¸®ÇÔ
-/// State¿¡ ÀÔÀåÇÏ°Å³ª ³ª°¬À» ¶§ ¾î´À ºÎºÐÀ» ²ô°í ÄÑ¾ß ÇÏ´ÂÁö °ü¸®ÇÔ
+/// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Stateï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+/// Stateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 public class StateManager : MonoBehaviour
 {
+    public GameState gameState = GameState.SelectReward;
+    private UIController UIController;
 
+    void Start() {
+        UIController = GameManager.gameManager.UIController;
+    }
+
+    public void EnterState(GameState state) {
+        switch (state) {
+            case GameState.SelectReward :
+                UIController.CardModeOn();
+                break;
+            case GameState.EditMode :
+                UIController.EditModeOn();
+                break;
+        }
+    }
+
+    public void ExitState(GameState state) {
+
+    }
+
+    public void AdvanceState() {
+    }
+
+    public void initState() {
+        EnterState(GameState.SelectReward);
+    }
 }

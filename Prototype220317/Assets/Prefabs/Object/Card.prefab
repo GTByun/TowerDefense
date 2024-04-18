@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2510813454627820641}
   - component: {fileID: 1421420202357587893}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5018356765335070077}
         m_TargetAssemblyTypeName: CardSpriteSet, Assembly-CSharp
-        m_MethodName: SendId
+        m_MethodName: CardClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -303,10 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fbdf4350735214ba03e2d39fbf755a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1421420202357587893}
-  description: {fileID: 3053481254218506320}
-  imageDescription: {fileID: 6910364769760449442}
-  firstId: 0
+  cardIcon: {fileID: 1421420202357587893}
+  cardName: {fileID: 6910364769760449442}
+  cardDescription: {fileID: 3053481254218506320}
+  index: 0
 --- !u!1 &9057120983127979911
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 2421901865226641681}
   - component: {fileID: 6910364769760449442}
   m_Layer: 5
-  m_Name: TowerType
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

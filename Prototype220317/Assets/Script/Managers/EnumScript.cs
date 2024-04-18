@@ -6,12 +6,12 @@ public class EnumScript
 {
 }
 
-//¿©±â¿¡ enumµé ³Ö¾îÁÖ¼¼¿ä
+//ï¿½ï¿½ï¿½â¿¡ enumï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
 
 /// <summary>
-/// Àû ¿ÀºêÁ§Æ®°¡ ¾î´À ¹æÇâÀ¸·Î ÀÌµ¿ÇØ¾ß ÇÏ´ÂÁö¸¦ ÀúÀåÇÔ
+/// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ø¾ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /// </summary>
-enum EnemyMove
+public enum EnemyMove
 {
     Up = 0,
     Right = 1,
@@ -20,9 +20,11 @@ enum EnemyMove
 }
 
 /// <summary>
-/// ÇöÀç °ÔÀÓÀÇ State
+/// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ State
 /// </summary>
-enum GameState
+public enum GameState
 {
-
+    SelectReward,
+    EditMode,
+    GamePlay
 }

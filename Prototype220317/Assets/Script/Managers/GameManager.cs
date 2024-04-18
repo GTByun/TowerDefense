@@ -15,17 +15,18 @@ public class GameManager : MonoBehaviour
     public UIController UIController { get; private set; }
     public EditManager EditManager { get; private set; }
     public TowerInfoManager TowerInfoManager { get; private set; }
+    public StateManager StateManager { get; private set; }
 
     void Awake()
     {
-        //°ÔÀÓ¸Å´ÏÀú ÀÎ½ºÅÏ½º ÀúÀå
+        //ï¿½ï¿½ï¿½Ó¸Å´ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (gameManager == null)
             gameManager = this;
-        //Å¸¿ö ¹èÄ¡ ¿ÀºêÁ§Æ® »ý¼º. TowerPlaceParent¿¡ ÀÚ½ÄÀ¸·Î ÁöÁ¤
+        //Å¸ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½. TowerPlaceParentï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         SetTowerPlace();
-        //¸Å´ÏÀú °¡Á®¿À±â
+        //ï¿½Å´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         SetManagers();
-        //°ÔÀÓ ½ºÅ×ÀÌÆ®
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         GameOn = false;
         firstGame = true;
     }
@@ -62,11 +63,12 @@ public class GameManager : MonoBehaviour
     }
     private void SetManagers()
     {
-        //UIController : UI ¾×Æ¼ºê¸¦ °ü¸®
+        //UIController : UI ï¿½ï¿½Æ¼ï¿½ê¸¦ ï¿½ï¿½ï¿½ï¿½
         UIController = gameObject.GetComponent<UIController>();
-        //EditManager : ¿¡µ÷¸ðµå ÀüÈ¯
+        //EditManager : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         EditManager = gameObject.GetComponent<EditManager>();
-        //TowerInfoManager : °¢ Å¸¿ö¿¡ ´ëÇÑ Á¤º¸µéÀ» º¸°ü
-        TowerInfoManager = gameObject.GetComponent <TowerInfoManager>();
+        //TowerInfoManager : ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        TowerInfoManager = gameObject.GetComponent<TowerInfoManager>();
+        StateManager = gameObject.GetComponent<StateManager>();
     }
 }

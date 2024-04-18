@@ -6,33 +6,32 @@ using UnityEngine.UI;
 
 public class CardSpriteSet : MonoBehaviour
 {
-    public Image image;
-    public Text description;
-    public Text imageDescription;
+    public Image cardIcon;
+    public Text cardName;
+    public Text cardDescription;
     private TowerInfoManager TIManager;
     private EditManager editManager;
-    public int firstId;
-    public int nowId;
+    public int index;
 
 
     private void Start()
     {
         TIManager = GameManager.gameManager.TowerInfoManager;
         editManager = GameManager.gameManager.EditManager;
-        SetCardSprite(firstId);
+        SetCard(index);
     }
 
-    public void SetCardSprite(int id)
+    public void SetCard(int value)
     {
-        image.sprite = TIManager.GetIcon(id);
-        description.text = TIManager.GetName(id);
-        imageDescription.text = TIManager.GetDescription(id);
-        nowId = id;
+        index = value;
+        Debug.Log(TIManager.GetName(value));
+        cardName.text = TIManager.GetName(value);
+        cardIcon.sprite = TIManager.GetIcon(value);
+        cardDescription.text = TIManager.GetDescription(value);
     }
 
-    public void SendId()
+    public void CardClicked()
     {
-        editManager.SetEditId(nowId);
-        editManager.SetEditMode(true);
+        editManager.EditTower(index);
     }
 }
