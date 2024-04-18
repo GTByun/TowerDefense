@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public float modular;
     public GameObject towerPlace;
     public GameObject towerPlaceParent;
-    public static GameManager gameManager;
+    public static GameManager instance;
     public CardSpriteSet[] cards;
     public bool GameOn;
     private bool firstGame;
@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //���ӸŴ��� �ν��Ͻ� ����
-        if (gameManager == null)
-            gameManager = this;
+        //테스트
+        if (instance == null)
+            instance = this;
         //Ÿ�� ��ġ ������Ʈ ����. TowerPlaceParent�� �ڽ����� ����
         SetTowerPlace();
         //�Ŵ��� ��������

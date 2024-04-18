@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        modular = GameManager.gameManager.modular;
+        modular = GameManager.instance.modular;
         healthPoint = 100;
         transform.position = new Vector2(modular * -2, modular * -2);
         move = EnemyMove.Up;

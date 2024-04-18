@@ -22,9 +22,9 @@ public class TowerPlace : MonoBehaviour
 
     private void Start()
     {
-        editManager = GameManager.gameManager.EditManager;
-        TIManager = GameManager.gameManager.TowerInfoManager;
-        uIController = GameManager.gameManager.UIController;
+        editManager = GameManager.instance.EditManager;
+        TIManager = GameManager.instance.TowerInfoManager;
+        uIController = GameManager.instance.UIController;
     }
 
     bool TowerCreate(int id)
@@ -79,7 +79,7 @@ public class TowerPlace : MonoBehaviour
             {
                 editManager.SetEditMode(editModeOn);
                 uIController.GameModeOn();
-                GameManager.gameManager.GameOn = true;
+                GameManager.instance.GameOn = true;
             }
         }
     }

@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.gameManager.GameOn)
+        if (GameManager.instance.GameOn)
         {
             timer += Time.deltaTime;
             if (timer > spawnDelay)

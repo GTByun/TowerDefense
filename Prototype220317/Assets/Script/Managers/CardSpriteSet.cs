@@ -16,8 +16,8 @@ public class CardSpriteSet : MonoBehaviour
 
     private void Start()
     {
-        TIManager = GameManager.gameManager.TowerInfoManager;
-        editManager = GameManager.gameManager.EditManager;
+        TIManager = GameManager.instance.TowerInfoManager;
+        editManager = GameManager.instance.EditManager;
         SetCard(index);
     }
 

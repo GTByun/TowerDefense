@@ -36,7 +36,7 @@ public class Tower : MonoBehaviour
             RotateTowardsTarget();
             // 대상이 사정 거리 밖에 있는 경우 다시 대상을 찾습니다.
             attackTimer += Time.deltaTime;
-            if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.gameManager.modular + (GameManager.gameManager.modular/2))
+            if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.instance.modular + (GameManager.instance.modular/2))
             {
                 if (attackTimer >= 1f / reloadDelay)
                 {
@@ -44,7 +44,7 @@ public class Tower : MonoBehaviour
                     attackTimer = 0f;
                 }
             }
-            if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.gameManager.modular + (GameManager.gameManager.modular / 2)) target = FindClosestEnemy();
+            if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2)) target = FindClosestEnemy();
         }
     }
 
@@ -107,6 +107,6 @@ public class Tower : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range * GameManager.gameManager.modular + (GameManager.gameManager.modular / 2));
+        Gizmos.DrawWireSphere(transform.position, range * GameManager.instance.modular + (GameManager.instance.modular / 2));
     }
 }

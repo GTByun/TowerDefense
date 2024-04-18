@@ -10,7 +10,7 @@ public class EditManager : MonoBehaviour
 
     private void Awake()
     {
-        UIController = GameManager.gameManager.UIController;
+        UIController = GameManager.instance.UIController;
     }
 
     public void SetEditMode(bool edit)
@@ -23,7 +23,7 @@ public class EditManager : MonoBehaviour
     }
 
     public void EditTower(int index) {
-        GameManager.gameManager.StateManager.EnterState(GameState.EditMode);
+        GameManager.instance.StateManager.EnterState(GameState.EditMode);
         editId = index;
     }
 }

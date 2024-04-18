@@ -13,7 +13,7 @@ public class StateManager : MonoBehaviour
     private UIController UIController;
 
     void Start() {
-        UIController = GameManager.gameManager.UIController;
+        UIController = GameManager.instance.UIController;
     }
 
     public void EnterState(GameState state) {

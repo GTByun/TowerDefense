@@ -35,13 +35,13 @@ public class MonsterAI : MonoBehaviour
 
     private void Start()
     {
-        modular = GameManager.gameManager.modular;
+        modular = GameManager.instance.modular;
         transform.position = new Vector2(modular * -2, modular * -2);
     }
 
     private void Update()
     {
-        if (GameManager.gameManager.GameOn) 
+        if (GameManager.instance.GameOn) 
         {
             switch (move)
             {
