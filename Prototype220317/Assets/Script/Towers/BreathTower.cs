@@ -31,8 +31,8 @@ public class BreathTower : Tower
             Vector3 rot = transform.rotation.eulerAngles;
             rot.z = rot.z + rotZ;
             bullet.setTransform(transform.position, rot);
-            //bObject.SetActive(true);
             rotZ += angleOffset;
+            bObject.SetActive(true);
         }
     }
 }

@@ -36,7 +36,7 @@ public class Tower : MonoBehaviour
             RotateTowardsTarget();
             // 대상이 사정 거리 밖에 있는 경우 다시 대상을 찾습니다.
             attackTimer += Time.deltaTime;
-            if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.instance.modular + (GameManager.instance.modular/2))
+            if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.instance.modular + (GameManager.instance.modular / 2))
             {
                 if (attackTimer >= 1f / reloadDelay)
                 {
@@ -44,7 +44,10 @@ public class Tower : MonoBehaviour
                     attackTimer = 0f;
                 }
             }
-            if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2)) target = FindClosestEnemy();
+            else if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2))
+            {
+                target = FindClosestEnemy();
+            }
         }
     }
 
@@ -75,27 +78,9 @@ public class Tower : MonoBehaviour
         Bullet bullet = bObject.GetComponent<Bullet>();
         bullet.init(speed, damage, penetrate);
         bullet.setTransform(transform.position, transform.rotation.eulerAngles);
-        //bObject.SetActive(true);
+        bObject.SetActive(true);
     }
 
-    protected void GenerateBullet(float fireAngle, float shell)
-    {
-        float angleOffset = fireAngle / (shell - 1);
-        float startAngle = -fireAngle / 2f;
-        float rotZ = startAngle;
-
-        for (int i = 0; i < shell; i++)
-        {
-            GameObject bObject = Instantiate(bulletObject);
-            Bullet bullet = bObject.GetComponent<Bullet>();
-            bullet.init(speed, damage, penetrate);
-            Vector3 rot = transform.rotation.eulerAngles;
-            rot.z = rot.z + rotZ;
-            bullet.setTransform(transform.position, rot);
-            //bObject.SetActive(true);
-            rotZ += angleOffset;
-        }
-    }
     protected void RotateTowardsTarget()
     {
         Vector3 direction = (target.transform.position - transform.position).normalized; // 타겟 방향

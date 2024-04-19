@@ -34,8 +34,6 @@ public class Enemy : MonoBehaviour
         Debug.Log("spawn");
     }
 
-
-
     private void Start()
     {
     }
@@ -44,14 +42,9 @@ public class Enemy : MonoBehaviour
     {
         if(healthPoint <= 0)
         {
-            //사망
+            // 사망
             DeSpawn();
-            PlayerStatus.exp += 10;
-            if(PlayerStatus.exp >= 100 )
-            {
-                //레벨업
-                PlayerStatus.exp = PlayerStatus.exp - 100;
-            }
+            // 경험치
         }
         if (burning)
         {
@@ -72,6 +65,7 @@ public class Enemy : MonoBehaviour
                     transform.Translate(synthSpeed * Time.deltaTime * Vector2.left);
                     if (transform.position.x <= modular * - 2 + modular / 5 * 4)
                     {
+                        // 골인
                         DeSpawn();
                         // 라이프 감소
                         Debug.Log("-life");
