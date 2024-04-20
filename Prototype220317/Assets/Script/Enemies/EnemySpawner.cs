@@ -5,54 +5,27 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy;
+    public ObjectPool pool;
     float spawnDelay;
     float timer;
-    public static Queue<GameObject> enemys;
     int spawnCount;
+
 
     void Start()
     {
         spawnDelay = 0.5f;
-        enemys = new Queue<GameObject>();
-        for (int i = 0; i < 30; i++)
-        {
-            GameObject en= Instantiate(enemy);
-            en.SetActive(false);
-            en.transform.SetParent(transform);
-            enemys.Enqueue(en);
-        }
     }
+
     void Update()
     {
-        if (false) //게임 시작 시
+        if (true) // 게임 시작 상태
         {
             timer += Time.deltaTime;
             if (timer > spawnDelay)
             {
-                Debug.Log(enemys.Count);
-                GameObject en = SpawnEnemy();
-                en.SetActive(true);
+                pool.GetObjectFromPool();
                 timer = 0;
             }
         }        
-    }
-
-    private GameObject SpawnEnemy()
-    {
-        GameObject en;
-        if (enemys.Count <= 0)
-        {
-            en = Instantiate(enemy);
-            en.SetActive(false);
-            en.transform.SetParent(transform);
-            enemys.Enqueue(en);
-        }
-        else
-        {
-            Debug.Log("dequeue");
-            en= enemys.Dequeue();
-        }
-        return en;
     }
 }

@@ -184,13 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modular: 1.5
-  towerPlace: {fileID: 6258160126458089546, guid: b6698fb405d713949a9016d441e43935, type: 3}
-  towerPlaceParent: {fileID: 1581357590}
-  cards:
-  - {fileID: 1906873761}
-  - {fileID: 1837545559}
-  - {fileID: 713519036}
-  GameOn: 0
 --- !u!114 &114203220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82ca8cdd57e4dd46a6ccb403c2b0999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEdit: 0
-  editId: 0
 --- !u!114 &114203224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,8 +608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c120f02cfa940448dc584bae960a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMagni: 1
-  speed: 1
 --- !u!212 &280305918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1749,6 +1738,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312829012}
   m_CullTransparentMesh: 1
+--- !u!1 &1318653710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318653711}
+  - component: {fileID: 1318653713}
+  - component: {fileID: 1318653712}
+  m_Layer: 0
+  m_Name: EnemiesPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318653711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318653710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318653712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318653710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193f496cf3963354d8519a1db0627cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 487683865007375024, guid: d30bc1413c76fa341b0b45e16385e038, type: 3}
+  poolSize: 15
+--- !u!114 &1318653713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318653710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b64dc69de501e40bf545a37abd86f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 1318653712}
 --- !u!1 &1347134098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,51 +3065,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939602094}
   m_CullTransparentMesh: 1
---- !u!1 &1943649872
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1943649874}
-  - component: {fileID: 1943649873}
-  m_Layer: 0
-  m_Name: Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1943649873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943649872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7b64dc69de501e40bf545a37abd86f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 487683865007375024, guid: d30bc1413c76fa341b0b45e16385e038, type: 3}
---- !u!4 &1943649874
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943649872}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952946255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,4 +3327,4 @@ SceneRoots:
   - {fileID: 376413330}
   - {fileID: 1560113798}
   - {fileID: 280305919}
-  - {fileID: 1943649874}
+  - {fileID: 1318653711}

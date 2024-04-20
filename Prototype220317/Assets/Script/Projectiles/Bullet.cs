@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
     public float speed;
     public float damage;
     public int penetrate;
-
+    private Transform target;
 
     public void init(float speed, float damage, int penetrate)
     {
@@ -19,13 +20,23 @@ public class Bullet : MonoBehaviour
         transform.position = pos;
         transform.rotation = Quaternion.Euler(rot);
     }
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
     void Start()
     {
 
     }
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (target != null) // 타겟이 설정되었는지 확인
+        {
+            Vector2 direction = (target.position - transform.position).normalized; // 타겟 방향 계산
+            transform.up = direction; // 총알이 타겟 방향으로 회전
+        }
+
+        transform.Translate(Vector2.up * speed * Time.deltaTime); // 회전된 방향으로 이동
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,7 +58,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().Hit(damage);
-            if (penetrate <= 0) Destroy(gameObject);//gameObject.SetActive(false);
+            if (penetrate <= 0) Destroy(gameObject);
             penetrate--;
         }
     }

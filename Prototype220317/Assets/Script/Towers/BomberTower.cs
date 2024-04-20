@@ -8,6 +8,7 @@ public class BomberTower : Tower
 
     protected override void Start()
     {
+        base.Start();
         speed = 3f;
         range = 5;
         damage = 80f;
@@ -15,7 +16,6 @@ public class BomberTower : Tower
         hitArea = 1f;
         splashArea = 2f;
         splashDamage = 30f;
-        base.Start();
     }
     protected override void Fire()
     {

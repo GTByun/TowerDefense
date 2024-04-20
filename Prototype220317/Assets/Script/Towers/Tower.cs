@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -15,26 +16,38 @@ public class Tower : MonoBehaviour
     private float attackTimer;
 
     protected GameObject target = null;
+    protected GameObject[] enemies;
+    public Transform enemiesPool;
     public GameObject bulletObject;
 
 
     protected virtual void Start()
     {
+        enemiesPool = GameObject.Find("EnemiesPool").transform;
+    }
 
+    void GetEnemies()
+    {
+        enemies=new GameObject[enemiesPool.childCount];
+        for (int i = 0; i < enemiesPool.childCount; i++)
+        {
+            enemies[i] = enemiesPool.GetChild(i).gameObject;
+        }
     }
 
     protected virtual void Update()
     {
         // 대상이 없으면 새로운 대상을 찾습니다.
-        if (target == null)
+        if (target == null||!target.activeSelf)
         {
+            Debug.Log("target null");
             target = FindClosestEnemy();
         }
         // 대상이 있으면 일정 시간 간격으로 공격을 수행합니다.
-        else if (target != null)
+        else if (target != null&&target.activeSelf)
         {
+            Debug.Log("target exists");
             RotateTowardsTarget();
-            // 대상이 사정 거리 밖에 있는 경우 다시 대상을 찾습니다.
             attackTimer += Time.deltaTime;
             if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.instance.modular + (GameManager.instance.modular / 2))
             {
@@ -44,6 +57,7 @@ public class Tower : MonoBehaviour
                     attackTimer = 0f;
                 }
             }
+            // 대상이 사정 거리 밖에 있는 경우 다시 대상을 찾습니다.
             else if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2))
             {
                 target = FindClosestEnemy();
@@ -54,21 +68,23 @@ public class Tower : MonoBehaviour
     // 가장 가까운 적을 찾습니다.
     protected GameObject FindClosestEnemy()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GetEnemies();
         GameObject closestEnemy = null;
-        float closestDistance = 10;
-        for (int i = 0; i < enemies.Length; i++)
+        float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);
+        for (int i = 0 ; i < enemies.Length; i++)
         {
             GameObject enemy = enemies[i];
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
             {
-                closestDistance = distance;
+                //closestDistance = distance;
                 closestEnemy = enemy;
+                return closestEnemy;
             }
         }
         return closestEnemy;
     }
+
     // 대상을 공격합니다.
     protected virtual void Fire() { }
 
@@ -78,6 +94,7 @@ public class Tower : MonoBehaviour
         Bullet bullet = bObject.GetComponent<Bullet>();
         bullet.init(speed, damage, penetrate);
         bullet.setTransform(transform.position, transform.rotation.eulerAngles);
+        bullet.SetTarget(target.transform);
         bObject.SetActive(true);
     }
 
@@ -86,8 +103,10 @@ public class Tower : MonoBehaviour
         Vector3 direction = (target.transform.position - transform.position).normalized; // 타겟 방향
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // 타겟 방향을 각도로 변환
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward); // 타겟 방향으로 회전할 Quaternion 생성
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); // 부드럽게 회전
+        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); // 부드럽게 회전
+        transform.rotation = targetRotation; // 바로 회전
     }
+
     // 사정거리를 시각적으로 표시
     private void OnDrawGizmosSelected()
     {

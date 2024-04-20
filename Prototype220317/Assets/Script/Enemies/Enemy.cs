@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
         transform.position = new Vector2(modular * -2, modular * -2);
         move = EnemyMove.Up;
         synthSpeed = speedMagni * speed;
-        Debug.Log("spawn");
     }
 
     private void Start()
@@ -104,7 +103,6 @@ public class Enemy : MonoBehaviour
         Debug.Log("despawn");
         gameObject.SetActive(false);
         transform.position = new Vector2(modular * -2, modular * -2);
-        EnemySpawner.enemys.Enqueue(gameObject);
     }
     public void Hit(float damage)
     {

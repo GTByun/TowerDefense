@@ -6,13 +6,13 @@ public class BurstTower : Tower
 
     protected override void Start()
     {
+        base.Start();
         ammo = 3;
         range = 2f;
         speed = 40f;
         damage = 8f;
         penetrate = 0;
         reloadDelay = 2.5f;
-        base.Start();
     }
     protected override void Fire()
     {
