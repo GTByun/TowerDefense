@@ -9,7 +9,7 @@ using UnityEngine;
 public class TowerPlace : MonoBehaviour
 {
     private GridManager gridManager;
-    public int towerIndex;
+    public int towerIndex; //이 타워의 인덱스
 
     private void Start()
     {
@@ -18,6 +18,7 @@ public class TowerPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gridManager.TowerClicked(towerIndex);
+        //클릭 감지. 뭔 클릭인지 신경안씀. 일단 내 index가 클릭되었다고 함수 호출함
+        gridManager.GridClicked(towerIndex);
     }
 }

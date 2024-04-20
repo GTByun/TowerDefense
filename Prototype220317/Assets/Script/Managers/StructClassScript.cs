@@ -9,7 +9,6 @@ using UnityEngine;
 public class TowerInfo
 {
     //타워의 아이콘, 이름, 설명, 프리팹
-
     public Sprite towerIcon;
     public string towerName;
     public string towerDescription;
@@ -22,11 +21,11 @@ public class TowerInfo
 [System.Serializable]
 public class GridInfo
 {
-    public int index;
-    public bool hasTower;
-    public GameObject towerPlace;
-    public GameObject towerObject;
-    public Vector3 pos;
+    public int index; //index번째 그리드
+    public bool hasTower; //타워 유무
+    public GameObject towerPlace; //클릭 감지용 오브젝트
+    public GameObject towerObject; //타워 오브젝트
+    public Vector3 pos; //벡터 위치
 
     public GridInfo(int index, bool hasTower, GameObject towerPlace)
     {

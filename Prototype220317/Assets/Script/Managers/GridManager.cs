@@ -10,34 +10,39 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class GridManager : MonoBehaviour
 {
-    public GridInfo[] gridInfoArr = new GridInfo[9];
-    public int towerInHand;
-    [SerializeField] private GameObject towerPlace;
-    [SerializeField] private GameObject towerPlaceParent;
+    public GridInfo[] gridInfoArr = new GridInfo[9]; //각 그리드에 설치되는 타워의 정보 배열
+    public int towerInHand; //손에 가지고 있는 타워. 타워를 설치할 때, 손에 먼저 타워를 저장한 뒤 이 타워를 배치함
+    [SerializeField] private GameObject towerPlace; //클릭 감지용 오브젝트
+    [SerializeField] private GameObject towerPlaceParent; //towerPlace의 부모
     private StateManager stateManager;
     private TowerInfoManager towerInfoManager;
+    private UIController uiController;
 
     private void Start()
     {
-        stateManager = GameManager.instance.StateManager;
-        towerInfoManager = GameManager.instance.TowerInfoManager;
+        stateManager = GameManager.instance.stateManager;
+        towerInfoManager = GameManager.instance.towerInfoManager;
+        uiController = GameManager.instance.uiController;
     }
 
-    public void SetEditMode()
+    /// <summary>
+    /// 손에 들고 있는 타워를 변경함. UI를 업데이트함.
+    /// </summary>
+    /// <param name="tower">변경될 타워의 인덱스</param>
+    public void SetHand(int tower)
     {
-
+        towerInHand = tower;
+        uiController.UpdateEditModeHUD();
     }
-
-    public void EditTower(int index)
+    /// <summary>
+    /// 그리드가 클릭되었을 때 호출되는 함수임
+    /// </summary>
+    /// <param name="index">index번째의 그리드가 클릭됨</param>
+    public void GridClicked(int index)
     {
-        GameManager.instance.StateManager.EnterState(GameState.EditMode);
-    }
-
-    public void TowerClicked(int index)
-    {
-        if (stateManager.gameState == GameState.EditMode && towerInHand != -1)
+        if (stateManager.gameState == GameState.EditMode && towerInHand != -1)//에딧모드인지와 손에 카드가 있는지를 먼저 체크함
         {
-            if (gridInfoArr[index].hasTower)
+            if (gridInfoArr[index].hasTower)//이 그리드에 타워가 있다면
             {
                 ChangeTower(index);
             }else
@@ -47,20 +52,30 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// index번째 그리드에 있는 타워와 손에 있는 타워를 교체함
+    /// </summary>
+    /// <param name="tower">대상 그리드의 index</param>
     private void ChangeTower(int index)
     {
         
     }
 
+    /// <summary>
+    /// index번째 그리드에 손에 있는 타워를 배치함
+    /// </summary>
+    /// <param name="index">대상 그리드의 index</param>
     private void CreateTower(int index)
     {
-        GameObject obj = GameObject.Instantiate(towerInfoManager.GetObject(towerInHand));
+        GameObject obj = GameObject.Instantiate(towerInfoManager.GetObject(towerInHand));//타워 생성 및 초기화
         gridInfoArr[index].towerObject = obj;
         obj.transform.position = gridInfoArr[index].pos;
-        towerInHand = -1;
-        GameManager.instance.UIController.UpdateEditModeHUD();
+        SetHand(-1); //손을 비워줌
     }
 
+    /// <summary>
+    /// 일회용 TowerPlace 설치 함수
+    /// </summary>
     public void SetTowerPlace(float modular)
     {
         for (int i = 0; i < 3; i++)
@@ -77,5 +92,6 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+
 }
 

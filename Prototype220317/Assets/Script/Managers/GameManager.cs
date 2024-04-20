@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float modular;
-    public GameObject towerPlace;
-    public GameObject towerPlaceParent;
-    public static GameManager instance;
-    public CardSpriteSet[] cards;
+    public float modular; //그리드 크기
+    public static GameManager instance; //static 인스턴스
 
-    public UIController UIController { get; private set; }
-    public TowerInfoManager TowerInfoManager { get; private set; }
-    public StateManager StateManager { get; private set; }
+    //매니저들
+    public UIController uiController { get; private set; }
+    public TowerInfoManager towerInfoManager { get; private set; }
+    public StateManager stateManager { get; private set; }
     public GridManager gridManager { get; private set; }
 
     void Awake()
@@ -27,9 +25,9 @@ public class GameManager : MonoBehaviour
     }
     private void SetManagers()
     {
-        UIController = gameObject.GetComponent<UIController>();
-        TowerInfoManager = gameObject.GetComponent<TowerInfoManager>();
-        StateManager = gameObject.GetComponent<StateManager>();
+        uiController = gameObject.GetComponent<UIController>();
+        towerInfoManager = gameObject.GetComponent<TowerInfoManager>();
+        stateManager = gameObject.GetComponent<StateManager>();
         gridManager = gameObject.GetComponent<GridManager>();
     }
 }

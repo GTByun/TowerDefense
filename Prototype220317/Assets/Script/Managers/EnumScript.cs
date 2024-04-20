@@ -7,7 +7,7 @@ public class EnumScript
 }
 
 /// <summary>
-/// 적의 이동 경로
+/// 적의 이동 경로. 0 = Up으로 시작해서 시계방향으로 돌음
 /// </summary>
 public enum EnemyMove
 {
@@ -25,5 +25,5 @@ public enum GameState
     None,
     SelectReward,
     EditMode,
-    GamePlay
+    GameMode
 }

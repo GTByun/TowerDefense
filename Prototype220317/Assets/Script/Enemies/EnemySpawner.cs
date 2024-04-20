@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.instance.GameOn)
+        if (false) //게임 시작 시
         {
             timer += Time.deltaTime;
             if (timer > spawnDelay)
