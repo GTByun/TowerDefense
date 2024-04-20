@@ -15,42 +15,30 @@ public class TowerInfoManager : MonoBehaviour
     /// </summary>
     public GameObject GetObject(int index) 
     {
-        return TowerInfoArr[index].TowerObject;
+        return TowerInfoArr[index].towerObject;
     }
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 아이콘을 리턴함
     /// </summary>
     public Sprite GetIcon(int index)
     {
-        return TowerInfoArr[index].TowerIcon;
+        return TowerInfoArr[index].towerIcon;
     }
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 이름을 리턴함
     /// </summary>
     public string GetName(int index)
     {
-        return TowerInfoArr[index].TowerName;
+        return TowerInfoArr[index].towerName;
     }
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 설명을 리턴함
     /// </summary>
     public string GetDescription(int index) 
     {
-        return TowerInfoArr[index].TowerDescription;
+        return TowerInfoArr[index].towerDescription;
     }
 }
 
 
-/// <summary>
-/// 하나의 타워에 대한 모든 정보를 보관함
-/// </summary>
-[System.Serializable]
-public class TowerInfo
-{
-    //타워의 아이콘, 이름, 설명, 프리팹
 
-    public Sprite TowerIcon;
-    public string TowerName;
-    public string TowerDescription;
-    public GameObject TowerObject;
-}

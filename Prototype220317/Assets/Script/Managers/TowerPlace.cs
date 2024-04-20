@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// TowerPlace에 들어가는 스크립트이며 단순히 클릭 이벤트만 들어가있음
+/// </summary>
 public class TowerPlace : MonoBehaviour
 {
-    private GameObject nowTower;
-    private int towerId;
-    private EditManager editManager;
-    private TowerInfoManager towerInfoManager;
-
-    private void Awake()
-    {
-        towerId = -1;
-    }
+    private GridManager gridManager;
+    public int towerIndex; //이 타워의 인덱스
 
     private void Start()
     {
-        editManager = GameManager.instance.EditManager;
-        towerInfoManager = GameManager.instance.TowerInfoManager;
+        gridManager = GameManager.instance.gridManager;
     }
 
     private void OnMouseDown()
     {
-        if (editManager.isEdit)
-        {
-
-        }
+        //클릭 감지. 뭔 클릭인지 신경안씀. 일단 내 index가 클릭되었다고 함수 호출함
+        gridManager.GridClicked(towerIndex);
     }
 }
