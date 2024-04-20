@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject towerPlaceParent;
     public static GameManager instance;
     public CardSpriteSet[] cards;
-    public bool GameOn;
-    private bool firstGame;
 
     public UIController UIController { get; private set; }
     public TowerInfoManager TowerInfoManager { get; private set; }
@@ -26,27 +24,6 @@ public class GameManager : MonoBehaviour
         SetManagers();
         //TowerPlace를 배치
         gridManager.SetTowerPlace(modular);
-        //뭔지 모름
-        GameOn = false;
-        firstGame = true;
-    }
-
-    void Update()
-    {
-        if (GameOn)
-        {
-            if (firstGame)
-            {
-                GameOn = false;
-                firstGame = false;
-                StartCoroutine(FirstGameStart());
-            }
-        }
-    }
-    IEnumerator FirstGameStart()
-    {
-        yield return new WaitForSeconds(3);
-        GameOn = true;
     }
     private void SetManagers()
     {
