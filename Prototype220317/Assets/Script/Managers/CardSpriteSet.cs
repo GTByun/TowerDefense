@@ -1,37 +1,36 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CardSpriteSet : MonoBehaviour
 {
     public Image cardIcon;
-    public Text cardName;
-    public Text cardDescription;
-    private TowerInfoManager TIManager;
-    private EditManager editManager;
-    public int index;
+    public TextMeshProUGUI cardName;
+    public TextMeshProUGUI cardDescription;
+    private GameManager gameManager;
+    public int tower;
 
 
     private void Start()
     {
-        TIManager = GameManager.instance.TowerInfoManager;
-        editManager = GameManager.instance.EditManager;
-        SetCard(index);
+        gameManager = GameManager.instance;
+        SetCard(tower);
     }
 
     public void SetCard(int value)
     {
-        index = value;
-        Debug.Log(TIManager.GetName(value));
-        cardName.text = TIManager.GetName(value);
-        cardIcon.sprite = TIManager.GetIcon(value);
-        cardDescription.text = TIManager.GetDescription(value);
+        tower = value;
+        cardName.text = gameManager.TowerInfoManager.GetName(value);
+        cardIcon.sprite = gameManager.TowerInfoManager.GetIcon(value);
+        cardDescription.text = gameManager.TowerInfoManager.GetDescription(value);
     }
 
     public void CardClicked()
     {
-        editManager.EditTower(index);
+        gameManager.gridManager.towerInHand = tower;
+        gameManager.StateManager.EnterState(GameState.EditMode);
     }
 }

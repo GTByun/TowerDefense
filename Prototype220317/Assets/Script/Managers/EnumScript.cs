@@ -18,10 +18,11 @@ public enum EnemyMove
 }
 
 /// <summary>
-/// State 상태
+/// 현재 게임의 상태
 /// </summary>
 public enum GameState
 {
+    None,
     SelectReward,
     EditMode,
     GamePlay

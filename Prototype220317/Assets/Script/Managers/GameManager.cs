@@ -13,19 +13,19 @@ public class GameManager : MonoBehaviour
     private bool firstGame;
 
     public UIController UIController { get; private set; }
-    public EditManager EditManager { get; private set; }
     public TowerInfoManager TowerInfoManager { get; private set; }
     public StateManager StateManager { get; private set; }
+    public GridManager gridManager { get; private set; }
 
     void Awake()
     {
         //인스턴스 생성
         if (instance == null)
             instance = this;
-        //TowerPlace를 배치
-        SetTowerPlace();
         //매니저들 지정
         SetManagers();
+        //TowerPlace를 배치
+        gridManager.SetTowerPlace(modular);
         //뭔지 모름
         GameOn = false;
         firstGame = true;
@@ -48,24 +48,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         GameOn = true;
     }
-    private void SetTowerPlace()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 3; j++)
-            {
-                Vector2 pos = new(i * modular - modular, modular - j * modular);
-                GameObject obj = Instantiate(towerPlace, pos, Quaternion.identity);
-                obj.transform.localScale = Vector2.one * modular;
-                obj.transform.parent = towerPlaceParent.transform;
-            }
-        }
-    }
     private void SetManagers()
     {
         UIController = gameObject.GetComponent<UIController>();
-        EditManager = gameObject.GetComponent<EditManager>();
         TowerInfoManager = gameObject.GetComponent<TowerInfoManager>();
         StateManager = gameObject.GetComponent<StateManager>();
+        gridManager = gameObject.GetComponent<GridManager>();
     }
 }

@@ -9,13 +9,11 @@ using UnityEngine;
 /// </summary>
 public class StateManager : MonoBehaviour
 {
-    public GameState gameState = GameState.SelectReward;
+    public GameState gameState = GameState.None;
     private UIController UIController;
-    private EditManager EditManager;
 
     void Start() {
         UIController = GameManager.instance.UIController;
-        EditManager = GameManager.instance.EditManager;
     }
 
     public void EnterState(GameState state) {
@@ -25,9 +23,17 @@ public class StateManager : MonoBehaviour
                 break;
             case GameState.EditMode :
                 UIController.EditModeOn();
-                EditManager.SetEditMode();
+                break;
+            case GameState.GamePlay :
+                UIController.GameModeOn();
                 break;
         }
+        gameState = state;
+    }
+
+    public void EnterState(int stateIndex)
+    {
+        EnterState((GameState)stateIndex);
     }
 
     public void ExitState(GameState state) {
@@ -35,9 +41,5 @@ public class StateManager : MonoBehaviour
     }
 
     public void AdvanceState() {
-    }
-
-    public void InitState() {
-        EnterState(GameState.SelectReward);
     }
 }
