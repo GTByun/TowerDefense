@@ -6,8 +6,9 @@ public class Tower : MonoBehaviour
 {
     public float rotationSpeed = 50f;
 
-    public float range;
+    public ObjectPool pool;
 
+    protected float range;
     protected float speed;
     protected float damage;
     protected int penetrate;
@@ -18,12 +19,14 @@ public class Tower : MonoBehaviour
     protected GameObject target = null;
     protected GameObject[] enemies;
     public Transform enemiesPool;
-    public GameObject bulletObject;
-
 
     protected virtual void Start()
     {
-        enemiesPool = GameObject.Find("EnemiesPool").transform;
+        
+    }
+    void Awake()
+    {
+        enemiesPool = GameObject.Find("Enemies").transform;
     }
 
     void GetEnemies()
@@ -40,13 +43,11 @@ public class Tower : MonoBehaviour
         // 대상이 없으면 새로운 대상을 찾습니다.
         if (target == null||!target.activeSelf)
         {
-            Debug.Log("target null");
             target = FindClosestEnemy();
         }
         // 대상이 있으면 일정 시간 간격으로 공격을 수행합니다.
         else if (target != null&&target.activeSelf)
         {
-            Debug.Log("target exists");
             RotateTowardsTarget();
             attackTimer += Time.deltaTime;
             if (Vector3.Distance(transform.position, target.transform.position) < range * GameManager.instance.modular + (GameManager.instance.modular / 2))
@@ -90,12 +91,11 @@ public class Tower : MonoBehaviour
 
     protected void GenerateBullet()
     {
-        GameObject bObject = Instantiate(bulletObject);
+        GameObject bObject = pool.GetObjectFromPool();
         Bullet bullet = bObject.GetComponent<Bullet>();
+        bullet.SetTarget(target);
         bullet.init(speed, damage, penetrate);
         bullet.setTransform(transform.position, transform.rotation.eulerAngles);
-        bullet.SetTarget(target.transform);
-        bObject.SetActive(true);
     }
 
     protected void RotateTowardsTarget()

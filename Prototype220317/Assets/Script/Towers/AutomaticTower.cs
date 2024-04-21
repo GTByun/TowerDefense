@@ -5,7 +5,7 @@ public class AutomaticTower : Tower
     protected override void Start()
     {
         range = 2f;
-        speed = 40f;
+        speed = 5f;
         damage = 3f;
         penetrate = 0;
         reloadDelay = 10f;

@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
     {
         if (collision.CompareTag("GameArea"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -54,7 +54,7 @@ public class Bomb : MonoBehaviour
     void Explode()
     {
         stop = true;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
 
         // Æø¹ß ÀÌÆåÆ®¸¦ »ý¼º
         if (explosionEffectPrefab != null)

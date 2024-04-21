@@ -32,7 +32,7 @@ public class Fire : MonoBehaviour
     {
         if (collision.CompareTag("Breath"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -41,7 +41,7 @@ public class Fire : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().Burn(damage);
-            if (penetrate <= 0) Destroy(gameObject);
+            if (penetrate <= 0) gameObject.SetActive(false);
             penetrate--;
         }
     }

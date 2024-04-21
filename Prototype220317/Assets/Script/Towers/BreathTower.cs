@@ -25,7 +25,7 @@ public class BreathTower : Tower
 
         for (int i = 0; i < shell; i++)
         {
-            GameObject bObject = Instantiate(bulletObject);
+            GameObject bObject = pool.GetObjectFromPool();
             Fire bullet = bObject.GetComponent<Fire>();
             bullet.init(speed, damage, penetrate);
             Vector3 rot = transform.rotation.eulerAngles;

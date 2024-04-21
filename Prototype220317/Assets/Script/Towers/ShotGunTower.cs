@@ -25,7 +25,7 @@ public class ShotGunTower : Tower
 
         for (int i = 0; i < shell; i++)
         {
-            GameObject bObject = Instantiate(bulletObject);
+            GameObject bObject = pool.GetObjectFromPool();
             Bullet bullet = bObject.GetComponent<Bullet>();
             bullet.init(speed, damage, penetrate);
             Vector3 rot = transform.rotation.eulerAngles;

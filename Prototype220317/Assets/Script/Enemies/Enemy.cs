@@ -51,7 +51,6 @@ public class Enemy : MonoBehaviour
             if (timer >= 1.0f)
             {
                 healthPoint -= burningDamage;
-                Debug.Log(burningDamage + "burn");
                 timer = 0.0f;
             }
         }
@@ -67,7 +66,6 @@ public class Enemy : MonoBehaviour
                         // 골인
                         DeSpawn();
                         // 라이프 감소
-                        Debug.Log("-life");
                     }
                     break;
                 case EnemyMove.Down:
@@ -100,7 +98,6 @@ public class Enemy : MonoBehaviour
 
     private void DeSpawn()
     {
-        Debug.Log("despawn");
         gameObject.SetActive(false);
         transform.position = new Vector2(modular * -2, modular * -2);
     }

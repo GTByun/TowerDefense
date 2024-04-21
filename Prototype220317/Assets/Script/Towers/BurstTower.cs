@@ -9,7 +9,7 @@ public class BurstTower : Tower
         base.Start();
         ammo = 3;
         range = 2f;
-        speed = 40f;
+        speed = 5f;
         damage = 8f;
         penetrate = 0;
         reloadDelay = 2.5f;

@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
-  range: 0
-  enemiesParent: {fileID: 484133022167928300, guid: 21e9dade2a1fda242a5bdf0f517565d0, type: 3}
-  bulletObject: {fileID: 0}
+  pool: {fileID: 0}
+  enemiesPool: {fileID: 0}
   radarEffectPrefab: {fileID: 229168227256767939, guid: 1bd1d4d243994124fbb1f268ceca9873, type: 3}

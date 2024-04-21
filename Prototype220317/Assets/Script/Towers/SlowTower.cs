@@ -14,14 +14,11 @@ public class SlowTower : Tower
 
     protected override void Fire()
     {
-        Debug.Log("Fire");
         if (radarEffectPrefab != null)
         {
-            Debug.Log("fab !null");
             radarEffect = Instantiate(radarEffectPrefab, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
             if (radarEffect != null)
             {
-                Debug.Log("Effect !null");
                 radarEffect.Play();
             }
         }
