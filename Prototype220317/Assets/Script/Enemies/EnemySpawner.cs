@@ -9,16 +9,18 @@ public class EnemySpawner : MonoBehaviour
     float spawnDelay;
     float timer;
     int spawnCount;
+    private GameManager gameManager;
 
 
     void Start()
     {
         spawnDelay = 0.5f;
+        gameManager = GameManager.instance;
     }
 
     void Update()
     {
-        if (true) // 게임 시작 상태
+        if (gameManager.stateManager.gameState == GameState.GameMode) // 게임 시작 상태
         {
             timer += Time.deltaTime;
             if (timer > spawnDelay)

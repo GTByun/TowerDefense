@@ -12,7 +12,9 @@ public class DebugScript : MonoBehaviour
 {
     private void BuildString()
     {
-
+        //여기에서 outputString 스트링빌더에 Append 해주면 나옴
+        outputString.Append("Hello World!\n");
+        outputString.Append($"현재 게임 스테이트 : {gameManager.stateManager.gameState}");
     }
     #region 구성요소
     private GameManager gameManager;
@@ -32,6 +34,7 @@ public class DebugScript : MonoBehaviour
 
     private void UpdateDebugUI()
     {
+        outputString.Clear();
         BuildString();
         tmp.text = outputString.ToString();
     }
