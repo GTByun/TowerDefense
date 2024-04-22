@@ -7,7 +7,7 @@ public class SniperTower : Tower
         range = 3f;
         speed = 50f;
         damage = 100f;
-        penetrate = 1;
+        penetrate = 0;
         reloadDelay = 0.8f;
         base.Start();
     }

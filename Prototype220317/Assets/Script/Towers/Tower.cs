@@ -22,7 +22,7 @@ public class Tower : MonoBehaviour
 
     protected virtual void Start()
     {
-        gameManager=GameManager.instance;
+        gameManager = GameManager.instance;
         enemies = EnemySpawner.enemies;
     }
 
@@ -63,7 +63,7 @@ public class Tower : MonoBehaviour
     {
         GameObject closestEnemy = null;
         float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);
-        for (int i = 0 ; i < enemies.Length; i++)
+        for (int i = 0; i < enemies.Length; i++)
         {
             GameObject enemy = enemies[i];
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
@@ -97,7 +97,7 @@ public class Tower : MonoBehaviour
     {
         Vector3 direction = (target.transform.position - transform.position).normalized; // 타겟 방향
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // 타겟 방향을 각도로 변환
-        Quaternion targetRotation = Quaternion.AngleAxis(angle-90f, Vector3.forward); // 타겟 방향으로 회전할 Quaternion 생성
+        Quaternion targetRotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward); // 타겟 방향으로 회전할 Quaternion 생성
         transform.rotation = targetRotation; // 바로 회전
         //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); // 부드럽게 회전
     }
