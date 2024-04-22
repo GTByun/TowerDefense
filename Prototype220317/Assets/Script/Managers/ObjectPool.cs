@@ -31,15 +31,14 @@ public class ObjectPool : MonoBehaviour
         {
             if (!obj.activeInHierarchy)
             {
-                obj.SetActive(true);
+                //obj.SetActive(true);
                 return obj;
             }
         }
-
         // 오브젝트 풀에 사용 가능한 오브젝트가 없으면 새로 생성
         GameObject newObj = Instantiate(objectPrefab, transform);
         objectPool.Add(newObj);
-        newObj.SetActive(true);
+        //newObj.SetActive(true);
         return newObj;
     }
 

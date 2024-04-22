@@ -24,5 +24,5 @@ public class BomberTower : Tower
         bomb.init(speed, damage, hitArea, splashArea, splashDamage);
         bomb.setTransform(transform.position, transform.rotation.eulerAngles);
         bObject.SetActive(true);
-    }    
+    }
 }

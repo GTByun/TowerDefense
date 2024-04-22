@@ -10,7 +10,7 @@ public class ShotGunTower : Tower
         shell = 5;
         fireAngle = 60f;
         range = 1f;
-        speed = 30f;
+        speed = 3f;
         damage = 15f;
         penetrate = 0;
         reloadDelay = 1.0f;
@@ -22,7 +22,7 @@ public class ShotGunTower : Tower
         float angleOffset = fireAngle / (shell - 1);
         float startAngle = -fireAngle / 2f;
         float rotZ = startAngle;
-
+        
         for (int i = 0; i < shell; i++)
         {
             GameObject bObject = pool.GetObjectFromPool();

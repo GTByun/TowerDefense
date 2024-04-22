@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private float synthSpeed;
     private float modular;
 
+    private GameManager gameManager;
 
     private EnemyMove move;
 
@@ -22,13 +23,15 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         move = EnemyMove.Up;
+        gameManager = GameManager.instance;
     }
 
     private void OnEnable()
     {
         modular = GameManager.instance.modular;
         healthPoint = 100;
-        transform.position = new Vector2(modular * -2, modular * -2);
+        if (gameManager.stateManager.gameState == GameState.GameMode) transform.position = new Vector2(modular * -2, modular * -2);
+        else transform.position = new Vector2(15, 0);
         move = EnemyMove.Up;
         synthSpeed = speedMagni * speed;
     }
@@ -55,7 +58,7 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (true)//GameManager.gameManager.GameOn)
+        if (gameManager.stateManager.gameState == GameState.GameMode)
         {
             switch (move)
             {            
@@ -99,7 +102,7 @@ public class Enemy : MonoBehaviour
     private void DeSpawn()
     {
         gameObject.SetActive(false);
-        transform.position = new Vector2(modular * -2, modular * -2);
+        //transform.position = new Vector2(modular * -2, modular * -2);
     }
     public void Hit(float damage)
     {
