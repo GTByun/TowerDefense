@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         if (gameManager.stateManager.gameState == GameState.GameMode) transform.position = new Vector2(modular * -2, modular * -2);
         else transform.position = new Vector2(15, 0);
         move = EnemyMove.Up;
-        synthSpeed = speedMagni * speed;
+        
     }
 
     private void Start()
@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
 
         if (gameManager.stateManager.gameState == GameState.GameMode)
         {
+            synthSpeed = speedMagni * speed;
             switch (move)
             {            
                 case EnemyMove.Left:
@@ -112,5 +113,9 @@ public class Enemy : MonoBehaviour
     {
         burning = true;
         burningDamage=burningDamage > damage? burningDamage:damage;
+    }
+    public void SlowDown(float slowScale)
+    {
+        speed = slowScale;
     }
 }
