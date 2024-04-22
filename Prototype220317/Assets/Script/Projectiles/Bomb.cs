@@ -32,7 +32,7 @@ public class Bomb : MonoBehaviour
     }
     void Update()
     {
-        if(!stop) transform.Translate(Vector2.up * speed * Time.deltaTime);
+        if(!stop) transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

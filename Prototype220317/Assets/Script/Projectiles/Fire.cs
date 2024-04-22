@@ -41,7 +41,8 @@ public class Fire : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().Burn(damage);
-            gameObject.SetActive(false);
+            if (penetrate <= 0) gameObject.SetActive(false);
+            penetrate--;
         }
     }
 }

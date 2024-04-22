@@ -34,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
         gameManager = GameManager.instance;
         currentSpawn = 0;
         timer = 0;
-        spawnDelay = 1f;        
+        spawnDelay = 0.5f;
+        
     }
 
     void Update()

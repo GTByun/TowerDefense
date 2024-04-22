@@ -43,6 +43,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(CompareTag("Fire")){ 
+            if (collision.CompareTag("Breath"))
+            {
+                gameObject.SetActive(false);
+            }
+        }
         if (collision.CompareTag("GameArea"))
         {
             gameObject.SetActive(false);
@@ -53,8 +59,9 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            gameObject.SetActive(false);
             collision.gameObject.GetComponent<Enemy>().Hit(damage);
+            if (penetrate <= 0) gameObject.SetActive(false);
+            penetrate--;
         }
     }
 }
