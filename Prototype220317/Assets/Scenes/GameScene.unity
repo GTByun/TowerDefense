@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 114203224}
   - component: {fileID: 114203225}
   - component: {fileID: 114203226}
+  - component: {fileID: 114203227}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -320,6 +321,19 @@ MonoBehaviour:
   towerInHand: 0
   towerPlace: {fileID: 6258160126458089546, guid: b6698fb405d713949a9016d441e43935, type: 3}
   towerPlaceParent: {fileID: 1581357590}
+--- !u!114 &114203227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114203217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2489c7d9b476b043bfd0b86613e3238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LifeText: {fileID: 1821994436}
 --- !u!1 &155785711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +1846,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1318653712}
+  spawnDelay: 0
+  timer: 0
+  currentSpawnN: 0
+  spawnCount: 0
 --- !u!1 &1347134098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,37 +2079,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387939758}
   m_CullTransparentMesh: 1
---- !u!1 &1560113797
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1560113798}
-  m_Layer: 0
-  m_Name: MonsterObjectPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1560113798
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560113797}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581357590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,5 +3436,4 @@ SceneRoots:
   - {fileID: 1374163848}
   - {fileID: 1952946257}
   - {fileID: 376413330}
-  - {fileID: 1560113798}
   - {fileID: 1318653711}

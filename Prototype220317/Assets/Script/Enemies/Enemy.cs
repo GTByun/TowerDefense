@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public float healthPoint;
+    public float HP;
     public bool burning;
     public float burningDamage;
+
+    public Image image;
 
     private float timer = 0.0f;
     public float speedMagni;
@@ -15,7 +18,6 @@ public class Enemy : MonoBehaviour
     private float modular;
 
     private GameManager gameManager;
-
     private EnemyMove move;
 
     public float Speed { set => speed = value; }
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         modular = GameManager.instance.modular;
-        healthPoint = 100;
+        HP = 100;
         if (gameManager.stateManager.gameState == GameState.GameMode) transform.position = new Vector2(modular * -2, modular * -2);
         else transform.position = new Vector2(15, 0);
         move = EnemyMove.Up;
@@ -42,7 +44,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(healthPoint <= 0)
+        image.fillAmount = HP / 100;
+
+        if (HP <= 0)
         {
             // ªÁ∏¡
             DeSpawn();
@@ -53,7 +57,7 @@ public class Enemy : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.0f)
             {
-                healthPoint -= burningDamage;
+                HP -= burningDamage;
                 timer = 0.0f;
             }
         }
@@ -70,6 +74,7 @@ public class Enemy : MonoBehaviour
                         // ∞Ò¿Œ
                         DeSpawn();
                         // ∂Û¿Ã«¡ ∞®º“
+                        PlayerStatus.Life -= 1;
                     }
                     break;
                 case EnemyMove.Down:
@@ -103,11 +108,11 @@ public class Enemy : MonoBehaviour
     private void DeSpawn()
     {
         gameObject.SetActive(false);
-        //transform.position = new Vector2(modular * -2, modular * -2);
+        EnemySpawner.deadEnemy++;
     }
     public void Hit(float damage)
     {
-        healthPoint -= damage;
+        HP -= damage;
     }
     public void Burn(float damage)
     {

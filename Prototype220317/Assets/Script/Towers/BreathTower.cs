@@ -4,9 +4,12 @@ public class BreathTower : Tower
 {
     float fireAngle;
     int shell;
+    CircleCollider2D collider;
 
     protected override void Start()
     {
+        collider = GetComponent<CircleCollider2D>();
+        collider.radius = GameManager.instance.modular * 2;
         shell = 7;
         fireAngle = 90f;
         range = 1f;

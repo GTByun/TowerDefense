@@ -50,7 +50,7 @@ public class Tower : MonoBehaviour
                 {
                     target = FindClosestEnemy();
                 }
-                if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2))
+                else if (Vector3.Distance(transform.position, target.transform.position) > range * GameManager.instance.modular + (GameManager.instance.modular / 2))
                 {
                     target = FindClosestEnemy();
                 }

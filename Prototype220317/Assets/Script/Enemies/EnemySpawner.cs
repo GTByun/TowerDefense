@@ -6,12 +6,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public ObjectPool pool;
-    float spawnDelay;
-    float timer;
-    int currentSpawn;
-    int spawnCount;
+    public float spawnDelay;
+    public float timer;
+    public int currentSpawnN;
+    public int spawnCount;
     private GameManager gameManager;
     public static GameObject[] enemies;
+    public static int deadEnemy;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
-        currentSpawn = 0;
+        currentSpawnN = 0;
         timer = 0;
         spawnDelay = 1f;        
     }
@@ -41,15 +42,22 @@ public class EnemySpawner : MonoBehaviour
     {
         if (gameManager.stateManager.gameState == GameState.GameMode) // 게임 시작 상태
         {
-            if (currentSpawn < spawnCount)
+            if (currentSpawnN < spawnCount)
             {
                 timer += Time.deltaTime;
                 if (timer > spawnDelay)
                 {
-                    enemies[currentSpawn++].SetActive(true);
+                    Debug.Log(currentSpawnN);
+                    enemies[currentSpawnN++].SetActive(true);
                     timer = 0;
                 }
-            }            
-        }        
+            }
+            else if (deadEnemy >= spawnCount) // 웨이브 종료
+            {
+                GameManager.instance.stateManager.EnterState(GameState.SelectReward); 
+                deadEnemy = 0;
+                currentSpawnN = 0;
+            }
+        }
     }
 }
