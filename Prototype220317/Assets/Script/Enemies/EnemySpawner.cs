@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer > spawnDelay)
                 {
-                    Debug.Log(currentSpawnN);
+                    //Debug.Log(currentSpawnN);
                     enemies[currentSpawnN++].SetActive(true);
                     timer = 0;
                 }

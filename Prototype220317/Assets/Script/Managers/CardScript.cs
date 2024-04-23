@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -16,12 +17,15 @@ public class CardScript : MonoBehaviour
     public TextMeshProUGUI cardDescription; //카드의 
     public int tower; //이 타워가 가리키는 타워 인덱스
     private GameManager gameManager;
+    private Animator animator;
+    public CardScript otherCard0;
+    public CardScript otherCard1;
 
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         gameManager = GameManager.instance;
-        SetCard(tower);
     }
 
     /// <summary>
@@ -38,7 +42,7 @@ public class CardScript : MonoBehaviour
     /// </summary>
     public void UpdateCard()
     {
-
+        gameManager = GameManager.instance;
         cardName.text = gameManager.towerInfoManager.GetName(tower);
         cardIcon.sprite = gameManager.towerInfoManager.GetIcon(tower);
         cardDescription.text = gameManager.towerInfoManager.GetDescription(tower);
@@ -48,7 +52,19 @@ public class CardScript : MonoBehaviour
     /// </summary>
     public void CardClicked()
     {
+        if (gameManager.gridManager.towerInHand != -1) return; //손에 타워가 있다면, 카드 클릭을 무시합니다
         gameManager.gridManager.SetHand(tower);
-        gameManager.stateManager.EnterState(GameState.EditMode);
+        gameManager.gridManager.CheckModule(tower);
+        animator.SetTrigger("CardShrinkTrigger");
+        Invoke("TriggerOtherCard", 0.5f);
+    }
+    public void ThrowState()
+    {
+        gameManager.stateManager.BumpCard();
+    }
+    public void TriggerOtherCard()
+    {
+        otherCard0.animator.SetTrigger("CardShrinkTrigger");
+        otherCard1.animator.SetTrigger("CardShrinkTrigger");
     }
 }

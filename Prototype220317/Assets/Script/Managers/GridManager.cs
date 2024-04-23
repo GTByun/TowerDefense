@@ -11,7 +11,7 @@ using UnityEngine.Tilemaps;
 public class GridManager : MonoBehaviour
 {
     public GridInfo[] gridInfoArr = new GridInfo[9]; //각 그리드에 설치되는 타워의 정보 배열
-    public int towerInHand; //손에 가지고 있는 타워. 타워를 설치할 때, 손에 먼저 타워를 저장한 뒤 이 타워를 배치함
+    public int towerInHand = -1; //손에 가지고 있는 타워. 타워를 설치할 때, 손에 먼저 타워를 저장한 뒤 이 타워를 배치함
     [SerializeField] private GameObject towerPlace; //클릭 감지용 오브젝트
     [SerializeField] private GameObject towerPlaceParent; //towerPlace의 부모
     private StateManager stateManager;
@@ -60,6 +60,7 @@ public class GridManager : MonoBehaviour
     {
         int temp = gridInfoArr[index].towerIndex;//temp에 기존 타워 인덱스 저장
         Destroy(gridInfoArr[index].towerObject);//기존 타워 삭제. 일단 함수 실행되는 수가 적으니 Destroy 쓰면 될듯
+        gridInfoArr[index].towerObject = null;
         if (towerInHand != -1) //손에 타워가 있다면, 타워 교체 작업
         {
             GameObject obj = GameObject.Instantiate(towerInfoManager.GetObject(towerInHand));//타워 생성 및 초기화
@@ -103,5 +104,33 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 그리드 내에 타워가 하나라도 있는지 확인함. 없을시 -1, 있을시 그 그리드 번호를 반환함
+    /// </summary>
+    /// <param name="tower">tower 번호의 타워를 찾음</param>
+    /// <returns></returns>
+    public int HasTower(int tower)
+    {
+        int result = -1;
+        foreach (GridInfo gridInfo in gridInfoArr)
+        {
+            if (gridInfo.towerIndex == tower)
+            {
+                result = gridInfo.index; break;
+            }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 이 타워 번호가 모듈이라면, 그리드에서 이미 있는 타워를 지워줌
+    /// </summary>
+    /// <param name="tower"></param>
+    public void CheckModule(int tower)
+    {
+        if (tower < towerInfoManager.nTower / 2) return; //모듈이 아니라서 반환
+        int index = HasTower(tower - towerInfoManager.nTower / 2);
+        gridInfoArr[index].ResetTower();
+    }
 }
 

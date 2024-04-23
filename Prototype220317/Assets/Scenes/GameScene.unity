@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &22490490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2979950333390154906, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+  m_PrefabInstance: {fileID: 1906873759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &114203217
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +154,7 @@ GameObject:
   - component: {fileID: 114203225}
   - component: {fileID: 114203226}
   - component: {fileID: 114203227}
+  - component: {fileID: 114203228}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -214,35 +220,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed589fe2613de4d9cbf81f5ec9e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nTower: 8
   TowerInfoArr:
   - towerIcon: {fileID: 21300000, guid: a2df7184e064e6343b76ce930973b784, type: 3}
     towerName: "\uC0F7\uAC74"
     towerDescription: "\uC0F7\uAC74 \uC124\uBA85 \uB300\uCDA9"
     towerObject: {fileID: 6624849031295809783, guid: 34ca1f5d4a13e354682f4f0be536129d, type: 3}
-  - towerIcon: {fileID: 21300000, guid: bf772b7286ebdca4fa983df130b40b27, type: 3}
-    towerName: "\uC6A9\uC228\uACB0"
-    towerDescription: "\uC6A9\uC228\uACB0 \uC124\uBA85 \uB300\uCDA9\uB300\uCDA9"
-    towerObject: {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
   - towerIcon: {fileID: 21300000, guid: d0d8b48008a3d4f41a7bae8ad6c32fa5, type: 3}
     towerName: "\uC800\uACA9"
     towerDescription: "\uC800\uACA9 \uC124\uBA85 \uAC1C\uB300\uCDA9"
     towerObject: {fileID: 6881034845119654329, guid: 144cc32c86b5db44d81abce816dfcf60, type: 3}
+  - towerIcon: {fileID: 21300000, guid: 8a8726b9b45a0694783c588f401928f9, type: 3}
+    towerName: "\uC0BC\uC810\uC0AC"
+    towerDescription: 1
+    towerObject: {fileID: 177113014060768766, guid: 006235f96029d9c4ab74090d504d3c85, type: 3}
+  - towerIcon: {fileID: 21300000, guid: 6284937469f977c4eb31c61e8c8b91ca, type: 3}
+    towerName: "\uD3ED\uACA9"
+    towerDescription: 2
+    towerObject: {fileID: 6822693835450624016, guid: bbe2e1f570407364f9ad54f3524852a5, type: 3}
+  - towerIcon: {fileID: 21300000, guid: bf772b7286ebdca4fa983df130b40b27, type: 3}
+    towerName: "\uC6A9\uC228\uACB0"
+    towerDescription: "\uC6A9\uC228\uACB0 \uC124\uBA85 \uB300\uCDA9\uB300\uCDA9"
+    towerObject: {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
   - towerIcon: {fileID: 21300000, guid: fe30338a50c68a440a8194cbfdf1066d, type: 3}
     towerName: "\uC989\uC0AC"
     towerDescription: 
     towerObject: {fileID: 6881034845119654329, guid: d7e415f740dc1fd4fb1adab2b19d75bc, type: 3}
-  - towerIcon: {fileID: 21300000, guid: 8a8726b9b45a0694783c588f401928f9, type: 3}
-    towerName: "\uC0BC\uC810\uC0AC"
-    towerDescription: 
-    towerObject: {fileID: 177113014060768766, guid: 006235f96029d9c4ab74090d504d3c85, type: 3}
   - towerIcon: {fileID: 21300000, guid: 95a177e1168cdf640a99c6c03e661123, type: 3}
     towerName: "\uC5F0\uC0AC"
     towerDescription: 
     towerObject: {fileID: 177113014060768766, guid: 7c3e0833017ad5242af20ce3a8d2f45a, type: 3}
-  - towerIcon: {fileID: 21300000, guid: 6284937469f977c4eb31c61e8c8b91ca, type: 3}
-    towerName: "\uD3ED\uACA9"
-    towerDescription: 
-    towerObject: {fileID: 6822693835450624016, guid: bbe2e1f570407364f9ad54f3524852a5, type: 3}
   - towerIcon: {fileID: 21300000, guid: 15a826ac763e9624bade0b1b18cf974b, type: 3}
     towerName: "\uB808\uC774\uB354"
     towerDescription: 
@@ -274,51 +281,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridInfoArr:
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
   - index: 0
-    hasTower: 0
+    towerIndex: 0
     towerPlace: {fileID: 0}
     towerObject: {fileID: 0}
     pos: {x: 0, y: 0, z: 0}
-  towerInHand: 0
+  towerInHand: -1
   towerPlace: {fileID: 6258160126458089546, guid: b6698fb405d713949a9016d441e43935, type: 3}
   towerPlaceParent: {fileID: 1581357590}
 --- !u!114 &114203227
@@ -334,6 +341,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeText: {fileID: 1821994436}
+--- !u!114 &114203228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114203217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1eca3daebb01b428d7d740b746b62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 22490490}
+  - {fileID: 1213578534}
+  - {fileID: 1235277119}
+  moduleChance: 0.2
 --- !u!1 &155785711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1063,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1611205874}
     - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard0
+      value: 
+      objectReference: {fileID: 1906873761}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard1
+      value: 
+      objectReference: {fileID: 1837545559}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
       propertyPath: cardDescription
       value: 
       objectReference: {fileID: 1683161564}
@@ -1229,7 +1261,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
   m_PrefabInstance: {fileID: 713519034}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1235277119}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30fbdf4350735214ba03e2d39fbf755a, type: 3}
@@ -1519,6 +1551,16 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &1213578534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2979950333390154906, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+  m_PrefabInstance: {fileID: 1837545557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1235277119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2979950333390154906, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+  m_PrefabInstance: {fileID: 713519034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1290792019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,6 +2665,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 682507116}
     - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard0
+      value: 
+      objectReference: {fileID: 1906873761}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard1
+      value: 
+      objectReference: {fileID: 713519036}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
       propertyPath: cardDescription
       value: 
       objectReference: {fileID: 15259917}
@@ -2813,7 +2863,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
   m_PrefabInstance: {fileID: 1837545557}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1213578534}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30fbdf4350735214ba03e2d39fbf755a, type: 3}
@@ -2875,6 +2925,14 @@ PrefabInstance:
       propertyPath: cardName
       value: 
       objectReference: {fileID: 1358045433}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard0
+      value: 
+      objectReference: {fileID: 1837545559}
+    - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
+      propertyPath: otherCard1
+      value: 
+      objectReference: {fileID: 713519036}
     - target: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
       propertyPath: cardDescription
       value: 
@@ -3070,7 +3128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5018356765335070077, guid: 703688fc31d2acb4a91ab8cba6359298, type: 3}
   m_PrefabInstance: {fileID: 1906873759}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 22490490}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30fbdf4350735214ba03e2d39fbf755a, type: 3}

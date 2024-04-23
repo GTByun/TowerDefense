@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TowerInfoManager towerInfoManager { get; private set; }
     public StateManager stateManager { get; private set; }
     public GridManager gridManager { get; private set; }
+    public CardManager cardManager { get; private set; }
 
     void Awake()
     {
@@ -29,5 +30,6 @@ public class GameManager : MonoBehaviour
         towerInfoManager = gameObject.GetComponent<TowerInfoManager>();
         stateManager = gameObject.GetComponent<StateManager>();
         gridManager = gameObject.GetComponent<GridManager>();
+        cardManager = gameObject.GetComponent<CardManager>();
     }
 }

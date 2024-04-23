@@ -11,9 +11,12 @@ public class StateManager : MonoBehaviour
 {
     public GameState gameState = GameState.None; //현재 게임의 상태
     private UIController uiController;
+    private CardManager cardManager;
+    private int nCard = 0;
 
     void Start() {
         uiController = GameManager.instance.uiController;
+        cardManager = GameManager.instance.cardManager;
     }
 
     /// <summary>
@@ -22,9 +25,9 @@ public class StateManager : MonoBehaviour
     /// <param name="state">진입할 상태</param>
     public void EnterState(GameState state) {
         switch (state) {
-            case GameState.SelectReward :
+            case GameState.SelectReward:
                 uiController.CardModeOn();
-                
+                cardManager.RandomizeCards();
                 break;
             case GameState.EditMode :
                 uiController.EditModeOn();
@@ -43,5 +46,14 @@ public class StateManager : MonoBehaviour
     public void EnterState(int stateIndex)
     {
         EnterState((GameState)stateIndex);
+    }
+
+    public void BumpCard()
+    {
+        nCard++;
+        if (nCard > 2)
+        {
+            EnterState(GameState.EditMode);
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -33,5 +34,12 @@ public class GridInfo
         this.towerPlace = towerPlace;
         this.pos = towerPlace.transform.position;
         this.towerIndex = -1;
+    }
+
+    public void ResetTower()
+    {
+        this.towerIndex = -1;
+        GameObject temp = this.towerObject;
+        GameObject.Destroy(temp);
     }
 }

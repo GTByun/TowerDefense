@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class TowerInfoManager : MonoBehaviour 
 {
+    public int nTower = 8;
     //TowerInfoÀÇ ¹è¿­
     public TowerInfo[] TowerInfoArr = new TowerInfo[8];
 

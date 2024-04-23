@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 7390837625235246230}
   - component: {fileID: 9067942653741678201}
   - component: {fileID: 5018356765335070077}
+  - component: {fileID: 5685527444323371981}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -227,6 +228,27 @@ MonoBehaviour:
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
   tower: 0
+--- !u!95 &5685527444323371981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979950333390154906}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94f200bd74ac60e4592de4e23541e976, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5280138250584666468
 GameObject:
   m_ObjectHideFlags: 0
