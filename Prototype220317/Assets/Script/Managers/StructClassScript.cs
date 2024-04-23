@@ -22,16 +22,16 @@ public class TowerInfo
 public class GridInfo
 {
     public int index; //index번째 그리드
-    public bool hasTower; //타워 유무
+    public int towerIndex; //타워 인덱스
     public GameObject towerPlace; //클릭 감지용 오브젝트
     public GameObject towerObject; //타워 오브젝트
     public Vector3 pos; //벡터 위치
 
-    public GridInfo(int index, bool hasTower, GameObject towerPlace)
+    public GridInfo(int index, GameObject towerPlace)
     {
         this.index = index;
-        this.hasTower = hasTower;
         this.towerPlace = towerPlace;
         this.pos = towerPlace.transform.position;
+        this.towerIndex = -1;
     }
 }

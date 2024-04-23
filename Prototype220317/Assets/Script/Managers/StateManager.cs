@@ -24,6 +24,7 @@ public class StateManager : MonoBehaviour
         switch (state) {
             case GameState.SelectReward :
                 uiController.CardModeOn();
+                
                 break;
             case GameState.EditMode :
                 uiController.EditModeOn();

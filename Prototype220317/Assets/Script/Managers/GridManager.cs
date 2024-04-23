@@ -40,14 +40,14 @@ public class GridManager : MonoBehaviour
     /// <param name="index">index번째의 그리드가 클릭됨</param>
     public void GridClicked(int index)
     {
-        if (stateManager.gameState == GameState.EditMode && towerInHand != -1)//에딧모드인지와 손에 카드가 있는지를 먼저 체크함
+        if (stateManager.gameState == GameState.EditMode)//에딧모드인지를 먼저 체크함
         {
-            if (gridInfoArr[index].hasTower)//이 그리드에 타워가 있다면
+            if (gridInfoArr[index].towerIndex != -1)//이 그리드에 타워가 있다면
             {
                 ChangeTower(index);
             }else
             {
-                CreateTower(index);
+                if (towerInHand != -1) CreateTower(index);
             }
         }
     }
@@ -58,7 +58,16 @@ public class GridManager : MonoBehaviour
     /// <param name="tower">대상 그리드의 index</param>
     private void ChangeTower(int index)
     {
-        
+        int temp = gridInfoArr[index].towerIndex;//temp에 기존 타워 인덱스 저장
+        Destroy(gridInfoArr[index].towerObject);//기존 타워 삭제. 일단 함수 실행되는 수가 적으니 Destroy 쓰면 될듯
+        if (towerInHand != -1) //손에 타워가 있다면, 타워 교체 작업
+        {
+            GameObject obj = GameObject.Instantiate(towerInfoManager.GetObject(towerInHand));//타워 생성 및 초기화
+            gridInfoArr[index].towerObject = obj;
+            obj.transform.position = gridInfoArr[index].pos;
+        }
+        gridInfoArr[index].towerIndex = towerInHand;
+        SetHand(temp); //손에 있는 타워를 바꿔줌
     }
 
     /// <summary>
@@ -69,6 +78,7 @@ public class GridManager : MonoBehaviour
     {
         GameObject obj = GameObject.Instantiate(towerInfoManager.GetObject(towerInHand));//타워 생성 및 초기화
         gridInfoArr[index].towerObject = obj;
+        gridInfoArr[index].towerIndex = towerInHand;
         obj.transform.position = gridInfoArr[index].pos;
         SetHand(-1); //손을 비워줌
     }
@@ -88,7 +98,7 @@ public class GridManager : MonoBehaviour
                 obj.transform.localScale = Vector2.one * modular;
                 obj.transform.parent = towerPlaceParent.transform;
                 obj.GetComponent<TowerPlace>().towerIndex = index;
-                gridInfoArr[index] = new GridInfo(index, false, obj);
+                gridInfoArr[index] = new GridInfo(index, obj);
             }
         }
     }

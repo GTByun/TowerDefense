@@ -14,7 +14,8 @@ public class DebugScript : MonoBehaviour
     {
         //여기에서 outputString 스트링빌더에 Append 해주면 나옴
         outputString.Append("Hello World!\n");
-        outputString.Append($"현재 게임 스테이트 : {gameManager.stateManager.gameState}");
+        outputString.Append($"현재 게임 스테이트 : {gameManager.stateManager.gameState}\n");
+        outputString.Append($"towerInHand : {gameManager.gridManager.towerInHand}");
     }
     #region 구성요소
     private GameManager gameManager;
