@@ -132,5 +132,10 @@ public class GridManager : MonoBehaviour
         int index = HasTower(tower - towerInfoManager.nTower / 2);
         gridInfoArr[index].ResetTower();
     }
+
+    public void ClearHand()
+    {
+        SetHand(-1);
+    }
 }
 

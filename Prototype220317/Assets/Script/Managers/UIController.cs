@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject towerInHandHUD;
     [SerializeField] private Image towerInHandIcon;
     [SerializeField] private GameObject startButton;
+    [SerializeField] private TextMeshProUGUI splashText;
 
     private GameManager gameManager;
 
@@ -60,18 +62,26 @@ public class UIController : MonoBehaviour
     /// </summary>
     public void UpdateEditModeHUD()
     {
+        if (gameManager.stateManager.gameState != GameState.EditMode) return;
         int index = gameManager.gridManager.towerInHand;
         if (index == -1)
         {
             //손에 타워 없음
             towerInHandHUD.SetActive(false);
             startButton.SetActive(true);
+            UpdateSplash("");
         }else
         {
             //손에 타워 잇음
             towerInHandHUD.SetActive(true);
             startButton.SetActive(false);
             towerInHandIcon.sprite = gameManager.towerInfoManager.GetIcon(index);
+            UpdateSplash("손에 있는 타워를 지우거나 설치하세요 .");
         }
+    }
+
+    public void UpdateSplash(string text)
+    {
+        splashText.text = text;
     }
 }

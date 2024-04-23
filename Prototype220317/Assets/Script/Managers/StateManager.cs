@@ -23,7 +23,9 @@ public class StateManager : MonoBehaviour
     /// 상태에 진입함
     /// </summary>
     /// <param name="state">진입할 상태</param>
-    public void EnterState(GameState state) {
+    public void EnterState(GameState state)
+    {
+        gameState = state;
         switch (state) {
             case GameState.SelectReward:
                 uiController.CardModeOn();
@@ -36,7 +38,6 @@ public class StateManager : MonoBehaviour
                 uiController.GameModeOn();
                 break;
         }
-        gameState = state;
     }
 
     /// <summary>
@@ -54,6 +55,7 @@ public class StateManager : MonoBehaviour
         if (nCard > 2)
         {
             EnterState(GameState.EditMode);
+            nCard = 0;
         }
     }
 }
