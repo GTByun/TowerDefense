@@ -18,6 +18,7 @@ public class TowerPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("towerIndex : "+towerIndex);
         //클릭 감지. 뭔 클릭인지 신경안씀. 일단 내 index가 클릭되었다고 함수 호출함
         gridManager.GridClicked(towerIndex);
     }
