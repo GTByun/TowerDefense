@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoogleAdMob : MonoBehaviour
 {
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-3940256099942544/5354046379";
+    private string _adUnitId = "ca-app-pub-3940256099942544/1033173712";
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
