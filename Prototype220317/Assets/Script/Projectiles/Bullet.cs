@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     }
     void Update()
     {        
-        if (target != null) // 타겟이 설정되었는지 확인
+        if (target != null&&target.activeSelf) // 타겟이 설정되었는지 확인
         {
             Vector2 direction = (target.transform.position - transform.position).normalized; // 타겟 방향 계산
             transform.up = direction; // 총알이 타겟 방향으로 회전
