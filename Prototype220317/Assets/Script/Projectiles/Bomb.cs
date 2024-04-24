@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
     {
         if (collision.CompareTag("GameArea"))
         {
-            gameObject.SetActive(false);
+            Explode();
         }
     }
 
