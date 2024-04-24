@@ -25,5 +25,6 @@ public enum GameState
     None,
     SelectReward,
     EditMode,
-    GameMode
+    GameMode,
+    GameOver
 }
