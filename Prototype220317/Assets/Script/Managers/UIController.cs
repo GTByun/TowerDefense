@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,12 +21,23 @@ public class UIController : MonoBehaviour
     [SerializeField] private Image towerInHandIcon;
     [SerializeField] private GameObject startButton;
     [SerializeField] private TextMeshProUGUI splashText;
+    [SerializeField] private Material tile;
+
+    public float speed = 1f;
+
+    private float offset = 0;
 
     private GameManager gameManager;
 
     private void Start()
     {
         gameManager = GameManager.instance;
+    }
+
+    private void Update()
+    {
+        offset += Time.deltaTime;
+        tile.SetTextureOffset("_MainTex", new Vector2(0, offset) * speed);
     }
 
     /// <summary>
