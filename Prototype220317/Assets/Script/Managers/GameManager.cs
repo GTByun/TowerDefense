@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public StateManager stateManager { get; private set; }
     public GridManager gridManager { get; private set; }
     public CardManager cardManager { get; private set; }
+    public GoogleAdMob googleAdMob { get; private set; }
 
     void Awake()
     {
@@ -31,5 +32,6 @@ public class GameManager : MonoBehaviour
         stateManager = gameObject.GetComponent<StateManager>();
         gridManager = gameObject.GetComponent<GridManager>();
         cardManager = gameObject.GetComponent<CardManager>();
+        googleAdMob = gameObject.GetComponent<GoogleAdMob>();
     }
 }

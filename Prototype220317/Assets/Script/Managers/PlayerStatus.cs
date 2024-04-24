@@ -4,8 +4,6 @@ using UnityEngine.Events;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public static float EXP;
-
     public static int Life = 20;
     public TextMeshProUGUI LifeText;
 

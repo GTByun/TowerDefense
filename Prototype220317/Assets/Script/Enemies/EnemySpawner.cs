@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
     public float timer;
     public int currentSpawnN;
     public int spawnCount;
+    public int wave;
+
     private GameManager gameManager;
     public static GameObject[] enemies;
     public static int deadEnemy;
@@ -33,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        wave = 0;
         currentSpawnN = 0;
         timer = 0;
         spawnDelay = 1f;        
@@ -47,7 +51,8 @@ public class EnemySpawner : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer > spawnDelay)
                 {
-                    //Debug.Log(currentSpawnN);
+                    Enemy enemy = enemies[currentSpawnN].GetComponent<Enemy>();
+                    enemy.setHP(wave);
                     enemies[currentSpawnN++].SetActive(true);
                     timer = 0;
                 }
@@ -57,6 +62,7 @@ public class EnemySpawner : MonoBehaviour
                 GameManager.instance.stateManager.EnterState(GameState.SelectReward); 
                 deadEnemy = 0;
                 currentSpawnN = 0;
+                wave++;
             }
         }
     }

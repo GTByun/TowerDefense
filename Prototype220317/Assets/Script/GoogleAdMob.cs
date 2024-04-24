@@ -13,14 +13,14 @@ public class GoogleAdMob : MonoBehaviour
 #endif
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //MobileAds.Initialize((InitializationStatus initStatus) =>
-        //{
-        //    // This callback is called once the MobileAds SDK is initialized.
-        //    LoadRewardedAd();
-        //});
-    }
+    //void Start()
+    //{
+    //    MobileAds.Initialize((InitializationStatus initStatus) =>
+    //    {
+    //        // This callback is called once the MobileAds SDK is initialized.
+    //        LoadRewardedAd();
+    //    });
+    //}
 
     private RewardedAd rewardedAd;
 
@@ -92,6 +92,7 @@ public class GoogleAdMob : MonoBehaviour
         ad.OnAdImpressionRecorded += () =>
         {
             Debug.Log("Rewarded ad recorded an impression.");
+            PlayerStatus.Life += 10;
         };
         // Raised when a click is recorded for an ad.
         ad.OnAdClicked += () =>
