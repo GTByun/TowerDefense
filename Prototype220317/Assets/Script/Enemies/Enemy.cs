@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         modular = GameManager.instance.modular;
-        HP = 100;
         if (gameManager.stateManager.gameState == GameState.GameMode) transform.position = new Vector2(modular * -2, modular * -2);
         else transform.position = new Vector2(15, 0);
         move = EnemyMove.Up;
@@ -122,5 +121,11 @@ public class Enemy : MonoBehaviour
     public void SlowDown(float slowScale)
     {
         speed = slowScale;
+    }
+
+    internal void setHP(int wave)
+    {
+        HP = 100*Mathf.Pow(1.5f,wave);
+        Debug.Log(HP);
     }
 }
