@@ -69,6 +69,12 @@ public class UIController : MonoBehaviour
         startButton.SetActive(false);
     }
 
+    public void GameOverOn()
+    {
+        darkFader.SetActive(true);
+        Time.timeScale = 0.2f;
+    }
+
     /// <summary>
     /// 에딧모드의 화면을 업데이트 해줌
     /// </summary>

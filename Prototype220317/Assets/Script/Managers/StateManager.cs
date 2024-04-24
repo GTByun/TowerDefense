@@ -37,6 +37,9 @@ public class StateManager : MonoBehaviour
             case GameState.GameMode :
                 uiController.GameModeOn();
                 break;
+            case GameState.GameOver:
+                uiController.GameOverOn();
+                break;
         }
     }
 
