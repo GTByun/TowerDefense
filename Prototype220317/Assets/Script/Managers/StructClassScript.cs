@@ -41,5 +41,6 @@ public class GridInfo
         this.towerIndex = -1;
         GameObject temp = this.towerObject;
         GameObject.Destroy(temp);
+        towerObject = null;
     }
 }

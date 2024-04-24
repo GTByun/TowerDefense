@@ -18,7 +18,14 @@ public class DebugScript : MonoBehaviour
         outputString.Append($"towerInHand : {gameManager.gridManager.towerInHand}\n");
         outputString.Append($"cardTower : {gameManager.cardManager.cards[0].GetComponent<CardScript>().tower}");
         outputString.Append($" ,{gameManager.cardManager.cards[1].GetComponent<CardScript>().tower}");
-        outputString.Append($" ,{gameManager.cardManager.cards[2].GetComponent<CardScript>().tower}");
+        outputString.Append($" ,{gameManager.cardManager.cards[2].GetComponent<CardScript>().tower}\n");
+
+        for (int i = 0; i < 9; i++)
+        {
+            outputString.Append(gameManager.gridManager.gridInfoArr[i].towerIndex);
+            if (i % 3 == 2) outputString.Append("\n");
+        }
+        
     }
     #region 구성요소
     private GameManager gameManager;
