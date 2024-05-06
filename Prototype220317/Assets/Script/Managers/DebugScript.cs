@@ -19,6 +19,7 @@ public class DebugScript : MonoBehaviour
         outputString.Append($"cardTower : {gameManager.cardManager.cards[0].GetComponent<CardScript>().tower}");
         outputString.Append($" ,{gameManager.cardManager.cards[1].GetComponent<CardScript>().tower}");
         outputString.Append($" ,{gameManager.cardManager.cards[2].GetComponent<CardScript>().tower}\n");
+        outputString.Append($"현재 라운드 HP : {Enemy.HPMax}\n");
 
         for (int i = 0; i < 9; i++)
         {

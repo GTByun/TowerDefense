@@ -4,7 +4,7 @@ public class BreathTower : Tower
 {
     float fireAngle;
     int shell;
-    CircleCollider2D collider;
+    new CircleCollider2D collider;
 
     protected override void Start()
     {

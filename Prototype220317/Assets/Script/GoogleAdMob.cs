@@ -5,14 +5,14 @@ using UnityEngine;
 public class GoogleAdMob : MonoBehaviour
 {
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-3940256099942544/1033173712";
+    private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
+    private string _adUnitId = "unused";
 #else
-  private string _adUnitId = "unused";
+    private string _adUnitId = "unused";
 #endif
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     //void Start()
     //{
     //    MobileAds.Initialize((InitializationStatus initStatus) =>
@@ -108,14 +108,12 @@ public class GoogleAdMob : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Rewarded ad full screen content closed.");
-            LoadRewardedAd();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
             Debug.LogError("Rewarded ad failed to open full screen content " +
                            "with error : " + error);
-            LoadRewardedAd();
         };
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public static float HPMax;
     public float HP;
     public bool burning;
     public float burningDamage;
@@ -43,8 +44,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        image.fillAmount = HP / 100;
-
+        image.fillAmount = HP / HPMax;
         if (HP <= 0)
         {
             // »ç¸Á
@@ -125,7 +125,8 @@ public class Enemy : MonoBehaviour
 
     internal void setHP(int wave)
     {
-        HP = 100*Mathf.Pow(1.5f,wave);
+        HP = 100f*Mathf.Pow(1.7f,wave);
+        HPMax = HP;
         Debug.Log(HP);
     }
 }
