@@ -12,7 +12,7 @@ public class BreathTower : Tower
         collider.radius = GameManager.instance.modular * 2;
         shell = 7;
         fireAngle = 90f;
-        range = 1f;
+        range = 2f;
         speed = 3f;
         damage = 20f;
         penetrate = 20;
