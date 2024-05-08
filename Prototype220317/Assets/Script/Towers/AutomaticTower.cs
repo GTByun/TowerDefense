@@ -4,7 +4,7 @@ public class AutomaticTower : Tower
 {
     protected override void Start()
     {
-        range = 2f;
+        range = 2.5f;
         speed = 5f;
         damage = 3f;
         penetrate = 0;

@@ -5,7 +5,7 @@ public class SniperTower : Tower
     protected override void Start()
     {
         range = 3f;
-        speed = 50f;
+        speed = 20f;
         damage = 100f;
         penetrate = 0;
         reloadDelay = 0.8f;

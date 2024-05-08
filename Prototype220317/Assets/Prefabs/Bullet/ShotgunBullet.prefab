@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1036771252266625331}
   - component: {fileID: 6849861538688696582}
   - component: {fileID: 9116910496733129736}
-  - component: {fileID: 9157130570274959936}
+  - component: {fileID: 3261058429271587811}
   m_Layer: 0
   m_Name: ShotgunBullet
   m_TagString: Bullet
@@ -99,9 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e6175513d188746965d3fa4e392847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  damage: 15
-  penetrate: 0
 --- !u!50 &9116910496733129736
 Rigidbody2D:
   serializedVersion: 4
@@ -129,8 +126,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &9157130570274959936
-CapsuleCollider2D:
+--- !u!58 &3261058429271587811
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,5 +159,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.7}
-  m_Direction: 1
+  serializedVersion: 2
+  m_Radius: 0.12

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoogleAdMob : MonoBehaviour
 {
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-3821527474596235/9659732473";
+    private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_IPHONE
     private string _adUnitId = "unused";
 #else
@@ -13,14 +13,14 @@ public class GoogleAdMob : MonoBehaviour
 #endif
 
     //Start is called before the first frame update
-    //void Start()
-    //{
-    //    MobileAds.Initialize((InitializationStatus initStatus) =>
-    //    {
-    //        // This callback is called once the MobileAds SDK is initialized.
-    //        LoadRewardedAd();
-    //    });
-    //}
+    void Start()
+    {
+        MobileAds.Initialize((InitializationStatus initStatus) =>
+        {
+            // This callback is called once the MobileAds SDK is initialized.
+            LoadRewardedAd();
+        });
+    }
 
     private RewardedAd rewardedAd;
 
@@ -29,6 +29,7 @@ public class GoogleAdMob : MonoBehaviour
     /// </summary>
     public void LoadRewardedAd()
     {
+        return; // юс╫ц
         // Clean up the old ad before loading a new one.
         if (rewardedAd != null)
         {

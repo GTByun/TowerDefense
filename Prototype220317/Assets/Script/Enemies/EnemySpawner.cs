@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public int currentSpawnN;
     public int spawnCount;
     public int wave;
+    public TextMeshProUGUI waveStartTxt;
 
     private GameManager gameManager;
     public static GameObject[] enemies;
@@ -63,6 +65,7 @@ public class EnemySpawner : MonoBehaviour
                 deadEnemy = 0;
                 currentSpawnN = 0;
                 wave++;
+                waveStartTxt.text = $"WAVE {wave+1} Start";
             }
         }
     }

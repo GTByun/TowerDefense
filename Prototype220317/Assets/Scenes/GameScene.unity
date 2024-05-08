@@ -697,7 +697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &188335559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2952,7 +2952,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 200, y: 75}
+  m_SizeDelta: {x: 250, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1312829014
 MonoBehaviour:
@@ -3113,6 +3113,7 @@ MonoBehaviour:
   currentSpawnN: 0
   spawnCount: 0
   wave: 0
+  waveStartTxt: {fileID: 1290792021}
 --- !u!1 &1347134098
 GameObject:
   m_ObjectHideFlags: 0
