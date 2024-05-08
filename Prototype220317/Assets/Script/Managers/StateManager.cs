@@ -27,6 +27,9 @@ public class StateManager : MonoBehaviour
     {
         gameState = state;
         switch (state) {
+            case GameState.None:
+                uiController.ResetUI();
+                break;
             case GameState.SelectReward:
                 uiController.CardModeOn();
                 cardManager.RandomizeCards();

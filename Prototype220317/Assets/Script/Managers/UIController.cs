@@ -22,6 +22,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject startButton;
     [SerializeField] private TextMeshProUGUI splashText;
     [SerializeField] private Material tile;
+    [SerializeField] public GameObject gameOver;
+    [SerializeField] private TextMeshProUGUI enemyKilledText;
+    [SerializeField] private TextMeshProUGUI timePlayedText;
+
 
     public float speed = 1f;
 
@@ -38,6 +42,7 @@ public class UIController : MonoBehaviour
     {
         offset += Time.deltaTime;
         tile.SetTextureOffset("_MainTex", new Vector2(0, offset) * speed);
+        if (gameManager.stateManager.gameState == GameState.None) gameOver.SetActive(false);
     }
 
     /// <summary>
@@ -68,11 +73,27 @@ public class UIController : MonoBehaviour
         darkFaderEdit.SetActive(false);
         startButton.SetActive(false);
     }
-
     public void GameOverOn()
     {
         darkFader.SetActive(true);
-        Time.timeScale = 0.2f;
+        gameOver.SetActive(true);
+        enemyKilledText.text = $"처치한 적 : {gameManager.enemyKilled.ToString()} 마리";
+        int hour, minute, second, played;
+        played = (int) gameManager.timePlayed;
+        hour = played / 3600;
+        minute = played / 60;
+        second = played % 60;
+        timePlayedText.text = $"플레이 시간 : ";
+        if (hour != 0) timePlayedText.text += $"{hour}시간 ";
+        if (minute != 0) timePlayedText.text += $"{minute}분 ";
+        timePlayedText.text += $"{second}초 ";
+
+    }
+    public void ResetUI()
+    {
+        darkFader.SetActive(true);
+        gameOver.SetActive(false);
+
     }
 
     /// <summary>

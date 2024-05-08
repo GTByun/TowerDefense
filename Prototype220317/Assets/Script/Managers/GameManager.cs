@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public float modular; //그리드 크기
     public static GameManager instance; //static 인스턴스
+    public int enemyKilled;
+    public float timePlayed;
 
     //매니저들
     public UIController uiController { get; private set; }
@@ -25,6 +28,11 @@ public class GameManager : MonoBehaviour
         //TowerPlace를 배치
         gridManager.SetTowerPlace(modular);
     }
+
+    private void Update()
+    {
+        if (stateManager.gameState != GameState.GameOver) timePlayed += Time.deltaTime;
+    }
     private void SetManagers()
     {
         uiController = gameObject.GetComponent<UIController>();
@@ -38,5 +46,16 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+        stateManager.EnterState(GameState.None);
+    }
+    public void ResetStats()
+    {
+        timePlayed = 0;
+        enemyKilled = 0;
     }
 }

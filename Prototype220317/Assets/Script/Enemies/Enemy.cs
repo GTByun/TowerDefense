@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour
         {
             // 사망
             DeSpawn();
+            gameManager.enemyKilled++;
             // 경험치
         }
         if (burning)
