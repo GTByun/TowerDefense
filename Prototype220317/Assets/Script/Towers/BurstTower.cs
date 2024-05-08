@@ -10,9 +10,9 @@ public class BurstTower : Tower
         ammo = 3;
         range = 2f;
         speed = 5f;
-        damage = 8f;
+        damage = 35f;
         penetrate = 0;
-        reloadDelay = 2.5f;
+        reloadDelay = 5.0f;
     }
     protected override void Fire()
     {
@@ -23,7 +23,7 @@ public class BurstTower : Tower
         }
         else if (ammo>0)
         {
-            reloadDelay = 2.5f;
+            reloadDelay = 5.0f;
             ammo--;
             GenerateBullet();
         } 
