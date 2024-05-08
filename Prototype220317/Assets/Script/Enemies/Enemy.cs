@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public bool burning;
     public float burningDamage;
 
+    public GameObject dead;
     public Image image;
 
     private float timer = 0.0f;
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
             // 사망
             DeSpawn();
             gameManager.enemyKilled++;
+            GameObject.Instantiate(dead).transform.position = transform.position;
             // 경험치
         }
         if (burning)

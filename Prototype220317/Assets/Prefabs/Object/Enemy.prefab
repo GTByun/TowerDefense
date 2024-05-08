@@ -137,12 +137,10 @@ MonoBehaviour:
   HP: 0
   burning: 0
   burningDamage: 0
+  dead: {fileID: 487683865007375024, guid: 175e112227b036844ada9dbc5d66828d, type: 3}
   image: {fileID: 681184006062485476}
   speedMagni: 1
   speed: 2
-  EnemyGoal:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1664115777135065089
 GameObject:
   m_ObjectHideFlags: 0
