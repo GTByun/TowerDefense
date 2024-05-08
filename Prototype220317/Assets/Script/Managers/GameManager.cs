@@ -34,4 +34,9 @@ public class GameManager : MonoBehaviour
         cardManager = gameObject.GetComponent<CardManager>();
         googleAdMob = gameObject.GetComponent<GoogleAdMob>();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
