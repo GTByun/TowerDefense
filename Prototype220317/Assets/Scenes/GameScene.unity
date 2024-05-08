@@ -328,15 +328,15 @@ MonoBehaviour:
     towerObject: {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
   - towerIcon: {fileID: 21300000, guid: fe30338a50c68a440a8194cbfdf1066d, type: 3}
     towerName: "\uC989\uC0AC"
-    towerDescription: 
+    towerDescription: "\uC989\uC0AC\uC124\uBA85"
     towerObject: {fileID: 6881034845119654329, guid: d7e415f740dc1fd4fb1adab2b19d75bc, type: 3}
   - towerIcon: {fileID: 21300000, guid: 95a177e1168cdf640a99c6c03e661123, type: 3}
     towerName: "\uC5F0\uC0AC"
-    towerDescription: 
-    towerObject: {fileID: 177113014060768766, guid: 7c3e0833017ad5242af20ce3a8d2f45a, type: 3}
+    towerDescription: "\uC5F0\uC0AC\uC124\uBA85"
+    towerObject: {fileID: 6853817563937056597, guid: c5bbb80b630f9404897fcd9c2e186d2d, type: 3}
   - towerIcon: {fileID: 21300000, guid: 15a826ac763e9624bade0b1b18cf974b, type: 3}
     towerName: "\uB808\uC774\uB354"
-    towerDescription: 
+    towerDescription: "\uB808\uC774\uB354\uC124"
     towerObject: {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
 --- !u!114 &114203225
 MonoBehaviour:
