@@ -72,6 +72,8 @@ public class UIController : MonoBehaviour
         cards.SetActive(false);
         darkFaderEdit.SetActive(false);
         startButton.SetActive(false);
+        darkFader.SetActive(false);
+        gameOver.SetActive(false); 
     }
     public void GameOverOn()
     {

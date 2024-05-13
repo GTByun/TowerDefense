@@ -14,7 +14,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void Update()
     {
-        if (Life == 0)
+        if (Life <= 0)
         {
             GameManager.instance.stateManager.EnterState(GameState.GameOver);
         }

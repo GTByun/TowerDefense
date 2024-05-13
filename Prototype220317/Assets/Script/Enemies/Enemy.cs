@@ -130,6 +130,5 @@ public class Enemy : MonoBehaviour
     {
         HP = 100f*Mathf.Pow(1.7f,wave);
         HPMax = HP;
-        Debug.Log(HP);
     }
 }

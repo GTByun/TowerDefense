@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoogleAdMob : MonoBehaviour
 {
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+    private string _adUnitId = "ca-app-pub-3821527474596235/9659732473"; // TestId ca-app-pub-3940256099942544/5224354917
 #elif UNITY_IPHONE
     private string _adUnitId = "unused";
 #else
@@ -18,7 +18,7 @@ public class GoogleAdMob : MonoBehaviour
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
-            LoadRewardedAd();
+            //LoadRewardedAd();
         });
     }
 
@@ -29,7 +29,6 @@ public class GoogleAdMob : MonoBehaviour
     /// </summary>
     public void LoadRewardedAd()
     {
-        return; // юс╫ц
         // Clean up the old ad before loading a new one.
         if (rewardedAd != null)
         {
@@ -109,6 +108,7 @@ public class GoogleAdMob : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Rewarded ad full screen content closed.");
+            GameManager.instance.stateManager.EnterState(GameState.GameMode);
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
