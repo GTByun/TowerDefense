@@ -10,7 +10,7 @@ public class DeadEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector3.zero;
-        rb.AddForce(new Vector2(Random.Range(-2f, 2f), 0.5f) * Random.Range(10f, 20f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(Random.Range(-1f, 1f), 0.5f) * Random.Range(10f, 20f), ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
