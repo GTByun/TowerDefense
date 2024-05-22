@@ -431,6 +431,7 @@ MonoBehaviour:
   gameOver: {fileID: 555175160}
   enemyKilledText: {fileID: 2022749002}
   timePlayedText: {fileID: 783984883}
+  adButton: {fileID: 0}
   speed: 0.6
 --- !u!114 &114203224
 MonoBehaviour:
@@ -1811,7 +1812,7 @@ GameObject:
   - component: {fileID: 559674840}
   m_Layer: 0
   m_Name: InvisWallBottom
-  m_TagString: Untagged
+  m_TagString: DeleteZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
