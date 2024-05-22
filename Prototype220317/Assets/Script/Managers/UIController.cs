@@ -46,6 +46,11 @@ public class UIController : MonoBehaviour
         if (gameManager.stateManager.gameState == GameState.None) gameOver.SetActive(false);
     }
 
+    private void OnApplicationQuit()
+    {
+        tile.SetTextureOffset("_MainTex", new Vector2(0, 0));
+    }
+
     /// <summary>
     /// 카드 선택 모드 UI
     /// </summary>
