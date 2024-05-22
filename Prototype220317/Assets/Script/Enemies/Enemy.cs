@@ -10,19 +10,14 @@ public class Enemy : MonoBehaviour
     public bool burning;
     public float burningDamage;
 
-    public GameObject dead;
     public Image image;
 
     private float timer = 0.0f;
-    public float speedMagni;
     public float speed;
-    private float synthSpeed;
     private float modular;
 
     private GameManager gameManager;
     private EnemyMove move;
-
-    public float Speed { set => speed = value; }
 
     private void Awake()
     {
@@ -51,7 +46,6 @@ public class Enemy : MonoBehaviour
             // »ç¸Á
             DeSpawn();
             gameManager.enemyKilled++;
-            //GameObject.Instantiate(dead).transform.position = transform.position;
             GameObject corpse = gameManager.deadPool.GetObjectFromPool();
             corpse.transform.position = transform.position;
             corpse.SetActive(true);
@@ -69,11 +63,10 @@ public class Enemy : MonoBehaviour
 
         if (gameManager.stateManager.gameState == GameState.GameMode)
         {
-            synthSpeed = speedMagni * speed;
             switch (move)
             {            
                 case EnemyMove.Left:
-                    transform.Translate(synthSpeed * Time.deltaTime * Vector2.left);
+                    transform.Translate(speed * Time.deltaTime * Vector2.left);
                     if (transform.position.x <= modular * - 2 + modular / 5 * 4)
                     {
                         // °ñÀÎ
@@ -83,7 +76,7 @@ public class Enemy : MonoBehaviour
                     }
                     break;
                 case EnemyMove.Down:
-                    transform.Translate(synthSpeed * Time.deltaTime * Vector2.down);
+                    transform.Translate(speed * Time.deltaTime * Vector2.down);
                     if (transform.position.y <= modular * -2)
                     {
                         transform.position = new Vector2(transform.position.x, modular * -2);
@@ -91,7 +84,7 @@ public class Enemy : MonoBehaviour
                     }
                     break;
                 case EnemyMove.Right:
-                    transform.Translate(synthSpeed * Time.deltaTime * Vector2.right);
+                    transform.Translate(speed * Time.deltaTime * Vector2.right);
                     if (transform.position.x >= modular * 2)
                     {
                         transform.position = new Vector2(modular * 2, transform.position.y);
@@ -99,7 +92,7 @@ public class Enemy : MonoBehaviour
                     }
                     break;
                 case EnemyMove.Up:
-                    transform.Translate(synthSpeed * Time.deltaTime * Vector2.up);
+                    transform.Translate(speed * Time.deltaTime * Vector2.up);
                     if (transform.position.y >= modular * 2)
                     {
                         transform.position = new Vector2(transform.position.x, modular * 2);
