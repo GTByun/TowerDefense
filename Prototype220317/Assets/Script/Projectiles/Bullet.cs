@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     public void init(float speed, float damage, int penetrate)
     {
         this.speed = speed;
-        this.damage = damage;
+        this.damage = damage * PlayerStatus.damageUpgrade;
         this.penetrate = penetrate;
     }
     public void setTransform(Vector3 pos, Vector3 rot)

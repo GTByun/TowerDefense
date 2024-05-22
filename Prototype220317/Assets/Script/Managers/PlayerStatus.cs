@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class PlayerStatus : MonoBehaviour
 {
     public static int Life = 20;
+    public static float damageUpgrade = 1f;
     public TextMeshProUGUI LifeText;
 
     private void Start()
