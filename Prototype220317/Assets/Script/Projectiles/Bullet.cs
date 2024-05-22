@@ -54,7 +54,10 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             gameObject.SetActive(false);
-            collision.gameObject.GetComponent<Enemy>().Hit(damage);
+            if (collision.gameObject.TryGetComponent(out Enemy enemy))
+            {
+                enemy.Hit(damage);
+            }
         }
     }
 }
