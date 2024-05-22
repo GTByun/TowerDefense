@@ -6,7 +6,7 @@ public class AutomaticTower : Tower
     {
         range = 2.5f;
         speed = 5f;
-        damage = 3f;
+        damage = 25f;
         penetrate = 0;
         reloadDelay = 10f;
         base.Start();
