@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     GameObject target;
     Vector3 pos;
     Vector3 rot;
+    bool collisionLock;
 
     public void init(float speed, float damage, int penetrate)
     {
@@ -30,6 +31,7 @@ public class Bullet : MonoBehaviour
     {
         transform.position = pos;
         transform.rotation = Quaternion.Euler(rot);
+        collisionLock = false;
     }
     void Update()
     {        
@@ -51,10 +53,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !collisionLock)
         {
             gameObject.SetActive(false);
             collision.gameObject.GetComponent<Enemy>().Hit(damage);
+            collisionLock = true;
         }
     }
 }
