@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// UI를 제어함. 끄고 키고 업데이트하고 하는 메소드를 가지고 잇음
@@ -18,14 +19,14 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject cards;
     [Header("HUD")]
     [SerializeField] private GameObject towerInHandHUD;
-    [SerializeField] private Image towerInHandIcon;
+    [SerializeField] private UnityEngine.UI.Image towerInHandIcon;
     [SerializeField] private GameObject startButton;
     [SerializeField] private TextMeshProUGUI splashText;
     [SerializeField] private Material tile;
     [SerializeField] public GameObject gameOver;
     [SerializeField] private TextMeshProUGUI enemyKilledText;
     [SerializeField] private TextMeshProUGUI timePlayedText;
-
+    [SerializeField] private GameObject adButton;
 
     public float speed = 1f;
 
@@ -77,6 +78,7 @@ public class UIController : MonoBehaviour
     }
     public void GameOverOn()
     {
+        adButton.SetActive(true);
         darkFader.SetActive(true);
         gameOver.SetActive(true);
         enemyKilledText.text = $"처치한 적 : {gameManager.enemyKilled.ToString()} 마리";
