@@ -427,7 +427,7 @@ MonoBehaviour:
   towerInHandIcon: {fileID: 1670432926}
   startButton: {fileID: 1312829012}
   splashText: {fileID: 335781114}
-  tile: {fileID: 2100000, guid: c6538f67134e2f142bf109f421157a66, type: 2}
+  tile: {fileID: 2100000, guid: 3b57d35595a165a41830131d79075b2b, type: 2}
   gameOver: {fileID: 555175160}
   enemyKilledText: {fileID: 2022749002}
   timePlayedText: {fileID: 783984883}
@@ -3805,7 +3805,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6538f67134e2f142bf109f421157a66, type: 2}
+  - {fileID: 2100000, guid: 3b57d35595a165a41830131d79075b2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
