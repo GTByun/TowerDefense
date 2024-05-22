@@ -15,7 +15,7 @@ public class Bomb : MonoBehaviour
     public void init(float speed, float damage, float hitArea, float splashArea, float splashDamage)
     {
         this.speed = speed;
-        this.damage = damage;
+        this.damage = damage * PlayerStatus.damageUpgrade;
         this.hitArea = hitArea;
         this.splashArea = splashArea;   
         this.splashDamage = splashDamage;
