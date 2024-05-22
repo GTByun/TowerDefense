@@ -5,9 +5,16 @@ using UnityEngine;
 public class DeadEnemy : MonoBehaviour
 {
     private Rigidbody2D rb;
-    void Start()
+
+    private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * 20, ForceMode2D.Impulse);
+        rb.velocity = Vector3.zero;
+        rb.AddForce(new Vector2(Random.Range(-2f, 2f), 0.5f) * Random.Range(10f, 20f), ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeleteZone")) gameObject.SetActive(false);
     }
 }

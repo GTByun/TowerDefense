@@ -9,6 +9,7 @@ TagManager:
   - Breath
   - Bullet
   - Fire
+  - DeleteZone
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //static 인스턴스
     public int enemyKilled;
     public float timePlayed;
+    public ObjectPool deadPool;
 
     //매니저들
     public UIController uiController { get; private set; }

@@ -51,7 +51,10 @@ public class Enemy : MonoBehaviour
             // »ç¸Á
             DeSpawn();
             gameManager.enemyKilled++;
-            GameObject.Instantiate(dead).transform.position = transform.position;
+            //GameObject.Instantiate(dead).transform.position = transform.position;
+            GameObject corpse = gameManager.deadPool.GetObjectFromPool();
+            corpse.transform.position = transform.position;
+            corpse.SetActive(true);
             // °æÇèÄ¡
         }
         if (burning)
