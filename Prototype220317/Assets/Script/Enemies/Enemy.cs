@@ -118,6 +118,7 @@ public class Enemy : MonoBehaviour
     public void Hit(float damage)
     {
         HP -= damage;
+        Debug.Log($"damage: {damage},   HP: {HP}");
     }
     public void Burn(float damage)
     {

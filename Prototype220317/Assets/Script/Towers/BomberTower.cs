@@ -15,7 +15,7 @@ public class BomberTower : Tower
         reloadDelay = 0.7f;
         hitArea = 1f;
         splashArea = 2f;
-        splashDamage = 30f;
+        splashDamage = 40f;
     }
     protected override void Fire()
     {
