@@ -72,15 +72,7 @@ public class Bomb : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.GetComponent<Enemy>().Hit(splashDamage);
-            }
-        }
-        Collider2D[] collidersInHit = Physics2D.OverlapCircleAll(transform.position, hitArea);
-        foreach (Collider2D collider in collidersInHit)
-        {
-            if (collider.CompareTag("Enemy"))
-            {
-                collider.GetComponent<Enemy>().Hit(damage - splashDamage);
+                collider.GetComponent<Enemy>().Hit(damage);
             }
         }
     }

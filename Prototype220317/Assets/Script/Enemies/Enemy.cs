@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
     }
     public void SlowDown(float slowScale)
     {
-        speed = slowScale;
+        speed *= slowScale;
     }
 
     internal void setHP(int wave)

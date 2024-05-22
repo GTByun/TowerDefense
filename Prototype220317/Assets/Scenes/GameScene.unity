@@ -407,7 +407,7 @@ MonoBehaviour:
   modular: 1.5
   enemyKilled: 0
   timePlayed: 0
-  deadPool: {fileID: 1318653714}
+  deadPool: {fileID: 0}
 --- !u!114 &114203220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   gameOver: {fileID: 555175160}
   enemyKilledText: {fileID: 2022749002}
   timePlayedText: {fileID: 783984883}
-  adButton: {fileID: 0}
+  adButton: {fileID: 188335558}
   speed: 0.6
 --- !u!114 &114203224
 MonoBehaviour:

@@ -78,9 +78,9 @@ public class UIController : MonoBehaviour
     }
     public void GameOverOn()
     {
-        adButton.SetActive(true);
         darkFader.SetActive(true);
         gameOver.SetActive(true);
+        adButton.SetActive(true);
         enemyKilledText.text = $"처치한 적 : {gameManager.enemyKilled.ToString()} 마리";
         int hour, minute, second, played;
         played = (int) gameManager.timePlayed;
