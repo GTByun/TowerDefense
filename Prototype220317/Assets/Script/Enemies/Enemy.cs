@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
 
     internal void setHP(int wave)
     {
-        HP = 100f*Mathf.Pow(1.7f,wave);
+        HP = 100f*Mathf.Pow(1.5f,wave);
         HPMax = HP;
     }
 }
