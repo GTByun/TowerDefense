@@ -5,24 +5,38 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public static float HPMax;
-    public float HP;
-    public bool burning;
-    public float burningDamage;
 
     public Image image;
 
     private float timer = 0.0f;
-    public float speed;
     private float modular;
 
-    private GameManager gameManager;
     private EnemyMove move;
+    //
+    //
+    //
+
+    [Header("Stats")]
+    //디폴트 스탯은 enemyData가 저장해두고, 현재 스탯은 여기서 관리합니다.
+    public float hp;//적의 현재 체력입니다.
+    public bool burning;//적이 불타고 있는지의 여부입니다.
+    public float speed;//적의 이동 속도입니다.
+
+    public static float hpMultiplier = 1f;//체력의 배수입니다. 최대 체력에 곱해집니다.
+    public static float burningDamage;//화상 피해입니다.
+
+    /* Technical Private */
+    private EnemyType enemyType;//적의 타입입니다.
+    private EnemyData enemyData;//적의 enemyData입니다.
+    private GameManager gameManager;
+    private SpriteRenderer spriteRenderer;
+
 
     private void Awake()
     {
         move = EnemyMove.Up;
         gameManager = GameManager.instance;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -40,8 +54,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        image.fillAmount = HP / HPMax;
-        if (HP <= 0)
+        image.fillAmount = hp / (enemyData.hp * hpMultiplier);
+        if (hp <= 0)
         {
             // 사망
             DeSpawn();
@@ -56,7 +70,7 @@ public class Enemy : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.0f)
             {
-                HP -= burningDamage;
+                hp -= burningDamage;
                 timer = 0.0f;
             }
         }
@@ -106,11 +120,11 @@ public class Enemy : MonoBehaviour
     private void DeSpawn()
     {
         gameObject.SetActive(false);
-        EnemySpawner.deadEnemy++;
+        EnemySpawner.enemies.Remove(gameObject);
     }
     public void Hit(float damage)
     {
-        HP -= damage;
+        hp -= damage;
     }
     public void Burn(float damage)
     {
@@ -122,9 +136,15 @@ public class Enemy : MonoBehaviour
         speed = slowScale;
     }
 
-    internal void setHP(int wave)
+    /// <summary>
+    /// 새로운 EnemyData를 받아서 이 Enemy의 스탯을 전부 교체합니다.
+    /// </summary>
+    /// <param name="nextEnemyData"></param>
+    public void ResetData(EnemyData nextEnemyData)
     {
-        HP = 100f*Mathf.Pow(1.7f,wave);
-        HPMax = HP;
+        enemyData = nextEnemyData;
+        hp = enemyData.hp * hpMultiplier;
+        speed = enemyData.speed;
+        spriteRenderer.sprite = enemyData.sprite;
     }
 }

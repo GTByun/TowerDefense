@@ -492,6 +492,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  WaveStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1318653713}
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
+        m_MethodName: StartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &114203226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3187,13 +3202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b64dc69de501e40bf545a37abd86f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 1318653712}
-  spawnDelay: 0
-  timer: 0
-  currentSpawnN: 0
-  spawnCount: 0
+  point: 0
   wave: 0
-  waveStartTxt: {fileID: 1290792021}
+  specialDistribution: 0
+  pool: {fileID: 1318653712}
+  enemiesData:
+  - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}
+  - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
+  - {fileID: 11400000, guid: 2f87f0e54a54bbc47ba49da3f7a917a3, type: 2}
 --- !u!114 &1318653714
 MonoBehaviour:
   m_ObjectHideFlags: 0

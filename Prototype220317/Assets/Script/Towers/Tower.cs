@@ -15,13 +15,11 @@ public class Tower : MonoBehaviour
     private float attackTimer;
 
     protected GameObject target = null;
-    protected GameObject[] enemies;
     GameManager gameManager;
 
     protected virtual void Start()
     {
         gameManager = GameManager.instance;
-        enemies = EnemySpawner.enemies;
     }
 
     protected virtual void Update()
@@ -61,9 +59,9 @@ public class Tower : MonoBehaviour
     {
         GameObject closestEnemy = null;
         float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < EnemySpawner.enemies.Count; i++)
         {
-            GameObject enemy = enemies[i];
+            GameObject enemy = EnemySpawner.enemies[i];
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (enemy.activeSelf)
             {
