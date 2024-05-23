@@ -25,7 +25,6 @@ public class EnemySpawner : MonoBehaviour
     */
     [Header("Stats")]
     public int point = 0; //현재 포인트. 포인트가 클수록 EnemySpawner가 웨이브에 더 많은 적을 구매합니다
-    public int wave = 1; //웨이브 수
     [Range(0, 3)]
     public int specialDistribution = 0; //얼마나 많은 특수 적 종류를 허용하는지의 값. 0일시 특수 적을 구매하지 않습니다.
 
@@ -37,13 +36,13 @@ public class EnemySpawner : MonoBehaviour
     public ObjectPool pool;//적 오브젝트의 Pool입니다.
     [SerializeField] private List<EnemyData> enemiesData;//스크립터블 오브젝트 EnemyData를 전부 가지고 있는 리스트입니다.
     private GameManager gameManager;
+    [HideInInspector] public int wave; //웨이브 수
     void Start()
     {
         gameManager = GameManager.instance;
         enemies = new List<GameObject>();
         waveEnemy = new Queue<EnemyType>();
-        //currentSpawnN = 0;
-        //timer = 0;
+        wave = 0;
     }
 
     /// <summary>
@@ -51,6 +50,8 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public void StartWave()
     {
+        SetHP(wave);
+        wave++;
         BuyWave();
         StartCoroutine("WaveCoroutine");
     }
@@ -77,16 +78,22 @@ public class EnemySpawner : MonoBehaviour
         while (true) {
             if (waveEnemy.Count == 0)
             {
-                Debug.Log("n");
                 yield break;
             }
             else
             {
-                Debug.Log("y");
-            yield return new WaitForSeconds(spawnDelay);
+                yield return new WaitForSeconds(spawnDelay);
             }
             SpawnNextEnemy();
         }
+    }
+    /// <summary>
+    /// 웨이브에 따라 체력의 배수를 정합니다.
+    /// </summary>
+    /// <param name="wave">현재 웨이브</param>
+    private void SetHP(int wave)
+    {
+        Enemy.hpMultiplier = Mathf.Pow(1.5f, wave);
     }
 
     /// <summary>

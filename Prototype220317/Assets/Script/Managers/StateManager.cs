@@ -95,8 +95,6 @@ public class StateManager : MonoBehaviour
         2. enemies가 비어있음 == 필드 위에 적이 없음
         둘다 만족하면 됩니다.
         */
-        Debug.Log("waveEnemy : " + EnemySpawner.waveEnemy.Count);
-        Debug.Log("enemies : " + EnemySpawner.enemies.Count);
         if (EnemySpawner.waveEnemy.Count == 0 && EnemySpawner.enemies.Count == 0)
         {
             EnterState(GameState.SelectReward);

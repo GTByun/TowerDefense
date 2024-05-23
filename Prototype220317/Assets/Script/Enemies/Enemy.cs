@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     //
 
     [Header("Stats")]
-    //디폴트 스탯은 enemyData가 저장해두고, 현재 스탯은 여기서 관리합니다.
+    //디폴트 스탯은 enemyData가 저장해두고, 게임이 돌아가는 동안의 스탯은 여기서 관리합니다.
     public float hp;//적의 현재 체력입니다.
     public bool burning;//적이 불타고 있는지의 여부입니다.
     public float speed;//적의 이동 속도입니다.

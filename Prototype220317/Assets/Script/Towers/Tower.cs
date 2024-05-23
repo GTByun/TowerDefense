@@ -63,14 +63,11 @@ public class Tower : MonoBehaviour
         {
             GameObject enemy = EnemySpawner.enemies[i];
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (enemy.activeSelf)
+            if (distance < closestDistance)
             {
-                if (distance < closestDistance)
-                {
-                    //closestDistance = distance;
-                    closestEnemy = enemy;
-                    return closestEnemy;
-                }
+                //closestDistance = distance;
+                closestEnemy = enemy;
+                return closestEnemy;
             }
         }
         return closestEnemy;
