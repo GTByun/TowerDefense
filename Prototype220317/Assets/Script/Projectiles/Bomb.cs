@@ -47,7 +47,6 @@ public class Bomb : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("trigger");
             Explode();
             collisionLock = true;
         }
@@ -74,7 +73,6 @@ public class Bomb : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                Debug.Log("Hit");
                 collider.GetComponent<Enemy>().Hit(splashDamage);
             }
         }

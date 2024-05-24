@@ -8,19 +8,21 @@ public class SlowTower : Tower
 
     protected override void Start()
     {
+        damage = 10f;
         range = 5f;
         reloadDelay = 0.7f;
-        slowScale = 0.8f;
-        base.Start();
-        for (int i = 0; i < EnemySpawner.enemies.Count; i++)
-        {
-            //if (enemies[i].activeSelf) 나와 있는 enemy에게만 적용할 시 
-            //enemies[i].GetComponent<Enemy>().Speed = slowScale;
-        }
+        slowScale = 0.75f;
+        base.Start();       
     }
 
     protected override void Fire()
     {
+        for (int i = 0; i < EnemySpawner.enemies.Count; i++)
+        {
+            Enemy e = EnemySpawner.enemies[i].GetComponent<Enemy>();
+            e.SlowDown(slowScale);
+            e.Hit(damage);
+        }
         if (radarEffectPrefab != null)
         {
             radarEffect = Instantiate(radarEffectPrefab, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();

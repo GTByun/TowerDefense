@@ -38,6 +38,7 @@ public class StateManager : MonoBehaviour
     /// <param name="state">진입할 상태</param>
     public void EnterState(GameState state)
     {
+        GameState preState = gameState;
         gameState = state;
         switch (state) {
             case GameState.None:
@@ -52,7 +53,7 @@ public class StateManager : MonoBehaviour
                 break;
             case GameState.GameMode :
                 uiController.GameModeOn();
-                WaveStarted.Invoke();
+                if (preState!=GameState.GameOver) WaveStarted.Invoke();
                 break;
             case GameState.GameOver:
                 uiController.GameOverOn();

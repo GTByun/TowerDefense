@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
                         // 골인
                         DeSpawn();
                         // 라이프 감소
-                        PlayerStatus.Life--;
+                        PlayerStatus.life--;
                     }
                     break;
                 case EnemyMove.Down:
@@ -128,8 +128,15 @@ public class Enemy : MonoBehaviour
     }
     public void Burn(float damage)
     {
-        burning = true;
-        burningDamage=burningDamage > damage? burningDamage:damage;
+        if (!burning) 
+        {
+            burningDamage = damage;
+            burning = true;
+        }
+        else
+        {
+            burningDamage *= 1.1f;
+        }        
     }
     public void SlowDown(float slowScale)
     {
@@ -146,5 +153,6 @@ public class Enemy : MonoBehaviour
         hp = enemyData.hp * hpMultiplier;
         speed = enemyData.speed;
         spriteRenderer.sprite = enemyData.sprite;
+        burning = false;
     }
 }

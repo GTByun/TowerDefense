@@ -431,7 +431,7 @@ MonoBehaviour:
   gameOver: {fileID: 555175160}
   enemyKilledText: {fileID: 2022749002}
   timePlayedText: {fileID: 783984883}
-  adButton: {fileID: 0}
+  adBtn: {fileID: 188335558}
   speed: 0.6
 --- !u!114 &114203224
 MonoBehaviour:
@@ -580,7 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2489c7d9b476b043bfd0b86613e3238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeText: {fileID: 1821994436}
+  lifeText: {fileID: 1821994436}
+  hasLife: 0
 --- !u!114 &114203228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,7 +2856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC8C\uC784 \uC2DC\uC791"
+  m_text: Wave Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0eb4baabf391284aa2baa948764e3ed, type: 2}
   m_sharedMaterial: {fileID: -5665953368220067651, guid: c0eb4baabf391284aa2baa948764e3ed, type: 2}
@@ -3203,13 +3204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: 0
-  wave: 0
   specialDistribution: 0
   pool: {fileID: 1318653712}
   enemiesData:
   - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}
   - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
   - {fileID: 11400000, guid: 2f87f0e54a54bbc47ba49da3f7a917a3, type: 2}
+  wave: 0
 --- !u!114 &1318653714
 MonoBehaviour:
   m_ObjectHideFlags: 0

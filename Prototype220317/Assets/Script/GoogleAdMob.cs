@@ -1,5 +1,7 @@
 using GoogleMobileAds.Api;
 using System;
+using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class GoogleAdMob : MonoBehaviour
@@ -74,6 +76,8 @@ public class GoogleAdMob : MonoBehaviour
             rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
+                PlayerStatus.life += 10;
+                GameManager.instance.stateManager.EnterState(GameState.GameMode);
                 Debug.Log(string.Format(rewardMsg, reward.Type, reward.Amount));
             });
         }
@@ -92,7 +96,6 @@ public class GoogleAdMob : MonoBehaviour
         ad.OnAdImpressionRecorded += () =>
         {
             Debug.Log("Rewarded ad recorded an impression.");
-            PlayerStatus.Life += 10;
         };
         // Raised when a click is recorded for an ad.
         ad.OnAdClicked += () =>
@@ -108,7 +111,6 @@ public class GoogleAdMob : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Rewarded ad full screen content closed.");
-            GameManager.instance.stateManager.EnterState(GameState.GameMode);
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
