@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
     protected int penetrate;
 
     protected float reloadDelay;
-    private float attackTimer;
+    private float attackTimer = 2f;
 
     protected GameObject target = null;
     GameManager gameManager;
@@ -54,8 +54,8 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // 가장 가까운 적을 찾습니다.
-    protected GameObject FindClosestEnemy()
+    // 사거리내 가장 먼저 생성된 적을 찾습니다.
+    protected virtual GameObject FindClosestEnemy()
     {
         GameObject closestEnemy = null;
         float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);

@@ -6,7 +6,7 @@ public class InstantTower : Tower
     {
         range = 3f;
         speed = 20f;
-        damage = 9999f;
+        damage = 99999f;
         penetrate = 0;
         reloadDelay = 0.5f;
         base.Start();

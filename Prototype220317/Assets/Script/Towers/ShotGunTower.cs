@@ -7,10 +7,10 @@ public class ShotGunTower : Tower
 
     protected override void Start()
     {
-        shell = 5;
+        shell = 6;
         fireAngle = 60f;
         range = 2f;
-        speed = 3f;
+        speed = 7f;
         damage = 30f;
         penetrate = 0;
         reloadDelay = 0.9f;

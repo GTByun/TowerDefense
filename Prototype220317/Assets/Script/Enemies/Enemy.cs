@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     public Image image;
 
-    private float timer = 0.0f;
+    private float burnTimer = 1.0f;
     private float modular;
 
     private EnemyMove move;
@@ -67,11 +67,11 @@ public class Enemy : MonoBehaviour
         }
         if (burning)
         {
-            timer += Time.deltaTime;
-            if (timer >= 1.0f)
+            burnTimer += Time.deltaTime;
+            if (burnTimer >= 1.0f)
             {
                 hp -= burningDamage;
-                timer = 0.0f;
+                burnTimer = 0.0f;
             }
         }
 

@@ -3204,7 +3204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: 75
-  specialDistribution: 0
   commonSpawn: 1
   uncommonSpawn: 0
   specialSpawn: 0
