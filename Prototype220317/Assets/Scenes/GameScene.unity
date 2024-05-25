@@ -3203,8 +3203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b64dc69de501e40bf545a37abd86f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 0
+  point: 75
   specialDistribution: 0
+  commonSpawn: 1
+  uncommonSpawn: 0
+  specialSpawn: 0
   pool: {fileID: 1318653712}
   enemiesData:
   - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}

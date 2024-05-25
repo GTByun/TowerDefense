@@ -15,8 +15,8 @@ MonoBehaviour:
   name: 
   grade: 0
   type: 1
-  hp: 30
-  speed: 2.5
+  hp: 10
+  speed: 3
   price: 1
   sprite: {fileID: 21300000, guid: deb49e1a418cef347a17f30d84d6509f, type: 3}
   spawnDelay: 0.2

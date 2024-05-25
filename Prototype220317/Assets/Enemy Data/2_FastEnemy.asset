@@ -15,7 +15,7 @@ MonoBehaviour:
   name: 
   grade: 0
   type: 2
-  hp: 100
+  hp: 50
   speed: 4
   price: 5
   sprite: {fileID: 21300000, guid: deb49e1a418cef347a17f30d84d6509f, type: 3}
