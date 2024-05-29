@@ -12,16 +12,14 @@ public class Tower : MonoBehaviour
     protected int penetrate;
 
     protected float reloadDelay;
-    private float attackTimer;
+    private float attackTimer = 2f;
 
     protected GameObject target = null;
-    protected GameObject[] enemies;
     GameManager gameManager;
 
     protected virtual void Start()
     {
         gameManager = GameManager.instance;
-        enemies = EnemySpawner.enemies;
     }
 
     protected virtual void Update()
@@ -56,23 +54,20 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // 가장 가까운 적을 찾습니다.
-    protected GameObject FindClosestEnemy()
+    // 사거리내 가장 먼저 생성된 적을 찾습니다.
+    protected virtual GameObject FindClosestEnemy()
     {
         GameObject closestEnemy = null;
         float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);
-        for (int i = 0; i < enemies.Length; i++)
+        for (int i = 0; i < EnemySpawner.enemies.Count; i++)
         {
-            GameObject enemy = enemies[i];
+            GameObject enemy = EnemySpawner.enemies[i];
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (enemy.activeSelf)
+            if (distance < closestDistance)
             {
-                if (distance < closestDistance)
-                {
-                    //closestDistance = distance;
-                    closestEnemy = enemy;
-                    return closestEnemy;
-                }
+                //closestDistance = distance;
+                closestEnemy = enemy;
+                return closestEnemy;
             }
         }
         return closestEnemy;

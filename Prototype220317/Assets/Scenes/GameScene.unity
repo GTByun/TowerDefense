@@ -407,7 +407,7 @@ MonoBehaviour:
   modular: 1.5
   enemyKilled: 0
   timePlayed: 0
-  deadPool: {fileID: 0}
+  deadPool: {fileID: 1318653714}
 --- !u!114 &114203220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +431,7 @@ MonoBehaviour:
   gameOver: {fileID: 555175160}
   enemyKilledText: {fileID: 2022749002}
   timePlayedText: {fileID: 783984883}
-  adButton: {fileID: 188335558}
+  adBtn: {fileID: 188335558}
   speed: 0.6
 --- !u!114 &114203224
 MonoBehaviour:
@@ -492,6 +492,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  WaveStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1318653713}
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
+        m_MethodName: StartWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &114203226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2489c7d9b476b043bfd0b86613e3238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeText: {fileID: 1821994436}
+  lifeText: {fileID: 1821994436}
+  hasLife: 0
 --- !u!114 &114203228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2840,7 +2856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC8C\uC784 \uC2DC\uC791"
+  m_text: Wave Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0eb4baabf391284aa2baa948764e3ed, type: 2}
   m_sharedMaterial: {fileID: -5665953368220067651, guid: c0eb4baabf391284aa2baa948764e3ed, type: 2}
@@ -2867,13 +2883,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3030,8 +3046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 250, y: 75}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 410, y: 120}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1312829014
 MonoBehaviour:
@@ -3102,7 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3187,13 +3203,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b64dc69de501e40bf545a37abd86f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  point: 75
+  commonSpawn: 1
+  uncommonSpawn: 0
+  specialSpawn: 0
   pool: {fileID: 1318653712}
-  spawnDelay: 0
-  timer: 0
-  currentSpawnN: 0
-  spawnCount: 0
+  enemiesData:
+  - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}
+  - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
+  - {fileID: 11400000, guid: 2f87f0e54a54bbc47ba49da3f7a917a3, type: 2}
   wave: 0
-  waveStartTxt: {fileID: 1290792021}
 --- !u!114 &1318653714
 MonoBehaviour:
   m_ObjectHideFlags: 0

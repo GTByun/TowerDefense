@@ -26,7 +26,7 @@ public class UIController : MonoBehaviour
     [SerializeField] public GameObject gameOver;
     [SerializeField] private TextMeshProUGUI enemyKilledText;
     [SerializeField] private TextMeshProUGUI timePlayedText;
-    [SerializeField] private GameObject adButton;
+    [SerializeField] private GameObject adBtn;
 
     public float speed = 1f;
 
@@ -83,9 +83,10 @@ public class UIController : MonoBehaviour
     }
     public void GameOverOn()
     {
+        adBtn.SetActive(true);
+        Debug.Log("GameOverOn");
         darkFader.SetActive(true);
         gameOver.SetActive(true);
-        adButton.SetActive(true);
         enemyKilledText.text = $"처치한 적 : {gameManager.enemyKilled.ToString()} 마리";
         int hour, minute, second, played;
         played = (int) gameManager.timePlayed;
@@ -96,7 +97,6 @@ public class UIController : MonoBehaviour
         if (hour != 0) timePlayedText.text += $"{hour}시간 ";
         if (minute != 0) timePlayedText.text += $"{minute}분 ";
         timePlayedText.text += $"{second}초 ";
-
     }
     public void ResetUI()
     {
