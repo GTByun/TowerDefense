@@ -21,7 +21,7 @@ public class Tower : MonoBehaviour
     {
         gameManager = GameManager.instance;
         range=towerData.range;
-        bulletSpeed=towerData.speed;
+        bulletSpeed=towerData.bulletSpeed;
         damage=towerData.damage;
         penetrate=towerData.penetrate;
         reloadSpeed=towerData.reloadSpeed;

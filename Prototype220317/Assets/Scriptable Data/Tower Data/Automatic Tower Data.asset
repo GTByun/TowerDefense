@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Automatic Tower Data
   m_EditorClassIdentifier: 
   range: 2.5
-  speed: 10
+  bulletSpeed: 0
   damage: 25
   reloadSpeed: 0
   penetrate: 0
+  towerIcon: {fileID: 21300000, guid: 95a177e1168cdf640a99c6c03e661123, type: 3}
+  towerName: "\uC5F0\uC0AC \uD0C0\uC6CC"
+  towerDescription: "\uC810\uC0AC \uD0C0\uC6CC\uC758 \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC911\uAC70\uB9AC\n\uB9E4\uC6B0
+    \uBE60\uB978 \uB2E8\uC77C \uC5F0\uC0AC \uACF5\uACA9\uC744 \uD558\uB294 \uD0C0\uC6CC\uC774\uB2E4."
+  towerType: 0

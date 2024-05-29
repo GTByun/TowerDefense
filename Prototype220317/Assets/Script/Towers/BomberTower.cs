@@ -11,13 +11,12 @@ public class BomberTower : Tower
         base.Start();
         hitArea = 1f;
         splashArea = 2.5f;
-        splashDamage = 50f;
     }
     protected override void Fire()
     {
         GameObject bObject = pool.GetObjectFromPool();
         Bomb bomb = bObject.GetComponent<Bomb>();
-        bomb.init(bulletSpeed, damage, hitArea, splashArea, splashDamage);
+        bomb.init(bulletSpeed, damage, hitArea, splashArea);
         bomb.setTransform(transform.position, transform.rotation.eulerAngles);
         bObject.SetActive(true);
     }

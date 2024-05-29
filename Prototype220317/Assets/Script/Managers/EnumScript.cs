@@ -51,3 +51,15 @@ public enum EnemyGrade
     Special,
     Boss
 }
+
+/// <summary>
+/// 타워 타입
+/// 해당 타워의 계열 (처음 설치 가능한 기본타워)
+/// </summary>
+public enum TowerType
+{
+    Burst,
+    Shotgun,
+    Sniper,
+    Bomber
+}

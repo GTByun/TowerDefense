@@ -7,18 +7,16 @@ public class Bomb : MonoBehaviour
     public float damage;
     public float hitArea;
     public float splashArea;
-    public float splashDamage;
     bool collisionLock;
 
     public GameObject explosionEffectPrefab;
     ParticleSystem explosionEffect;
-    public void init(float speed, float damage, float hitArea, float splashArea, float splashDamage)
+    public void init(float speed, float damage, float hitArea, float splashArea)
     {
         this.speed = speed;
         this.damage = damage * PlayerStatus.damageUpgrade;
         this.hitArea = hitArea;
         this.splashArea = splashArea;   
-        this.splashDamage = splashDamage;
         collisionLock = false;
     }
     public void setTransform(Vector3 pos, Vector3 rot)
@@ -73,7 +71,7 @@ public class Bomb : MonoBehaviour
         {
             if (collider.CompareTag("Enemy"))
             {
-                collider.GetComponent<Enemy>().Hit(splashDamage);
+                collider.GetComponent<Enemy>().Hit(damage);
             }
         }
     }
