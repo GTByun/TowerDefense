@@ -17,7 +17,10 @@ MonoBehaviour:
   damage: 30
   reloadSpeed: 0.9
   penetrate: 0
-  towerIcon: {fileID: 0}
+  towerIcon: {fileID: 21300000, guid: a2df7184e064e6343b76ce930973b784, type: 3}
   towerName: "\uC0F7\uAC74 \uD0C0\uC6CC"
-  towerDescription: 
-  towerType: 0
+  towerDescription: "\uAE30\uBCF8 \uD0C0\uC6CC\n\uB2E8\uAC70\uB9AC\n\uBCF4\uD1B5
+    \uAC04\uACA9\uC73C\uB85C \uBD80\uCC44\uAF34 \uBC94\uC704 \uACF5\uACA9\uC744 \uD558\uB294
+    \uD0C0\uC6CC\n\uB2E8\uC77C \uC801\uC5D0\uAC8C \uC5EC\uB7EC \uC258\uC774 \uC801\uC911
+    \uAC00\uB2A5"
+  towerType: 1
