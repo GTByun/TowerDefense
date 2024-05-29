@@ -12,11 +12,6 @@ public class BreathTower : Tower
         bulletRange = 4f;
         shell = 9;
         fireAngle = 90f;
-        range = 2f;
-        bulletSpeed = 3f;
-        damage = 20f;
-        penetrate = 20;
-        reloadSpeed = 0.5f;
         base.Start();
     }
     // 사거리내 가장 나중에 생성된 적을 찾습니다.

@@ -9,10 +9,6 @@ public class BomberTower : Tower
     protected override void Start()
     {
         base.Start();
-        bulletSpeed = 3f;
-        range = 5;
-        damage = 80f;
-        reloadSpeed = 0.7f;
         hitArea = 1f;
         splashArea = 2.5f;
         splashDamage = 50f;

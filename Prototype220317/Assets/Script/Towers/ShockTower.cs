@@ -9,10 +9,6 @@ public class ShockTower : Tower
     protected override void Start()
     {
         base.Start();
-        bulletSpeed = 15f;
-        range = 5;
-        damage = 60f;
-        reloadSpeed = 1.2f;
         hitArea = 0.3f;
         splashArea = 1.2f;
         splashDamage = 20f;

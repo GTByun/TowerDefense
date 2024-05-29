@@ -8,11 +8,6 @@ public class BurstTower : Tower
     {
         base.Start();
         ammo = 3;
-        range = 2.5f;
-        bulletSpeed = 10f;
-        damage = 35f;
-        penetrate = 0;
-        reloadSpeed = 5.0f;
     }
     protected override void Fire()
     {

@@ -19,7 +19,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (life <= 0 && hasLife)
         {
-           // GameManager.instance.stateManager.EnterState(GameState.GameOver);
+            GameManager.instance.stateManager.EnterState(GameState.GameOver);
             hasLife = false;
         }
         if (life > 0) 

@@ -9,11 +9,6 @@ public class ShotGunTower : Tower
     {
         shell = 6;
         fireAngle = 60f;
-        range = 2f;
-        bulletSpeed = 7f;
-        damage = 30f;
-        penetrate = 0;
-        reloadSpeed = 0.9f;
         base.Start();
     }
 
