@@ -31,8 +31,8 @@ public enum GameState
 public enum EnemyType
 {
     Normal,
-    Small,
     Fast,
+    Small,
     Tank,
     Guard
 }

@@ -131,4 +131,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   pool: {fileID: 0}
+  towerData: {fileID: 11400000, guid: da9d4faad3d4bbe4ba3def8e92ae8ae4, type: 2}
   radarEffectPrefab: {fileID: 229168227256767939, guid: 1bd1d4d243994124fbb1f268ceca9873, type: 3}

@@ -10,7 +10,7 @@ public class SlowTower : Tower
     {
         damage = 10f;
         range = 5f;
-        reloadDelay = 0.7f;
+        reloadSpeed = 0.7f;
         slowScale = 0.75f;
         base.Start();       
     }

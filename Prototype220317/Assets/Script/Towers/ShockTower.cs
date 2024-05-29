@@ -9,10 +9,10 @@ public class ShockTower : Tower
     protected override void Start()
     {
         base.Start();
-        speed = 15f;
+        bulletSpeed = 15f;
         range = 5;
         damage = 60f;
-        reloadDelay = 1.2f;
+        reloadSpeed = 1.2f;
         hitArea = 0.3f;
         splashArea = 1.2f;
         splashDamage = 20f;
@@ -21,7 +21,7 @@ public class ShockTower : Tower
     {
         GameObject bObject = pool.GetObjectFromPool();
         ShockBullet sb = bObject.GetComponent<ShockBullet>();
-        sb.init(speed, damage, hitArea, splashArea, splashDamage);
+        sb.init(bulletSpeed, damage, hitArea, splashArea, splashDamage);
         sb.setTransform(transform.position, transform.rotation.eulerAngles);
         bObject.SetActive(true);
     }

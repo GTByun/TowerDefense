@@ -7,19 +7,24 @@ public class Tower : MonoBehaviour
     public ObjectPool pool;
 
     protected float range;
-    protected float speed;
+    protected float bulletSpeed;
     protected float damage;
     protected int penetrate;
+    protected float reloadSpeed;
+    [SerializeField] protected TowerData towerData;
 
-    protected float reloadDelay;
     private float attackTimer = 2f;
-
     protected GameObject target = null;
     GameManager gameManager;
 
     protected virtual void Start()
     {
         gameManager = GameManager.instance;
+        range=towerData.range;
+        bulletSpeed=towerData.speed;
+        damage=towerData.damage;
+        penetrate=towerData.penetrate;
+        reloadSpeed=towerData.reloadSpeed;
     }
 
     protected virtual void Update()
@@ -36,7 +41,7 @@ public class Tower : MonoBehaviour
             else if (target != null)
             {
                 RotateTowardsTarget();
-                if (attackTimer >= 1f / reloadDelay)
+                if (attackTimer >= 1f / reloadSpeed)
                 {
                     Fire();
                     attackTimer = 0f;
@@ -81,7 +86,7 @@ public class Tower : MonoBehaviour
         GameObject bObject = pool.GetObjectFromPool();
         Bullet bullet = bObject.GetComponent<Bullet>();
         bullet.SetTarget(target);
-        bullet.init(speed, damage, penetrate);
+        bullet.init(bulletSpeed, damage, penetrate);
         bullet.setTransform(transform.position, transform.rotation.eulerAngles);
         bObject.SetActive(true);
     }

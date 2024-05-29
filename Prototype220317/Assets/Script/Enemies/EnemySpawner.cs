@@ -93,6 +93,7 @@ public class EnemySpawner : MonoBehaviour
         //첫번째로 무작위를 계속 돌려서 적을 구매합니다.
         while (thisWaveType.Count > 0)//thisWaveType이 비어있다면 탈출합니다.
         {
+            Debug.Log(currentPoint);
             EnemyType target = thisWaveType[Random.Range(0, thisWaveType.Count)];
             if (enemiesData[(int) target].price > currentPoint) //만약 구매할 점수가 없다면, 구매하지 않고 thisWaveType에서 제거하여 앞으로 구매하지 않도록 합니다.
             {
@@ -105,14 +106,10 @@ public class EnemySpawner : MonoBehaviour
                 waveEnemy.Enqueue(target);
             }
         }
+        Debug.Log("aaaa"+currentPoint);
         //두번째로 Special 적을 집중 구매합니다. Special이 있을때만 낮은 확률로 사용하며, 적 분포중 대부분이 Special이 됩니다.
         //일단 미구현
 
-        //마지막으로 남은 점수는 전부 Normal 적을 구매하는데 사용합니다.
-        for (int i = 0; i < currentPoint % enemiesData[0].price; i++)
-        {
-            waveEnemy.Enqueue(EnemyType.Normal);
-        }
     }
 
     /// <summary>

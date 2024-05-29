@@ -19,7 +19,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (life <= 0 && hasLife)
         {
-            GameManager.instance.stateManager.EnterState(GameState.GameOver);
+           // GameManager.instance.stateManager.EnterState(GameState.GameOver);
             hasLife = false;
         }
         if (life > 0) 
@@ -27,9 +27,21 @@ public class PlayerStatus : MonoBehaviour
             hasLife = true;
         }
         lifeText.text = life.ToString();
-        if(Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             life--;
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            life++;
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Time.timeScale -= 1f;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Time.timeScale += 1f;
         }
     }
 }

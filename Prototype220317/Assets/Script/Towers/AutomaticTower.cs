@@ -5,10 +5,10 @@ public class AutomaticTower : Tower
     protected override void Start()
     {
         range = 2.5f;
-        speed = 10f;
+        bulletSpeed = 10f;
         damage = 25f;
         penetrate = 0;
-        reloadDelay = 10f;
+        reloadSpeed = 10f;
         base.Start();
     }
     protected override void Fire()

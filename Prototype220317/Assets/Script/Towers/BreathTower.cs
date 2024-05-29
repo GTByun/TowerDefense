@@ -13,10 +13,10 @@ public class BreathTower : Tower
         shell = 9;
         fireAngle = 90f;
         range = 2f;
-        speed = 3f;
+        bulletSpeed = 3f;
         damage = 20f;
         penetrate = 20;
-        reloadDelay = 0.5f;
+        reloadSpeed = 0.5f;
         base.Start();
     }
     // 사거리내 가장 나중에 생성된 적을 찾습니다.
@@ -47,7 +47,7 @@ public class BreathTower : Tower
         {
             GameObject bObject = pool.GetObjectFromPool();
             Fire bullet = bObject.GetComponent<Fire>();
-            bullet.init(speed, damage, penetrate, bulletRange);
+            bullet.init(bulletSpeed, damage, penetrate, bulletRange);
             Vector3 rot = transform.rotation.eulerAngles;
             rot.z = rot.z + rotZ;
             bullet.setTransform(transform.position, rot);

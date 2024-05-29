@@ -3210,8 +3210,8 @@ MonoBehaviour:
   pool: {fileID: 1318653712}
   enemiesData:
   - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}
-  - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
   - {fileID: 11400000, guid: 2f87f0e54a54bbc47ba49da3f7a917a3, type: 2}
+  - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
   wave: 0
 --- !u!114 &1318653714
 MonoBehaviour:

@@ -9,10 +9,10 @@ public class BomberTower : Tower
     protected override void Start()
     {
         base.Start();
-        speed = 3f;
+        bulletSpeed = 3f;
         range = 5;
         damage = 80f;
-        reloadDelay = 0.7f;
+        reloadSpeed = 0.7f;
         hitArea = 1f;
         splashArea = 2.5f;
         splashDamage = 50f;
@@ -21,7 +21,7 @@ public class BomberTower : Tower
     {
         GameObject bObject = pool.GetObjectFromPool();
         Bomb bomb = bObject.GetComponent<Bomb>();
-        bomb.init(speed, damage, hitArea, splashArea, splashDamage);
+        bomb.init(bulletSpeed, damage, hitArea, splashArea, splashDamage);
         bomb.setTransform(transform.position, transform.rotation.eulerAngles);
         bObject.SetActive(true);
     }

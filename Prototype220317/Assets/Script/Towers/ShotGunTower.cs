@@ -10,10 +10,10 @@ public class ShotGunTower : Tower
         shell = 6;
         fireAngle = 60f;
         range = 2f;
-        speed = 7f;
+        bulletSpeed = 7f;
         damage = 30f;
         penetrate = 0;
-        reloadDelay = 0.9f;
+        reloadSpeed = 0.9f;
         base.Start();
     }
 
@@ -27,7 +27,7 @@ public class ShotGunTower : Tower
         {
             GameObject bObject = pool.GetObjectFromPool();
             Bullet bullet = bObject.GetComponent<Bullet>();
-            bullet.init(speed, damage, penetrate);
+            bullet.init(bulletSpeed, damage, penetrate);
             Vector3 rot = transform.rotation.eulerAngles;
             rot.z = rot.z + rotZ;
             bullet.setTransform(transform.position, rot);

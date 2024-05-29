@@ -263,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   pool: {fileID: 9044739105518425821}
+  towerData: {fileID: 11400000, guid: 2f7f4410ddf804b4e9bb80d6d85ecada, type: 2}
   hitArea: 0
   splashArea: 0
   splashDamage: 0

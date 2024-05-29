@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   pool: {fileID: 1986817160411644414}
-  enemiesPool: {fileID: 0}
+  towerData: {fileID: 11400000, guid: c6769c9475880954f9e664adc35de882, type: 2}
 --- !u!1 &6881034845119654329
 GameObject:
   m_ObjectHideFlags: 0
