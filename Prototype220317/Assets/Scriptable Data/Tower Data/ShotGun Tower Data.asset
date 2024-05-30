@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotGun Tower Data
   m_EditorClassIdentifier: 
   range: 2
-  bulletSpeed: 0
+  bulletSpeed: 7
   damage: 30
   reloadSpeed: 0.9
   penetrate: 0

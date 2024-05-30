@@ -27,7 +27,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemyKilledText;
     [SerializeField] private TextMeshProUGUI timePlayedText;
     [SerializeField] private GameObject adBtn;
-
+    [Header("±¤°í ¿¡·¯¿ë")]
+    [SerializeField] public GameObject resumeBtn;
+    //[SerializeField] public TextMeshProUGUI errTxt;
     public float speed = 1f;
 
     private float offset = 0;

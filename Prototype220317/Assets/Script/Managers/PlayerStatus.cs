@@ -7,19 +7,25 @@ public class PlayerStatus : MonoBehaviour
     public static int life = 20;
     public static float damageUpgrade = 1f;
     public TextMeshProUGUI lifeText;
-    public bool hasLife;
+    public static bool errAd;
+    bool hasLife;
+    bool debugModOn;
+    
+    
 
     private void Start()
     {
-        hasLife = true;
         lifeText.text = life.ToString();
+        debugModOn = false;
+        hasLife = true;
+        errAd = false;
     }
 
     private void Update()
     {
         if (life <= 0 && hasLife)
         {
-            GameManager.instance.stateManager.EnterState(GameState.GameOver);
+            if (!debugModOn) GameManager.instance.stateManager.EnterState(GameState.GameOver);
             hasLife = false;
         }
         if (life > 0) 
@@ -42,6 +48,11 @@ public class PlayerStatus : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             Time.timeScale += 1f;
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            debugModOn = !debugModOn;
+            Debug.Log("DebugMode: " + debugModOn.ToString());
         }
     }
 }

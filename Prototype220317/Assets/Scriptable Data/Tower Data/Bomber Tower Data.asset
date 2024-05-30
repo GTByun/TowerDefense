@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bomber Tower Data
   m_EditorClassIdentifier: 
   range: 5
-  bulletSpeed: 0
+  bulletSpeed: 3
   damage: 50
   reloadSpeed: 0.7
   penetrate: 0

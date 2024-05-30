@@ -13,7 +13,7 @@ public class GoogleAdMob : MonoBehaviour
 #else
     private string _adUnitId = "unused";
 #endif
-
+    
     //Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class GoogleAdMob : MonoBehaviour
         {
             // This callback is called once the MobileAds SDK is initialized.
             //LoadRewardedAd();
-        });
+        });        
     }
 
     private RewardedAd rewardedAd;
@@ -52,6 +52,7 @@ public class GoogleAdMob : MonoBehaviour
                 {
                     Debug.LogError("Rewarded ad failed to load an ad " +
                                    "with error : " + error);
+                    PlayerStatus.errAd = true;
                     return;
                 }
 
@@ -76,13 +77,17 @@ public class GoogleAdMob : MonoBehaviour
             rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
-                PlayerStatus.life += 10;
+                refillLife();
                 GameManager.instance.stateManager.EnterState(GameState.GameMode);
                 Debug.Log(string.Format(rewardMsg, reward.Type, reward.Amount));
             });
         }
     }
-
+    public void refillLife()
+    {
+        PlayerStatus.life += 10;
+        GameManager.instance.stateManager.EnterState(GameState.GameMode);
+    }
     private void RegisterEventHandlers(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.
