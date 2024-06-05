@@ -16,6 +16,7 @@ public class Tower : MonoBehaviour
     private float attackTimer = 2f;
     protected GameObject target = null;
     GameManager gameManager;
+    protected bool waitFind;
 
     protected virtual void Start()
     {
@@ -25,6 +26,7 @@ public class Tower : MonoBehaviour
         damage=towerData.damage;
         penetrate=towerData.penetrate;
         reloadSpeed=towerData.reloadSpeed;
+        waitFind = false;
     }
 
     protected virtual void Update()
@@ -62,6 +64,7 @@ public class Tower : MonoBehaviour
     // 사거리내 가장 먼저 생성된 적을 찾습니다.
     protected virtual GameObject FindClosestEnemy()
     {
+        if (waitFind) return target;
         GameObject closestEnemy = null;
         float closestDistance = range * GameManager.instance.modular + (GameManager.instance.modular / 2);
         for (int i = 0; i < EnemySpawner.enemies.Count; i++)

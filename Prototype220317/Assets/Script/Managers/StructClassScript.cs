@@ -10,9 +10,7 @@ using UnityEngine;
 public class TowerInfo
 {
     //타워의 아이콘, 이름, 설명, 프리팹
-    public Sprite towerIcon;
-    public string towerName;
-    public string towerDescription;
+    public TowerData towerData;
     public GameObject towerObject;
 }
 

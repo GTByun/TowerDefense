@@ -228,6 +228,8 @@ MonoBehaviour:
   cardName: {fileID: 0}
   cardDescription: {fileID: 0}
   tower: 0
+  otherCard0: {fileID: 0}
+  otherCard1: {fileID: 0}
 --- !u!95 &5685527444323371981
 Animator:
   serializedVersion: 5
@@ -475,8 +477,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

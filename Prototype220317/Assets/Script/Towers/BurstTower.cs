@@ -10,17 +10,19 @@ public class BurstTower : Tower
     {
         base.Start();
         ammo = 3;
-        burstSpeed = 10f;
+        burstSpeed = 20f;
     }
     protected override void Fire()
     {
         if (ammo == 0)
         {
+            waitFind = false;
             ammo = 3;
             reloadSpeed = towerData.reloadSpeed;
         }
         else if (ammo>0)
         {
+            waitFind = true;
             reloadSpeed = burstSpeed;
             ammo--;
             GenerateBullet();

@@ -23,21 +23,21 @@ public class TowerInfoManager : MonoBehaviour
     /// </summary>
     public Sprite GetIcon(int index)
     {
-        return TowerInfoArr[index].towerIcon;
+        return TowerInfoArr[index].towerData.towerIcon;
     }
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 이름을 리턴함
     /// </summary>
     public string GetName(int index)
     {
-        return TowerInfoArr[index].towerName;
+        return TowerInfoArr[index].towerData.towerName;
     }
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 설명을 리턴함
     /// </summary>
     public string GetDescription(int index) 
     {
-        return TowerInfoArr[index].towerDescription;
+        return TowerInfoArr[index].towerData.towerDescription;
     }
 }
 

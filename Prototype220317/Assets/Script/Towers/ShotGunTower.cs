@@ -3,22 +3,22 @@ using UnityEngine;
 public class ShotGunTower : Tower
 {
     float fireAngle;
-    int shell;
+    int ball;
 
     protected override void Start()
     {
-        shell = 6;
+        ball = 6;
         fireAngle = 60f;
         base.Start();
     }
 
     protected override void Fire()
     {
-        float angleOffset = fireAngle / (shell - 1);
+        float angleOffset = fireAngle / (ball - 1);
         float startAngle = -fireAngle / 2f;
         float rotZ = startAngle;
         
-        for (int i = 0; i < shell; i++)
+        for (int i = 0; i < ball; i++)
         {
             GameObject bObject = pool.GetObjectFromPool();
             Bullet bullet = bObject.GetComponent<Bullet>();
