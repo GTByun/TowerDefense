@@ -27,6 +27,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enemyKilledText;
     [SerializeField] private TextMeshProUGUI timePlayedText;
     [SerializeField] private GameObject adBtn;
+    [SerializeField] private GameObject creditBtn;
     [Header("±¤°í ¿¡·¯¿ë")]
     [SerializeField] public GameObject resumeBtn;
     //[SerializeField] public TextMeshProUGUI errTxt;
@@ -39,6 +40,9 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.instance;
+#if UNITY_EDITOR
+        creditBtn.SetActive(true);
+#endif
     }
 
     private void Update()
