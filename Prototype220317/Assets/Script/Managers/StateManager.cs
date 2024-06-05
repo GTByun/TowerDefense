@@ -40,6 +40,7 @@ public class StateManager : MonoBehaviour
     {
         GameState preState = gameState;
         gameState = state;
+        Debug.Log($"{preState} -> {gameState}");
         switch (state) {
             case GameState.None:
                 uiController.ResetUI();

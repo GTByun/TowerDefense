@@ -19,7 +19,7 @@ MonoBehaviour:
   penetrate: 0
   towerIcon: {fileID: 21300000, guid: a2df7184e064e6343b76ce930973b784, type: 3}
   towerName: "\uBC85\uC0F7 \uD0C0\uC6CC"
-  towerDescription: "\uC0F7\uAC74 \uD0C0\uC6CC\uC758 \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC911\uAC70\uB9AC\n\uB354\uBE14
+  towerDescription: "\uC0F7\uAC74 \uD0C0\uC6CC \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC911\uAC70\uB9AC\n\uB354\uBE14
     \uBC30\uB7F4\uC744 \uC544\uC8FC \uBE60\uB974\uAC8C \uBC85\uC0F7\uC73C\uB85C \uC5F0\uC0AC\uD558\uB294
     \uD0C0\uC6CC"
   towerType: 1

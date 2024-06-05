@@ -458,7 +458,7 @@ MonoBehaviour:
     towerObject: {fileID: 6822693835450624016, guid: bbe2e1f570407364f9ad54f3524852a5, type: 3}
   - towerData: {fileID: 11400000, guid: 34cf29f106f3c4641acf4433b61d6817, type: 2}
     towerObject: {fileID: 8983610929055677803, guid: 458f192ab2629ac4ba3cc2a3c6b6cd24, type: 3}
-  - towerData: {fileID: 11400000, guid: 34cf29f106f3c4641acf4433b61d6817, type: 2}
+  - towerData: {fileID: 11400000, guid: c6769c9475880954f9e664adc35de882, type: 2}
     towerObject: {fileID: 6881034845119654329, guid: d7e415f740dc1fd4fb1adab2b19d75bc, type: 3}
   - towerData: {fileID: 11400000, guid: 75a3ae940ab22ae44afbe332c8ceb3d8, type: 2}
     towerObject: {fileID: 6853817563937056597, guid: c5bbb80b630f9404897fcd9c2e186d2d, type: 3}
@@ -4069,7 +4069,7 @@ GameObject:
   - component: {fileID: 1579931213}
   - component: {fileID: 1579931212}
   m_Layer: 5
-  m_Name: ResumeBtn
+  m_Name: AdErrBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4138,31 +4138,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1579931213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1579931210}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114203229}
-        m_TargetAssemblyTypeName: GoogleAdMob, Assembly-CSharp
-        m_MethodName: refillLife
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1579931213
 MonoBehaviour:
   m_ObjectHideFlags: 0
