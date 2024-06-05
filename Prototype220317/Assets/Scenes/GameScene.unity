@@ -1336,6 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341077494}
   - component: {fileID: 341077493}
+  - component: {fileID: 341077495}
   m_Layer: 0
   m_Name: InvisWallRight
   m_TagString: Untagged
@@ -1386,7 +1387,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 15}
+  m_Size: {x: 2, y: 15}
   m_EdgeRadius: 0
 --- !u!4 &341077494
 Transform:
@@ -1403,6 +1404,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1653284016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341077495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341077492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2d0741efd03a746a3c113ba8c7e036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376413327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 5}
+  m_Size: {x: 24, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &673956670
 GameObject:
@@ -3368,7 +3381,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 5}
+  m_Size: {x: 24, y: 6}
   m_EdgeRadius: 0
 --- !u!4 &1299669111
 Transform:
@@ -4240,6 +4253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639739487}
   - component: {fileID: 1639739486}
+  - component: {fileID: 1639739488}
   m_Layer: 0
   m_Name: InvisWallLeft
   m_TagString: Untagged
@@ -4290,7 +4304,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 15}
+  m_Size: {x: 2, y: 15}
   m_EdgeRadius: 0
 --- !u!4 &1639739487
 Transform:
@@ -4307,6 +4321,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1653284016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639739488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639739485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2d0741efd03a746a3c113ba8c7e036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1644567562
 GameObject:
   m_ObjectHideFlags: 0
