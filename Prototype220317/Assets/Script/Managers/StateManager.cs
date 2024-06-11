@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class StateManager : MonoBehaviour
         uiController = GameManager.instance.uiController;
         cardManager = GameManager.instance.cardManager;
         StartCoroutine("SlowUpdate");
+        uiController.CardModeOn();
+        StartCoroutine(nameof(LateRandomized));
     }
 
     /// <summary>
@@ -30,6 +33,12 @@ public class StateManager : MonoBehaviour
             if (gameState == GameState.GameMode) WatchWaveEnd();
             yield return new WaitForSeconds(1f);
         }
+    }
+
+    IEnumerator LateRandomized()
+    {
+        yield return new WaitForFixedUpdate();
+        cardManager.RandomizeCards();
     }
 
     /// <summary>

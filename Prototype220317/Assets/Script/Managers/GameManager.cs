@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         SetManagers();
         //TowerPlace를 배치
         gridManager.SetTowerPlace(modular);
+        ResetStats();
     }
 
     private void Update()
