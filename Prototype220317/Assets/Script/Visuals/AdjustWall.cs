@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class AdjustWall : MonoBehaviour
 {
+    private bool isPositive;
     private void Awake()
+    {
+        isPositive = transform.position.x > 0;
+    }
+
+    private void Update()
     {
         float ratio = Screen.width * 1.0f / Screen.height * 1.0f;
         ratio = (ratio * 5) + 1;
-        ratio *= transform.position.x > 0 ? 1 : -1;
-        gameObject.transform.position = new Vector2 (ratio, 0);
-        Destroy(gameObject.GetComponent<AdjustWall>());
+        if (ratio < 6)
+        {
+            ratio = 6;
+        }
+        ratio *= isPositive ? 1 : -1;
+        gameObject.transform.position = new Vector2(ratio, 0);
     }
 }
