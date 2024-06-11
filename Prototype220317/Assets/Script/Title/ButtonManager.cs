@@ -6,11 +6,20 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] private Button Start;
-    [SerializeField] private Button Help;
-    [SerializeField] private Button Credit;
-    [SerializeField] private Button Quit;
-    [SerializeField] private Button CreditOff;
+    [SerializeField] private GameObject credit;
+    [SerializeField] private GameObject help;
+    [SerializeField] private bool creditComplete = false;
+    [SerializeField] private bool helpComplete = false;
+
+    private void Start()
+    {
+        credit.SetActive(creditComplete);
+        help.SetActive(helpComplete);
+#if UNITY_EDITOR
+        credit.SetActive(true);
+        help.SetActive(true);
+#endif
+    }
 
     public void GameStart() => SceneManager.LoadScene("GameScene");
 
