@@ -20,14 +20,10 @@ public class ShotGunTower : Tower
         
         for (int i = 0; i < ball; i++)
         {
-            GameObject bObject = pool.GetObjectFromPool();
-            Bullet bullet = bObject.GetComponent<Bullet>();
-            bullet.init(bulletSpeed, damage, penetrate);
             Vector3 rot = transform.rotation.eulerAngles;
             rot.z = rot.z + rotZ;
-            bullet.setTransform(transform.position, rot);
+            GenerateBulletWithOutTarget(transform.position, rot);
             rotZ += angleOffset;
-            bObject.SetActive(true);
         }
     }
 }

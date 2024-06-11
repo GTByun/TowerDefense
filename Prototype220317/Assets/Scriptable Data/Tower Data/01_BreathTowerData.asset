@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589767980faa49f4a9414f199c6866c5, type: 3}
+  m_Name: 01_BreathTowerData
+  m_EditorClassIdentifier: 
+  range: 2
+  bulletSpeed: 3
+  damage: 20
+  reloadSpeed: 0.5
+  penetrate: 20
+  towerIcon: {fileID: 21300000, guid: bf772b7286ebdca4fa983df130b40b27, type: 3}
+  towerName: "\uBE0C\uB808\uC2A4 \uD0C0\uC6CC"
+  towerDescription: "\uC0F7\uAC74 \uD0C0\uC6CC \uC5C5\uADF8\uB808\uC774\uB4DC\n\uB2E8\uAC70\uB9AC\n\uBCF4\uD1B5
+    \uAC04\uACA9\uC73C\uB85C \uBD80\uCC44\uAF34 \uBC94\uC704 \uACF5\uACA9\uC744 \uD558\uB294
+    \uD0C0\uC6CC \n\uD53C\uACA9\uB41C \uC801\uC740 \uD654\uC0C1 \uB3C4\uD2B8 \uB370\uBBF8\uC9C0\uB97C
+    \uC785\uB294\uB2E4."
+  towerType: 1

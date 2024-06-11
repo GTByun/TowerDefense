@@ -465,6 +465,10 @@ MonoBehaviour:
     towerObject: {fileID: 6853817563937056597, guid: c5bbb80b630f9404897fcd9c2e186d2d, type: 3}
   - towerData: {fileID: 11400000, guid: da9d4faad3d4bbe4ba3def8e92ae8ae4, type: 2}
     towerObject: {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
+  - towerData: {fileID: 11400000, guid: e41e3a53fdd87484387165b61921cfab, type: 2}
+    towerObject: {fileID: 6624849031295809783, guid: b7317b775990d344eb9ed86388c25b87, type: 3}
+  - towerData: {fileID: 11400000, guid: 20426f585afc54743ae85cbff74fa9d7, type: 2}
+    towerObject: {fileID: 6822693835450624016, guid: 8b161e3c46c0b3b46bee9f26cf6a3a56, type: 3}
 --- !u!114 &114203225
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     public void setTransform(Vector3 pos, Vector3 rot)
     {
         this.pos = pos;
-        this.rot =rot;
+        this.rot = rot;
     }
     public void SetTarget(GameObject target)
     {
