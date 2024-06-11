@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 589767980faa49f4a9414f199c6866c5, type: 3}
-  m_Name: 12_ShockTowerData
+  m_Name: 22_ShockTowerData
   m_EditorClassIdentifier: 
   range: 2.5
   bulletSpeed: 15
@@ -21,4 +21,4 @@ MonoBehaviour:
   towerName: "\uCDA9\uACA9 \uD0C0\uC6CC"
   towerDescription: "\uC810\uC0AC \uD0C0\uC6CC \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC911\uAC70\uB9AC\n\uAC15\uB825\uD55C
     \uC881\uC740 \uC2A4\uD50C\uB798\uC2DC \uACF5\uACA9\uC744 \uD558\uB294 \uD0C0\uC6CC"
-  towerType: 2
+  towerType: 0
