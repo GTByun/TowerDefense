@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6af4aaefbc25d2f43bd5f4e7a3219562, type: 3}
-  m_Color: {r: 0.6981132, g: 0.591343, b: 0, a: 1}
+  m_Color: {r: 0.83137256, g: 0.54901963, b: 0.15686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,8 +130,6 @@ MonoBehaviour:
   damage: 0
   hitArea: 0
   splashArea: 0
-  splashDamage: 0
-  stop: 0
   explosionEffectPrefab: {fileID: 229168227256767939, guid: a086d9855e1a6a948913dde9e20df090, type: 3}
 --- !u!58 &1457930836205662523
 CircleCollider2D:

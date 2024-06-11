@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f3e9d4456dbfdec4998737d80d566d2f, type: 3}
-  m_Color: {r: 0.54901963, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.54901963, g: 0.078431375, b: 0.078431375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,9 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e6175513d188746965d3fa4e392847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  damage: 100
-  penetrate: 1
 --- !u!50 &9116910496733129736
 Rigidbody2D:
   serializedVersion: 4

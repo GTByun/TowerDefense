@@ -14,6 +14,7 @@ public class BreathTower : Tower
         fireAngle = 90f;
         base.Start();
     }
+
     // 사거리내 가장 나중에 생성된 적을 찾습니다.
     protected override GameObject FindClosestEnemy()
     {
