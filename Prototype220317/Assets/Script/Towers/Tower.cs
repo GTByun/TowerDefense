@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
     protected float reloadSpeed;
     [SerializeField] protected TowerData towerData;
 
-    private float attackTimer = 2f;
+    float attackTimer;
     protected GameObject target = null;
     GameManager gameManager;
     protected bool waitFind;
@@ -27,6 +27,7 @@ public class Tower : MonoBehaviour
         penetrate=towerData.penetrate;
         reloadSpeed=towerData.reloadSpeed;
         waitFind = false;
+        attackTimer = reloadSpeed * 0.9f;
     }
 
     protected virtual void Update()
@@ -91,6 +92,14 @@ public class Tower : MonoBehaviour
         bullet.SetTarget(target);
         bullet.init(bulletSpeed, damage, penetrate);
         bullet.setTransform(transform.position, transform.rotation.eulerAngles);
+        bObject.SetActive(true);
+    }
+    protected void GenerateBulletWithOutTarget(Vector3 pos, Vector3 rot)
+    {
+        GameObject bObject = pool.GetObjectFromPool();
+        Bullet bullet = bObject.GetComponent<Bullet>();
+        bullet.init(bulletSpeed, damage, penetrate);
+        bullet.setTransform(pos, rot);
         bObject.SetActive(true);
     }
 
