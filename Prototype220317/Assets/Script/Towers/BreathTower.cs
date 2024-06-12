@@ -35,6 +35,7 @@ public class BreathTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         float angleOffset = fireAngle / (shell - 1);
         float startAngle = -fireAngle / 2f;
         float rotZ = startAngle;

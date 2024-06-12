@@ -15,6 +15,7 @@ public class ShockTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         GameObject bObject = pool.GetObjectFromPool();
         ShockBullet sb = bObject.GetComponent<ShockBullet>();
         sb.init(bulletSpeed, damage, hitArea, splashArea, splashDamage);

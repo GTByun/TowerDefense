@@ -7,9 +7,10 @@ using UnityEngine;
 /// </summary>
 public class TowerInfoManager : MonoBehaviour 
 {
-    public int nTower = 8;
+    public int nDefaultTower = 4;
+    public int nTower = 12;
     //TowerInfo의 배열
-    public TowerInfo[] TowerInfoArr = new TowerInfo[10];
+    public TowerInfo[] TowerInfoArr = new TowerInfo[12];
 
     /// <summary>
     /// 받은 인덱스값에 해당하는 타워의 프리팹을 리턴함

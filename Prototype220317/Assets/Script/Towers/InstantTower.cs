@@ -8,6 +8,7 @@ public class InstantTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         GenerateBullet();
     }
 }

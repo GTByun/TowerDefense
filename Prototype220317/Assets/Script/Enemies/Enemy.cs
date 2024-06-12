@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
             burnTimer += Time.deltaTime;
             if (burnTimer >= 1.0f)
             {
-                hp -= burningDamage;
+                Hit(burningDamage);
                 burnTimer = 0.0f;
             }
         }
@@ -135,7 +135,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            burningDamage *= 1.1f;
+            burningDamage *= 1.2f;
         }        
     }
     public void SlowDown(float slowScale)

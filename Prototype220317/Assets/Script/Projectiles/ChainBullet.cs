@@ -98,6 +98,7 @@ public class ChainBullet : MonoBehaviour
                 enemy.Hit(damage);
             }
             damage *= damageReduce;
+            speed *= damageReduce;
         }
     }
 }

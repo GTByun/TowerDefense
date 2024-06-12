@@ -18,6 +18,7 @@ public class BuckShotTower : Tower
 
     protected override void Fire()
     {
+        base.Fire();
         // 두발 한번에 발사
         GenerateBulletWithOutTarget(transform.position + transform.right * barrelOffset, transform.rotation.eulerAngles);
         GenerateBulletWithOutTarget(transform.position + transform.right * -barrelOffset, transform.rotation.eulerAngles);

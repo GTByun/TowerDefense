@@ -15,11 +15,11 @@ MonoBehaviour:
   range: 3
   bulletSpeed: 20
   damage: 99999
-  reloadSpeed: 0.5
+  reloadSpeed: 0.33
   penetrate: 0
   towerIcon: {fileID: 21300000, guid: fe30338a50c68a440a8194cbfdf1066d, type: 3}
   towerName: "\uC989\uC0AC \uD0C0\uC6CC"
-  towerDescription: "\uC800\uACA9 \uD0C0\uC6CC \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC7A5\uAC70\uB9AC\n\uAE34
-    \uAC04\uACA9\uC73C\uB85C \uB9DE\uC740 \uC801\uC744 \uC989\uC0AC\uC2DC\uD0A4\uB294
-    \uB2E8\uC77C \uACF5\uACA9\uC744 \uD558\uB294 \uD0C0\uC6CC"
+  towerDescription: "\uC800\uACA9 \uD0C0\uC6CC \uC5C5\uADF8\uB808\uC774\uB4DC\n\uC7A5\uAC70\uB9AC\n\uC544\uC8FC
+    \uB290\uB9B0 \uC18D\uB3C4\uB85C \uC801\uC744 \uC989\uC0AC\uC2DC\uD0A4\uB294 \uB2E8\uC77C
+    \uACF5\uACA9\uC744 \uD558\uB294 \uD0C0\uC6CC"
   towerType: 2

@@ -43,7 +43,7 @@ public class Tower : MonoBehaviour
             // 대상이 있으면 일정 시간 간격으로 공격을 수행합니다.
             else if (target != null)
             {
-                RotateTowardsTarget();
+                //RotateTowardsTarget();
                 if (attackTimer >= 1f / reloadSpeed)
                 {
                     Fire();
@@ -83,7 +83,10 @@ public class Tower : MonoBehaviour
     }
 
     // 대상을 공격합니다.
-    protected virtual void Fire() { }
+    protected virtual void Fire() 
+    {
+        RotateTowardsTarget();
+    }
 
     protected void GenerateBullet()
     {
@@ -113,9 +116,9 @@ public class Tower : MonoBehaviour
     }
 
     // 사정거리를 시각적으로 표시
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range * GameManager.instance.modular + (GameManager.instance.modular / 2));
-    }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, range * GameManager.instance.modular + (GameManager.instance.modular / 2));
+    //}
 }

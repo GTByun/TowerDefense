@@ -14,6 +14,7 @@ public class BurstTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         if (ammo == 0)
         {
             waitFind = false;

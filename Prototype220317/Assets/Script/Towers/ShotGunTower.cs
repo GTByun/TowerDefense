@@ -14,6 +14,7 @@ public class ShotGunTower : Tower
 
     protected override void Fire()
     {
+        base.Fire();
         float angleOffset = fireAngle / (ball - 1);
         float startAngle = -fireAngle / 2f;
         float rotZ = startAngle;

@@ -8,6 +8,7 @@ public class SniperTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         GenerateBullet();
     }
 }

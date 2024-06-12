@@ -40,12 +40,10 @@ public class EnemySpawner : MonoBehaviour
     [Header("Technical")]
     public ObjectPool pool;//적 오브젝트의 Pool입니다.
     [SerializeField] private List<EnemyData> enemiesData;//스크립터블 오브젝트 EnemyData를 전부 가지고 있는 리스트입니다.
-    private GameManager gameManager;
     [HideInInspector] public int wave; //웨이브 수
     private int commonCount, uncommonCount, specialCount;//각 등급별로 적이 얼마나 있는지의 값입니다.
     void Start()
     {
-        gameManager = GameManager.instance;
         enemies = new List<GameObject>();
         waveEnemy = new Queue<EnemyType>();
         wave = 0;

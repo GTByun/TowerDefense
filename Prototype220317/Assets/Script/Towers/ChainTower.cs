@@ -9,12 +9,13 @@ public class ChainTower : Tower
     protected override void Start()
     {
         cushion = 3;
-        cushionRange = 5f;
+        cushionRange = 2f;
         damageReduce = 0.7f;
         base.Start();
     }
     protected override void Fire()
     {
+        base.Fire();
         GameObject bObject = pool.GetObjectFromPool();
         ChainBullet bullet = bObject.GetComponent<ChainBullet>();
         Debug.Log(target);

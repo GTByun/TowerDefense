@@ -128,8 +128,8 @@ public class GridManager : MonoBehaviour
     /// <param name="tower"></param>
     public void CheckModule(int tower)
     {
-        if (tower < towerInfoManager.nTower / 2) return; //모듈이 아니라서 반환
-        int index = HasTower(tower - towerInfoManager.nTower / 2);
+        if (tower < towerInfoManager.nDefaultTower) return; //모듈이 아니라서 반환
+        int index = HasTower(tower % towerInfoManager.nDefaultTower);
         gridInfoArr[index].ResetTower();
     }
 

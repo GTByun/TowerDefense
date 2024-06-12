@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ed589fe2613de4d9cbf81f5ec9e4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nDefaultTower: 4
   nTower: 8
   TowerInfoArr:
   - towerData: {fileID: 11400000, guid: 8356286d9096d65409c932fa61f4f300, type: 2}
@@ -467,8 +468,12 @@ MonoBehaviour:
     towerObject: {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
   - towerData: {fileID: 11400000, guid: e41e3a53fdd87484387165b61921cfab, type: 2}
     towerObject: {fileID: 6624849031295809783, guid: b7317b775990d344eb9ed86388c25b87, type: 3}
+  - towerData: {fileID: 11400000, guid: 4fe24e6bca1ab6d4ca237f4304423bfe, type: 2}
+    towerObject: {fileID: 6881034845119654329, guid: 6ee4a277d4c36df4187df6fc4a0504bb, type: 3}
   - towerData: {fileID: 11400000, guid: 20426f585afc54743ae85cbff74fa9d7, type: 2}
     towerObject: {fileID: 6822693835450624016, guid: 8b161e3c46c0b3b46bee9f26cf6a3a56, type: 3}
+  - towerData: {fileID: 11400000, guid: da9d4faad3d4bbe4ba3def8e92ae8ae4, type: 2}
+    towerObject: {fileID: 6822693835450624016, guid: f4b03d098b4ab1c458042cdf21d9fbb2, type: 3}
 --- !u!114 &114203225
 MonoBehaviour:
   m_ObjectHideFlags: 0

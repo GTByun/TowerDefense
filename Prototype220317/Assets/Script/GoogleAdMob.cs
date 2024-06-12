@@ -78,7 +78,6 @@ public class GoogleAdMob : MonoBehaviour
             {
                 // TODO: Reward the user.
                 refillLife();
-                GameManager.instance.stateManager.EnterState(GameState.GameMode);
                 Debug.Log(string.Format(rewardMsg, reward.Type, reward.Amount));
             });
         }

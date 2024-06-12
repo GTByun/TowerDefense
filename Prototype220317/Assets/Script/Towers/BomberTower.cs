@@ -14,6 +14,7 @@ public class BomberTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         GameObject bObject = pool.GetObjectFromPool();
         Bomb bomb = bObject.GetComponent<Bomb>();
         bomb.init(bulletSpeed, damage, hitArea, splashArea);

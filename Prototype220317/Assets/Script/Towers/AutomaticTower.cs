@@ -8,6 +8,7 @@ public class AutomaticTower : Tower
     }
     protected override void Fire()
     {
+        base.Fire();
         GenerateBullet();
     }
 }
