@@ -21,13 +21,17 @@ public class Tower : MonoBehaviour
     protected virtual void Start()
     {
         gameManager = GameManager.instance;
-        range=towerData.range;
-        bulletSpeed=towerData.bulletSpeed;
-        damage=towerData.damage;
-        penetrate=towerData.penetrate;
-        reloadSpeed=towerData.reloadSpeed;
+        InitTowerStatus();
         waitFind = false;
         attackTimer = reloadSpeed * 0.9f;
+    }
+    public void InitTowerStatus()
+    {
+        range = towerData.range;
+        bulletSpeed = towerData.bulletSpeed;
+        damage = towerData.damage * PlayerStatus.damageUpgrade;
+        penetrate = towerData.penetrate;
+        reloadSpeed = towerData.reloadSpeed * PlayerStatus.reloadSpeedUpgrade;
     }
 
     protected virtual void Update()

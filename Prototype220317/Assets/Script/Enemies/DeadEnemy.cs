@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeadEnemy : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     private void OnEnable()
     {
@@ -16,5 +17,10 @@ public class DeadEnemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DeleteZone")) gameObject.SetActive(false);
+    }
+    public void setSprite(Sprite s)
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = s;
     }
 }

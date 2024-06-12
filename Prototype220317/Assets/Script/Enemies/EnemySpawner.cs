@@ -40,13 +40,11 @@ public class EnemySpawner : MonoBehaviour
     [Header("Technical")]
     public ObjectPool pool;//적 오브젝트의 Pool입니다.
     [SerializeField] private List<EnemyData> enemiesData;//스크립터블 오브젝트 EnemyData를 전부 가지고 있는 리스트입니다.
-    [HideInInspector] public int wave; //웨이브 수
     private int commonCount, uncommonCount, specialCount;//각 등급별로 적이 얼마나 있는지의 값입니다.
     void Start()
     {
         enemies = new List<GameObject>();
         waveEnemy = new Queue<EnemyType>();
-        wave = 0;
         SetGradeCount();
     }
 
@@ -55,9 +53,9 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public void StartWave()
     {
-        SetHP(wave);
-        wave++;
-        point += (int) (wave * 1.5f);
+        SetHP(PlayerStatus.wave);
+        PlayerStatus.wave++;
+        point += (int) (PlayerStatus.wave * 1.5f);
         BuyWave();
         StartCoroutine("WaveCoroutine");
     }
@@ -131,7 +129,7 @@ public class EnemySpawner : MonoBehaviour
     /// <param name="wave">현재 웨이브</param>
     private void SetHP(int wave)
     {
-        Enemy.hpMultiplier = Mathf.Pow(1.5f, wave);
+        Enemy.hpMultiplier = Mathf.Pow(1.5f, PlayerStatus.wave);
     }
 
     /// <summary>

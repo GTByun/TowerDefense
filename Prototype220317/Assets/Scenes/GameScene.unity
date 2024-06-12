@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nDefaultTower: 4
-  nTower: 8
+  nTower: 12
   TowerInfoArr:
   - towerData: {fileID: 11400000, guid: 8356286d9096d65409c932fa61f4f300, type: 2}
     towerObject: {fileID: 6624849031295809783, guid: 34ca1f5d4a13e354682f4f0be536129d, type: 3}
@@ -592,7 +592,6 @@ MonoBehaviour:
   - {fileID: 22490490}
   - {fileID: 1213578534}
   - {fileID: 1235277119}
-  moduleChance: 0.2
 --- !u!114 &114203229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4210,7 +4209,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc71cc451bb1f98439afe67ccd5ae1ed, type: 2}
   - {fileID: 11400000, guid: 2f87f0e54a54bbc47ba49da3f7a917a3, type: 2}
   - {fileID: 11400000, guid: f674489b416eecb478646e0351bb0483, type: 2}
-  wave: 0
 --- !u!114 &1318653714
 MonoBehaviour:
   m_ObjectHideFlags: 0

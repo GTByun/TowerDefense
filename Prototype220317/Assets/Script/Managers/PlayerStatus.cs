@@ -4,8 +4,11 @@ using UnityEngine.Events;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public static int life = 20;
-    public static float damageUpgrade = 1f;
+    public static int life;
+    public static float damageUpgrade;
+    public static float reloadSpeedUpgrade;
+    public static int wave;
+
     public TextMeshProUGUI lifeText;
     public static bool errAd;
     bool hasLife;
@@ -15,6 +18,10 @@ public class PlayerStatus : MonoBehaviour
 
     private void Start()
     {
+        life = 20;
+        damageUpgrade = 1f;
+        reloadSpeedUpgrade = 1f;
+        wave = 0;
         lifeText.text = life.ToString();
         debugModOn = false;
         hasLife = true;
@@ -33,6 +40,7 @@ public class PlayerStatus : MonoBehaviour
             hasLife = true;
         }
         lifeText.text = life.ToString();
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             life--;

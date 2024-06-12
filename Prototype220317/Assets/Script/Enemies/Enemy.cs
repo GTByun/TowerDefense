@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
             DeSpawn();
             gameManager.enemyKilled++;
             GameObject corpse = gameManager.deadPool.GetObjectFromPool();
+            corpse.GetComponent<DeadEnemy>().setSprite(spriteRenderer.sprite);
             corpse.transform.position = transform.position;
             corpse.SetActive(true);
             // °æÇèÄ¡
