@@ -29,9 +29,9 @@ public class Tower : MonoBehaviour
     {
         range = towerData.range;
         bulletSpeed = towerData.bulletSpeed;
-        damage = towerData.damage * PlayerStatus.damageUpgrade;
+        damage = towerData.damage * gameManager.playerStatus.damageUpgrade;
         penetrate = towerData.penetrate;
-        reloadSpeed = towerData.reloadSpeed * PlayerStatus.reloadSpeedUpgrade;
+        reloadSpeed = towerData.reloadSpeed * gameManager.playerStatus.reloadSpeedUpgrade;
     }
 
     protected virtual void Update()

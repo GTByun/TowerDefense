@@ -36,13 +36,14 @@ public class EnemySpawner : MonoBehaviour
 
     public static List<GameObject> enemies; //적들의 정적 리스트입니다. 타워가 범위 내의 적을 체크하기 위해 정적으로 선언합니다.
     public static Queue<EnemyType> waveEnemy; //현재 웨이브에 나올 적들의 정적 Queue입니다. Queue 클래스를 사용하기에 먼저 집어넣은 적이 먼저 나옵니다.
-
+    GameManager gameManager;
     [Header("Technical")]
     public ObjectPool pool;//적 오브젝트의 Pool입니다.
     [SerializeField] private List<EnemyData> enemiesData;//스크립터블 오브젝트 EnemyData를 전부 가지고 있는 리스트입니다.
     private int commonCount, uncommonCount, specialCount;//각 등급별로 적이 얼마나 있는지의 값입니다.
     void Start()
     {
+        gameManager = GameManager.instance;
         enemies = new List<GameObject>();
         waveEnemy = new Queue<EnemyType>();
         SetGradeCount();
@@ -53,9 +54,10 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public void StartWave()
     {
-        SetHP(PlayerStatus.wave);
-        PlayerStatus.wave++;
-        point += (int) (PlayerStatus.wave * 1.5f);
+        if (gameManager.playerStatus.wave == 0) gameManager.uiController.AppendUpgradePanel();
+        SetHP(gameManager.playerStatus.wave);
+        gameManager.playerStatus.wave++;
+        point += (int) (gameManager.playerStatus.wave * 1.5f);
         BuyWave();
         StartCoroutine("WaveCoroutine");
     }
@@ -129,7 +131,7 @@ public class EnemySpawner : MonoBehaviour
     /// <param name="wave">현재 웨이브</param>
     private void SetHP(int wave)
     {
-        Enemy.hpMultiplier = Mathf.Pow(1.5f, PlayerStatus.wave);
+        Enemy.hpMultiplier = Mathf.Pow(1.4f, gameManager.playerStatus.wave);
     }
 
     /// <summary>

@@ -20,9 +20,9 @@ public class CardManager : MonoBehaviour
     public void RandomizeCards()
     {
         // 모듈찬스 점점 오르게
-        if (PlayerStatus.wave < 6) moduleChance = 0.2f;
-        else if (PlayerStatus.wave >= 6) moduleChance = 0.4f;
-        else if (PlayerStatus.wave >= 10) moduleChance = 0.7f;
+        if (gameManager.playerStatus.wave < 6) moduleChance = 0.2f;
+        else if (gameManager.playerStatus.wave >= 6) moduleChance = 0.4f;
+        else if (gameManager.playerStatus.wave >= 10) moduleChance = 0.7f;
         int excludeCard = Random.Range(0, nDefaultTower);
         int newCard = 0;
         foreach (var card in cards)

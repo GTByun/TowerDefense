@@ -4,10 +4,10 @@ using UnityEngine.Events;
 
 public class PlayerStatus : MonoBehaviour
 {
-    public static int life;
-    public static float damageUpgrade;
-    public static float reloadSpeedUpgrade;
-    public static int wave;
+    public int life;
+    public float damageUpgrade;
+    public float reloadSpeedUpgrade;
+    public int wave;
 
     public TextMeshProUGUI lifeText;
     public static bool errAd;
@@ -30,6 +30,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void Update()
     {
+        lifeText.text = life.ToString();
         if (life <= 0 && hasLife)
         {
             if (!debugModOn) GameManager.instance.stateManager.EnterState(GameState.GameOver);
@@ -39,8 +40,6 @@ public class PlayerStatus : MonoBehaviour
         {
             hasLife = true;
         }
-        lifeText.text = life.ToString();
-
         if (Input.GetKeyDown(KeyCode.O))
         {
             life--;

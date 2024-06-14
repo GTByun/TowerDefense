@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
                         // 골인
                         DeSpawn();
                         // 라이프 감소
-                        PlayerStatus.life--;
+                        gameManager.playerStatus.life--;
                     }
                     break;
                 case EnemyMove.Down:

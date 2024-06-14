@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 3
   bulletSpeed: 20
-  damage: 110
+  damage: 120
   reloadSpeed: 0.8
   penetrate: 0
   towerIcon: {fileID: 21300000, guid: d0d8b48008a3d4f41a7bae8ad6c32fa5, type: 3}

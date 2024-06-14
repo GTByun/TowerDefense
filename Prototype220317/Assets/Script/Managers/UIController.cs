@@ -28,9 +28,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timePlayedText;
     [SerializeField] private GameObject adBtn;
     [SerializeField] private GameObject creditBtn;
-    [Header("±¤°í ¿¡·¯¿ë")]
     [SerializeField] public GameObject resumeBtn;
     //[SerializeField] public TextMeshProUGUI errTxt;
+    [SerializeField] private GameObject LifePanel;
+    [SerializeField] private GameObject UpgradePanel;
+
+    [Space]
     public float speed = 1f;
 
     private float offset = 0;
@@ -108,6 +111,10 @@ public class UIController : MonoBehaviour
         darkFader.SetActive(true);
         gameOver.SetActive(false);
 
+    }
+    public void AppendUpgradePanel()
+    {
+        UpgradePanel.SetActive(true);
     }
 
     /// <summary>

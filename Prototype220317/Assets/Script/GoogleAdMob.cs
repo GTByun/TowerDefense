@@ -84,7 +84,7 @@ public class GoogleAdMob : MonoBehaviour
     }
     public void refillLife()
     {
-        PlayerStatus.life += 10;
+        GameManager.instance.playerStatus.life += 10;
         GameManager.instance.stateManager.EnterState(GameState.GameMode);
     }
     private void RegisterEventHandlers(RewardedAd ad)
