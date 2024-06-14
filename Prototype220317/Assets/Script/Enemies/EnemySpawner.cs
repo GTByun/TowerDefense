@@ -53,10 +53,11 @@ public class EnemySpawner : MonoBehaviour
     /// 웨이브를 시작합니다.
     /// </summary>
     public void StartWave()
-    {
-        if (gameManager.playerStatus.wave == 0) gameManager.uiController.AppendUpgradePanel();
-        SetHP(gameManager.playerStatus.wave);
+    {        
         gameManager.playerStatus.wave++;
+        SetHP();
+        // 10라운드부터 업그레이드 기능 추가 예정
+        if (gameManager.playerStatus.wave == 9) gameManager.uiController.AppendUpgradePanel();
         point += (int) (gameManager.playerStatus.wave * 1.5f);
         BuyWave();
         StartCoroutine("WaveCoroutine");
@@ -129,9 +130,10 @@ public class EnemySpawner : MonoBehaviour
     /// 웨이브에 따라 체력의 배수를 정합니다.
     /// </summary>
     /// <param name="wave">현재 웨이브</param>
-    private void SetHP(int wave)
+    private void SetHP()
     {
-        Enemy.hpMultiplier = Mathf.Pow(1.4f, gameManager.playerStatus.wave);
+        if (gameManager.playerStatus.wave == 1) return;
+        Enemy.hpMultiplier *= 1.3f; //Mathf.Pow(1.3f, gameManager.playerStatus.wave);
     }
 
     /// <summary>
