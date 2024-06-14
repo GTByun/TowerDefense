@@ -29,19 +29,22 @@ public class HelpManager : MonoBehaviour
     public void PageUp()
     {
         page++;
+        PageSetting();
     }
 
     public void PageDown() 
     {
         page--;
+        PageSetting();
     }
 
     public void PageReset()
     {
         page = 0;
+        PageSetting();
     }
 
-    public void PageSetting()
+    private void PageSetting()
     {
         for (int i = 0; i < helpFrames.Length; i++) 
         {
