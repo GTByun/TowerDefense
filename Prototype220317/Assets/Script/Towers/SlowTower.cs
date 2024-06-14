@@ -8,7 +8,7 @@ public class SlowTower : Tower
 
     protected override void Start()
     {
-        slowScale = 0.75f;
+        slowScale = 0.6f;
         base.Start();       
     }
 

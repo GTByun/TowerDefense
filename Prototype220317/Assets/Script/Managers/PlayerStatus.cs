@@ -6,10 +6,12 @@ public class PlayerStatus : MonoBehaviour
 {
     public int life;
     public float damageUpgrade;
-    public float reloadSpeedUpgrade;
+    public float speedUpgrade;
     public int wave;
 
     public TextMeshProUGUI lifeText;
+    public TextMeshProUGUI damageUpText;
+    public TextMeshProUGUI speedUpText;
     public static bool errAd;
     bool hasLife;
     bool debugModOn;
@@ -20,7 +22,7 @@ public class PlayerStatus : MonoBehaviour
     {
         life = 20;
         damageUpgrade = 1f;
-        reloadSpeedUpgrade = 1f;
+        speedUpgrade = 1f;
         wave = 0;
         lifeText.text = life.ToString();
         debugModOn = false;

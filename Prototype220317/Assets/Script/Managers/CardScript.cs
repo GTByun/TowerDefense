@@ -18,8 +18,9 @@ public class CardScript : MonoBehaviour
     public int tower; //이 타워가 가리키는 타워 인덱스
     private GameManager gameManager;
     private Animator animator;
-    public CardScript otherCard0;
-    public CardScript otherCard1;
+    // public CardScript otherCard0;
+    // public CardScript otherCard1;
+    public CardScript[] othercards;
 
 
     private void Start()
@@ -64,7 +65,25 @@ public class CardScript : MonoBehaviour
     }
     public void TriggerOtherCard()
     {
-        otherCard0.animator.SetTrigger("CardShrinkTrigger");
-        otherCard1.animator.SetTrigger("CardShrinkTrigger");
+        foreach (var card in othercards)
+        {
+            card.animator.SetTrigger("CardShrinkTrigger");
+        }
+        //otherCard0.animator.SetTrigger("CardShrinkTrigger");
+        //otherCard1.animator.SetTrigger("CardShrinkTrigger");
+    }
+    public void DamageUp()
+    {
+        gameManager.playerStatus.damageUpgrade += 0.1f;
+        gameManager.playerStatus.damageUpText.text = gameManager.playerStatus.damageUpgrade * 100 + " %";
+        animator.SetTrigger("CardShrinkTrigger");
+        Invoke("TriggerOtherCard", 0.5f);
+    }
+    public void SpeedUp()
+    {
+        gameManager.playerStatus.speedUpgrade += 0.1f;
+        gameManager.playerStatus.speedUpText.text = gameManager.playerStatus.speedUpgrade * 100 + " %";
+        animator.SetTrigger("CardShrinkTrigger");
+        Invoke("TriggerOtherCard", 0.5f);
     }
 }

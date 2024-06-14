@@ -16,9 +16,9 @@ public class DebugScript : MonoBehaviour
         outputString.Append("Hello World!\n");
         outputString.Append($"현재 게임 스테이트 : {gameManager.stateManager.gameState}\n");
         outputString.Append($"towerInHand : {gameManager.gridManager.towerInHand}\n");
-        outputString.Append($"cardTower : {gameManager.cardManager.cards[0].GetComponent<CardScript>().tower}");
-        outputString.Append($" ,{gameManager.cardManager.cards[1].GetComponent<CardScript>().tower}");
-        outputString.Append($" ,{gameManager.cardManager.cards[2].GetComponent<CardScript>().tower}\n");
+        outputString.Append($"cardTower : {gameManager.cardManager.towerCards[0].GetComponent<CardScript>().tower}");
+        outputString.Append($" ,{gameManager.cardManager.towerCards[1].GetComponent<CardScript>().tower}");
+        outputString.Append($" ,{gameManager.cardManager.towerCards[2].GetComponent<CardScript>().tower}\n");
         outputString.Append($"현재 라운드 HP 배수 : {Enemy.hpMultiplier}\n");
 
         for (int i = 0; i < 9; i++)

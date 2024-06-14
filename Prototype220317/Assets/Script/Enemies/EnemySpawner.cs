@@ -55,9 +55,7 @@ public class EnemySpawner : MonoBehaviour
     public void StartWave()
     {        
         gameManager.playerStatus.wave++;
-        SetHP();
-        // 10라운드부터 업그레이드 기능 추가 예정
-        if (gameManager.playerStatus.wave == 9) gameManager.uiController.AppendUpgradePanel();
+        SetHP();        
         point += (int) (gameManager.playerStatus.wave * 1.5f);
         BuyWave();
         StartCoroutine("WaveCoroutine");

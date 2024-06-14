@@ -31,7 +31,7 @@ public class Tower : MonoBehaviour
         bulletSpeed = towerData.bulletSpeed;
         damage = towerData.damage * gameManager.playerStatus.damageUpgrade;
         penetrate = towerData.penetrate;
-        reloadSpeed = towerData.reloadSpeed * gameManager.playerStatus.reloadSpeedUpgrade;
+        reloadSpeed = towerData.reloadSpeed * gameManager.playerStatus.speedUpgrade;
     }
 
     protected virtual void Update()
@@ -89,6 +89,8 @@ public class Tower : MonoBehaviour
     // 대상을 공격합니다.
     protected virtual void Fire() 
     {
+        reloadSpeed = towerData.reloadSpeed * gameManager.playerStatus.speedUpgrade; 
+        damage = towerData.damage * gameManager.playerStatus.damageUpgrade;
         RotateTowardsTarget();
     }
 

@@ -31,6 +31,10 @@ public class StateManager : MonoBehaviour
     {
         while (true) {
             if (gameState == GameState.GameMode) WatchWaveEnd();
+            if (PlayerStatus.errAd)
+            {
+                uiController.addErrBtn.SetActive(true);
+            }
             yield return new WaitForSeconds(1f);
         }
     }

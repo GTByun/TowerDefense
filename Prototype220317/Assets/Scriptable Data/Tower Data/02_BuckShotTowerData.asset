@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 02_BuckShotTowerData
   m_EditorClassIdentifier: 
   range: 2.5
-  bulletSpeed: 18
+  bulletSpeed: 13
   damage: 150
   reloadSpeed: 0.6
   penetrate: 0

@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timePlayedText;
     [SerializeField] private GameObject adBtn;
     [SerializeField] private GameObject creditBtn;
-    [SerializeField] public GameObject resumeBtn;
+    [SerializeField] public GameObject addErrBtn;
     //[SerializeField] public TextMeshProUGUI errTxt;
     [SerializeField] private GameObject LifePanel;
     [SerializeField] private GameObject UpgradePanel;

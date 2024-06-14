@@ -136,12 +136,12 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            burningDamage *= 1.2f;
+            burningDamage *= 1.1f;
         }        
     }
     public void SlowDown(float slowScale)
     {
-        speed = slowScale;
+        speed = enemyData.speed*slowScale;
     }
 
     /// <summary>
