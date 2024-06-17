@@ -10,6 +10,7 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class GridManager : MonoBehaviour
 {
+    public List<Tower> installedTower;
     public GridInfo[] gridInfoArr = new GridInfo[9]; //각 그리드에 설치되는 타워의 정보 배열
     public int towerInHand = -1; //손에 가지고 있는 타워. 타워를 설치할 때, 손에 먼저 타워를 저장한 뒤 이 타워를 배치함
     [SerializeField] private GameObject towerPlace; //클릭 감지용 오브젝트
@@ -20,6 +21,7 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
+        installedTower = new List<Tower>();
         stateManager = GameManager.instance.stateManager;
         towerInfoManager = GameManager.instance.towerInfoManager;
         uiController = GameManager.instance.uiController;
@@ -81,7 +83,8 @@ public class GridManager : MonoBehaviour
         gridInfoArr[index].towerObject = obj;
         gridInfoArr[index].towerIndex = towerInHand;
         obj.transform.position = gridInfoArr[index].pos;
-        SetHand(-1); //손을 비워줌
+        installedTower.Add(obj.transform.GetChild(0).GetComponent<Tower>());
+        SetHand(-1); //손을 비워줌        
     }
 
     /// <summary>

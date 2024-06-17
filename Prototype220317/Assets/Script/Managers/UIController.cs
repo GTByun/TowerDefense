@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -88,7 +89,11 @@ public class UIController : MonoBehaviour
         darkFaderEdit.SetActive(false);
         startButton.SetActive(false);
         darkFader.SetActive(false);
-        gameOver.SetActive(false); 
+        gameOver.SetActive(false);
+        foreach (Tower tower in gameManager.gridManager.installedTower)
+        {
+            tower.StartWave();
+        }
     }
     public void GameOverOn()
     {

@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
     public void ResetData(EnemyData nextEnemyData)
     {
         enemyData = nextEnemyData;
-        hp = enemyData.hp * hpMultiplier;
+        hp = Mathf.Floor(enemyData.hp * hpMultiplier);
         speed = enemyData.speed;
         spriteRenderer.sprite = enemyData.sprite;
         burning = false;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
@@ -5,12 +6,12 @@ public class Tower : MonoBehaviour
     public float rotationSpeed = 50f;
 
     public ObjectPool pool;
-
-    protected float range;
-    protected float bulletSpeed;
-    protected float damage;
-    protected int penetrate;
-    protected float reloadSpeed;
+    [Header("TowerData")]
+    public float range;
+    public float bulletSpeed;
+    public float damage;
+    public int penetrate;
+    public float reloadSpeed;
     [SerializeField] protected TowerData towerData;
 
     float attackTimer;
@@ -24,6 +25,10 @@ public class Tower : MonoBehaviour
         InitTowerStatus();
         waitFind = false;
         attackTimer = reloadSpeed * 0.9f;
+    }
+    public void StartWave()
+    {
+        InitTowerStatus();
     }
     public void InitTowerStatus()
     {
@@ -120,6 +125,8 @@ public class Tower : MonoBehaviour
         transform.rotation = targetRotation; // 바로 회전
         //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); // 부드럽게 회전
     }
+
+    
 
     // 사정거리를 시각적으로 표시
     //private void OnDrawGizmosSelected()

@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
     private int nCard = 0;
 
     void Start() {
+        Debug.Log("State Manager Start");
         uiController = GameManager.instance.uiController;
         cardManager = GameManager.instance.cardManager;
         StartCoroutine("SlowUpdate");
